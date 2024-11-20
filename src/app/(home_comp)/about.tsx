@@ -8,6 +8,7 @@ const HomeAbout = () => {
     <main className="bg-white z-[1] w-full h-fit min-h-screen flex flex-col justify-between items-center gap-16 py-[8rem]">
       <AboutInfo />
       <BentoGrid />
+      
     </main>
   );
 };

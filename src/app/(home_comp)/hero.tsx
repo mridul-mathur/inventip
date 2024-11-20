@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { color, motion, useScroll, useTransform } from "framer-motion";
 
 const Hero = () => {
   const ref = useRef(null);
@@ -15,7 +15,7 @@ const Hero = () => {
     <main
       ref={ref}
       className="z-[-1] h-[250vh] w-screen relative overflow-hidden"
-    >
+    > 
       <motion.div
         style={{ scale: s, scaleY: sy }}
         className="bg-black h-[100vh] w-[100vw] fixed top-0 left-0 rounded-[2rem]"
