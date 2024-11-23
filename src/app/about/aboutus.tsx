@@ -7,7 +7,9 @@ function aboutus() {
                 <h1 className='text-subhead'>About us</h1>
             </div>
             <div className=" flex h-full w-full items-center">
-                <div className="box h-[80%] w-[60%]  border rounded-3xl bg-slate-200">
+                {/* <div className="box h-[80%] w-[60%]  border rounded-3xl bg-slate-200"> */}
+                <div className="box h-[60vh] w-[60%]  border rounded-3xl bg-slate-200">
+
 
                 </div>
                 <div className="detail  h-[90%] w-[100%] px-12 flex flex-col justify-evenly ">

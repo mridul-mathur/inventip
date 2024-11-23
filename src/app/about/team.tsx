@@ -64,16 +64,19 @@ const TeamCade: React.FC<TeamCardProps> = ({ name, role, image, linkedin, mail }
                     </div>
                     <div className="link h-[100%] w-[70%] flex gap-2 items-center">
                         <div className="ixon-box h-[50%] w-[35%] border opacity-0 transition-opacity duration-1000 group-hover:opacity-100 rounded-md flex items-center justify-center">
-                            <MdMarkEmailUnread  className='text-white text-xl overflow-hidden' />
-
+                            <MdMarkEmailUnread
+                                className="text-white text-xl overflow-hidden translate-y-[100%] transition-transform duration-1000 group-hover:translate-y-0"
+                            />
                         </div>
                         <div className="ixon-box h-[50%] w-[35%] border opacity-0 transition-opacity duration-1000 group-hover:opacity-100 rounded-md flex items-center justify-center">
-                            <IoLogoLinkedin className='text-white text-xl overflow-hidden   ' />
-
+                            <IoLogoLinkedin
+                                className="text-white text-xl overflow-hidden translate-y-[100%] transition-transform duration-1000 group-hover:translate-y-0"
+                            />
                         </div>
                     </div>
                 </div>
             </div>
+
 
         </>
     );

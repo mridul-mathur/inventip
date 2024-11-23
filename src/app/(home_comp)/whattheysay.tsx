@@ -6,14 +6,15 @@ import { motion } from "framer-motion";
 
 function WhatTheySay() {
     return (
-        <main className="h-[60vh] w-[100%] bg-white p-16 overflow-hidden">
+        <main className="h-[60vh] w-screen bg-white p-16 overflow-hidden">
             <div className="w-auto mb-5">
                 <h1 className="text-head capitalize">what they say about us</h1>
             </div>
             <motion.div
                 className="right-image w-auto h-[40vh] flex overflow-x-visible"
                 drag="x"
-                dragConstraints={{ left: -500, right: 0 }} // Adjust constraints as needed
+                // custom karna ha isko 1 card ka 500 ha
+                dragConstraints={{ left: -1500, right: 0 }} // Adjust constraints as needed
             >
                 <AllAboutUs />
             </motion.div>
@@ -43,6 +44,13 @@ const AllAboutUs = () => {
             image: "/images/img.png",
             company: "TechCorp.Lcc",
         },
+        {
+            name: "Technology",
+            quate: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor in ",
+            image: "/images/img.png",
+            company: "TechCorp.Lcc",
+        },
+     
      
        
     ];

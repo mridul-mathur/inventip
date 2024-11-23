@@ -2,11 +2,11 @@ import React from 'react'
 
 function ourmission() {
     return (
-        <main className='h-[100vh] w-full  p-16'>
+        <main className='min-h-[100vh] border w-full b p-16'>
             <div className=" w-full">
                 <h1 className='text-subhead'> Your success our mission</h1>
             </div>
-            <div className=" flex h-auto w-full  mt-8">
+            <div className=" flex min-h-auto w-full  mt-8">
                 <div className="box h-auto w-[100%]   pr-20 pt-10">
                 <p className='text-lg'>To be valued by our clients for our quality work products and services. We partner
                          with our clients to help navigate the complex maze of IP law and procedures and 
@@ -15,7 +15,7 @@ function ourmission() {
                            and advisory capacities.</p>
 
                 </div>
-                <div className="detail  h-auto w-[100%]   pl-20 pt-10 ">
+                <div className="detail  min-h-auto w-[100%]   pl-20 pt-10 ">
                     <p className='text-lg'>The firm provides support in a transparent manner with relentless communication and
                          interactions at priority with clients. The firm's technology-driven processes for IP
                           management sets us apart from other firms and help us achieve higher returns for our
@@ -25,7 +25,7 @@ function ourmission() {
                 </div>
 
             </div>
-           <div className="w-full h-[50%] border mt-[50px] bg-slate-300 rounded-[2rem]"></div>
+           <div className="w-full min-h-[40vh] border mt-[50px] bg-slate-300 rounded-[2rem]"></div>
         </main>
     )
 }
