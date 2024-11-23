@@ -54,7 +54,7 @@ const AllIndustries = () => {
     },
   ];
   return (
-    <div className="px-16 bg-white w-full h-fit flex justify-start items-start gap-[4rem]">
+    <div className="px-16 bg-white w-full h-fit flex justify-start items-start gap-[4rem] overflow-x-hidden">
       {industries.map((ind, index) => (
         <Industrycard
           name={ind.name}

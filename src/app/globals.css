@@ -59,15 +59,18 @@
   box-sizing: border-box;
 }
 
+
 html,
 body {
   overscroll-behavior: none;
 }
 
 
-.Nav{
-  z-index: 999;
+.right-image{
+  scrollbar-width: none;
 }
+
+
 
 .customButton::before {
   content: "";
