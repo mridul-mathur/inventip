@@ -192,7 +192,7 @@ const Certified: React.FC = () => {
                     exit={{ y: 50, opacity: 0 }}
                     transition={{ duration: 0.8 }}
                 >
-                    <p>{slides[currentIndex].para}</p>
+                    <p className="text-para leading-6">{slides[currentIndex].para}</p>
                 </motion.div>
             </div>
             <div

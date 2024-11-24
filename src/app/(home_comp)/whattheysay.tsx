@@ -5,26 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 function WhatTheySay() {
-    return (
-        <main className="h-[60vh] w-screen bg-white p-16 overflow-hidden">
-            <div className="w-auto mb-5">
-                <h1 className="text-head capitalize">what they say about us</h1>
-            </div>
-            <motion.div
-                className="right-image w-auto h-[40vh] flex overflow-x-visible"
-                drag="x"
-                // custom karna ha isko 1 card ka 500 ha
-                dragConstraints={{ left: -1500, right: 0 }} // Adjust constraints as needed
-            >
-                <AllAboutUs />
-            </motion.div>
-        </main>
-    );
-}
-
-export default WhatTheySay;
-
-const AllAboutUs = () => {
+    const cardWidth = 600; // Width of one card in pixels
     const aboutUs = [
         {
             name: "Healthcare",
@@ -39,10 +20,22 @@ const AllAboutUs = () => {
             company: "TechCorp.Lcc",
         },
         {
-            name: "Technology",
+            name: "Finance",
             quate: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor in ",
             image: "/images/img.png",
-            company: "TechCorp.Lcc",
+            company: "FinanceCo.Lcc",
+        },
+        {
+            name: "Education",
+            quate: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor in ",
+            image: "/images/img.png",
+            company: "EduCorp.Lcc",
+        },
+        {
+            name: "Healthcare",
+            quate: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor in ",
+            image: "/images/img.png",
+            company: "HealthCo.Lcc",
         },
         {
             name: "Technology",
@@ -50,11 +43,45 @@ const AllAboutUs = () => {
             image: "/images/img.png",
             company: "TechCorp.Lcc",
         },
-     
-     
-       
+        {
+            name: "Finance",
+            quate: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor in ",
+            image: "/images/img.png",
+            company: "FinanceCo.Lcc",
+        },
+        {
+            name: "Education",
+            quate: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor in ",
+            image: "/images/img.png",
+            company: "EduCorp.Lcc",
+        },
     ];
 
+    const totalCards = aboutUs.length; // Calculate total cards dynamically
+    const viewportWidth = 1000; // Approximate viewport width in pixels
+    const dragLeftConstraint = -(cardWidth * totalCards - viewportWidth); // Calculate left constraint dynamically
+
+    return (
+        <main className="h-[60vh] w-screen bg-white p-16 overflow-hidden">
+            <div className="w-auto mb-5">
+                <h1 className="text-head capitalize">what they say about us</h1>
+            </div>
+            <motion.div
+                className="right-image w-auto h-[40vh] flex overflow-x-visible"
+                drag="x"
+                dragConstraints={{ left: dragLeftConstraint, right: 0 }} // Dynamically calculated constraints
+            >
+                <AllAboutUs aboutUs={aboutUs} />
+            </motion.div>
+        </main>
+    );
+}
+
+export default WhatTheySay;
+
+const AllAboutUs: React.FC<{ aboutUs: { name: string; quate: string; image: string; company: string }[] }> = ({
+    aboutUs,
+}) => {
     return (
         <>
             {aboutUs.map((item, index) => (
@@ -80,9 +107,9 @@ interface AboutUsCardProps {
 const AboutUsCard: React.FC<AboutUsCardProps> = ({ name, quate, image, company }) => {
     return (
         <motion.div
-            className="w-[50%] h-[100%] flex-shrink-0 flex items-center p-5"
-            whileHover={{ scale: 1.05 }} // Optional hover animation
-            whileTap={{ scale: 0.95 }} // Optional tap animation
+            className="w-[650px] h-[100%] flex-shrink-0 flex items-center p-5"
+            whileHover={{ scale: 1.05 }} 
+            whileTap={{ scale: 0.95 }} 
         >
             <div className="relative rounded-xl overflow-hidden w-[40%] h-[90%]">
                 <Image
@@ -92,17 +119,22 @@ const AboutUsCard: React.FC<AboutUsCardProps> = ({ name, quate, image, company }
                     className="relative object-cover w-full h-full"
                 />
             </div>
-            <div className="w-[50%] p-5 h-[100%] flex flex-col justify-evenly">
-                <h1>{quate}</h1>
+            <div className="w-[50%] p-5 h-[100%] flex flex-col justify-between">
+                <div className="relative w-fit">
+                    <img src="/images/upper.png" alt="" className="mb-2" />
+                    <h1 className="text-para leading-6">{quate}</h1>
+                    <img src="/images/down.png" className="absolute left-[80%] top-[85%]" alt="" />
+                </div>
                 <div className="down">
-                    <p>{name}</p>
+                    <p className="text-paramin leading-5">{name}</p>
                     <p>
-                        <span>{company}</span>
+                        <span className="text-slate-400 text-min leading-5">{company}</span>
                     </p>
                 </div>
             </div>
         </motion.div>
     );
 };
+
 
 

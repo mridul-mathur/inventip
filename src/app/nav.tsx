@@ -20,7 +20,7 @@ export function Nav() {
   ];
 
   return (
-    <main className="fixed top-0 w-full text-[#ADA5A5] backdrop-blur py-3 mix-blend-difference z-[999]">
+    <main className="fixed top-0 w-full text-[#ADA5A5] backdrop-blur py-3  z-[999]">
       <nav className="flex items-center justify-between py-3 px-6 lg:px-12">
         {/* Logo */}
         <Link href="/" className="font-bold text-lg">

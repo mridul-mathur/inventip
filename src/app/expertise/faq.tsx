@@ -7,7 +7,7 @@ function Faq() {
             <div className="w-[100%] h-[100%] px-10 pt-[5%]">
                 <h1 className="text-head">To ask? We may already have an answer.</h1>
                 <div className="flex justify-between items-center mt-[10%] pr-10">
-                    <p className="text-para">Is your question not listed?</p>
+                    <p className="text-para leading-6">Is your question not listed?</p>
                     <div className="px-5 py-1 rounded-2xl bg-black">
                         <Buttons color="#ffff">Contact</Buttons>
                     </div>

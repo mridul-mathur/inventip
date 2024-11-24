@@ -56,7 +56,7 @@ const Inovation: React.FC = () => {
 
                 <div className="overflow-hidden ">
                 <motion.p
-                    className="py-4 w-80 text-gray-700 "
+                    className="py-4 w-80 text-gray-700	text-para leading-6"
                     key={`para-${currentIndex}`}
                     initial={{ y: -50, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}

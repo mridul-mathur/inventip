@@ -63,15 +63,12 @@ const TeamCade: React.FC<TeamCardProps> = ({ name, role, image, linkedin, mail }
                         <p className="font-thin text-sm">{role}</p>
                     </div>
                     <div className="link h-[100%] w-[70%] flex gap-2 items-center">
-                        <div className="ixon-box h-[50%] w-[35%] border opacity-0 transition-opacity duration-1000 group-hover:opacity-100 rounded-md flex items-center justify-center">
-                            <MdMarkEmailUnread
-                                className="text-white text-xl overflow-hidden translate-y-[100%] transition-transform duration-1000 group-hover:translate-y-0"
-                            />
+                        <div className="ixon-box h-[50%] w-[35%] overflow-hidden border opacity-0 transition-opacity duration-1000 group-hover:opacity-100 rounded-md flex items-center justify-center">
+                            <img src="/images/mail.png" alt="" className="text-white  overflow-hidden translate-y-[100%] transition-transform duration-1000 group-hover:translate-y-0" />
                         </div>
-                        <div className="ixon-box h-[50%] w-[35%] border opacity-0 transition-opacity duration-1000 group-hover:opacity-100 rounded-md flex items-center justify-center">
-                            <IoLogoLinkedin
-                                className="text-white text-xl overflow-hidden translate-y-[100%] transition-transform duration-1000 group-hover:translate-y-0"
-                            />
+                        <div className="ixon-box h-[50%] w-[35%] overflow-hidden border opacity-0 transition-opacity duration-1000 group-hover:opacity-100 rounded-md flex items-center justify-center">
+                            <img src="/images/link.png" alt="" className="text-white  overflow-hidden translate-y-[100%] transition-transform duration-1000 group-hover:translate-y-0" />
+
                         </div>
                     </div>
                 </div>
