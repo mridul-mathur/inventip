@@ -55,18 +55,18 @@ interface TeamCardProps {
 const TeamCade: React.FC<TeamCardProps> = ({ name, role, image, linkedin, mail }) => {
     return (
         <>
-            <div className="card border h-[500px] w-[410px] rounded-3xl relative overflow-hidden group">
+            <div className="card border h-[37rem] w-[410px] rounded-3xl relative overflow-hidden group">
                 <img src={image} alt="" className="h-[100%] w-full" />
-                <div className="h-[20%] w-full border absolute bottom-0 rounded-xl backdrop-blur-[2px] flex">
+                <div className="h-[16%] w-full border absolute bottom-0 rounded-xl backdrop-blur-[2px] flex shadow-inner">
                     <div className="name h-[100%] w-[100%] text-white flex flex-col justify-evenly p-4">
                         <h1 className="text-2xl font-bold">{name}</h1>
                         <p className="font-thin text-sm">{role}</p>
                     </div>
                     <div className="link h-[100%] w-[70%] flex gap-2 items-center">
-                        <div className="ixon-box h-[50%] w-[35%] overflow-hidden border opacity-0 transition-opacity duration-1000 group-hover:opacity-100 rounded-md flex items-center justify-center">
+                        <div className="ixon-box h-[50%] w-[30%] overflow-hidden border opacity-0 transition-opacity duration-1000 group-hover:opacity-100 rounded-md flex items-center justify-center">
                             <img src="/images/mail.png" alt="" className="text-white  overflow-hidden translate-y-[100%] transition-transform duration-1000 group-hover:translate-y-0" />
                         </div>
-                        <div className="ixon-box h-[50%] w-[35%] overflow-hidden border opacity-0 transition-opacity duration-1000 group-hover:opacity-100 rounded-md flex items-center justify-center">
+                        <div className="ixon-box h-[50%] w-[30%] overflow-hidden border opacity-0 transition-opacity duration-1000 group-hover:opacity-100 rounded-md flex items-center justify-center">
                             <img src="/images/link.png" alt="" className="text-white  overflow-hidden translate-y-[100%] transition-transform duration-1000 group-hover:translate-y-0" />
 
                         </div>

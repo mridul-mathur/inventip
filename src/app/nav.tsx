@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import Buttons from "./buttons";  // Assuming this is for a button component, adjust as needed.
+import Buttons from "./buttons"; 
 
 export function Nav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,7 +11,6 @@ export function Nav() {
     setIsOpen(!isOpen);
   };
 
-  // Data for navigation links
   const navLinks = [
     { href: "/about", label: "about" },
     { href: "/expertise", label: "expertise" },
@@ -20,8 +19,8 @@ export function Nav() {
   ];
 
   return (
-    <main className="fixed top-0 w-full text-[#ADA5A5] backdrop-blur py-3  z-[999]">
-      <nav className="flex items-center justify-between py-3 px-6 lg:px-12">
+    <main className="fixed top-0 w-full text-black backdrop-blur py-1 z-[999]">
+      <nav className="flex items-center justify-between py-3 px-6 lg:px-12 text-submin">
         {/* Logo */}
         <Link href="/" className="font-bold text-lg">
           LOGO
@@ -32,7 +31,6 @@ export function Nav() {
           MENU
         </div>
 
-        {/* Links Section */}
         <div
           className={`${isOpen ? "flex" : "hidden"} flex-col lg:flex lg:flex-row lg:items-center w-full lg:w-auto mt-4 lg:mt-0`}
         >
@@ -47,13 +45,9 @@ export function Nav() {
           </ul>
         </div>
 
-        {/* Contact Button */}
-        <div className="hidden lg:block border border-[#ADA5A5]">
-          <Link
-            href="/contact"
-            className="rounded-full px-4 py-2 text-[#ADA5A5] font-semibold"
-          >
-            contact
+        <div className="hidden lg:block">
+          <Link href="/contact">
+            <Buttons color="black">Contact</Buttons>
           </Link>
         </div>
       </nav>
@@ -62,4 +56,3 @@ export function Nav() {
 }
 
 export default Nav;
-

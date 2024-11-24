@@ -3,7 +3,7 @@ import Buttons from "../buttons";
 
 function Faq() {
     return (
-        <main className="min-h-[100vh] w-full flex p-16 border">
+        <main className="min-h-[100vh] w-full flex p-16">
             <div className="w-[100%] h-[100%] px-10 pt-[5%]">
                 <h1 className="text-head">To ask? We may already have an answer.</h1>
                 <div className="flex justify-between items-center mt-[10%] pr-10">

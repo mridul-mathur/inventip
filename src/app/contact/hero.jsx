@@ -40,7 +40,7 @@ const ContactForm = () => {
                         <textarea
                             id={field.id}
                             placeholder={field.placeholder}
-                            className="p-3 border rounded-md focus:outline-none focus:ring focus:ring-blue-300"
+                            className="p-3 border border-black rounded-md focus:outline-none focus:ring focus:ring-blue-300"
                             rows={4}
                         ></textarea>
                     ) : (
@@ -48,7 +48,7 @@ const ContactForm = () => {
                             id={field.id}
                             type={field.type}
                             placeholder={field.placeholder}
-                            className="p-3 border rounded-md focus:outline-none focus:ring focus:ring-blue-300"
+                            className="p-3 border  border-black rounded-md focus:outline-none focus:ring focus:ring-blue-300"
                         />
                     )}
                 </div>

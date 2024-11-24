@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
@@ -45,17 +45,53 @@ const Industries = () => {
   ];
 
   const cardWidth = 650; // Width of one card
+  const move = cardWidth + 60;
   const totalCards = industries.length; // Total number of cards
   const viewportWidth = 1200; // Approximate viewport width
-  const dragLeftConstraint = -(cardWidth * totalCards - viewportWidth); // Dynamic drag constraint
+  const maxRightConstraint = -(cardWidth * totalCards - viewportWidth); // Dynamic drag constraint
+
+  const [currentPosition, setCurrentPosition] = useState(0);
+
+  // Handlers for moving carousel
+  const moveLeft = () => {
+    setCurrentPosition((prev) => Math.min(prev + move, 0)); // Move right but not beyond 0
+  };
+
+  const moveRight = () => {
+    setCurrentPosition((prev) => Math.max(prev - move, maxRightConstraint)); // Move left but not beyond constraint
+  };
 
   return (
-    <main className="bg-white z-[1] h-fit py-[8rem] w-screen overflow-x-hidden">
-      <p className="text-head mx-16 mb-8">Industries we target</p>
+    <main className="bg-white z-[1] h-fit py-[8rem] w-screen overflow-x-hidden border">
+      <div className="w-[90%] mb-5 flex justify-between items-center pl-[5rem]">
+        <h1 className="text-head capitalize">Industry we target</h1>
+        <div className="flex gap-5">
+          <button
+            onClick={moveLeft}
+            className="px-4 py-2 bg-gray-300 rounded-l"
+          >
+            ←
+          </button>
+          {/* <div onClick={moveLeft}>
+                        <Buttons color="black" > Left </Buttons>
+                    </div> */}
+          {/* <div onClick={moveRight}>
+                        <Buttons color="black" > Right </Buttons>
+                    </div> */}
+          <button
+            onClick={moveRight}
+            className="px-4 py-2 bg-gray-300 rounded-r"
+          >
+            →
+          </button>
+        </div>
+      </div>
       <motion.div
         className="px-16 flex gap-8 overflow-x-visible"
         drag="x"
-        dragConstraints={{ left: dragLeftConstraint, right: 0 }}
+        dragConstraints={{ left: maxRightConstraint, right: 0 }}
+        animate={{ x: currentPosition }} // Sync with button clicks
+        transition={{ duration: 0.5, ease: "easeOut" }} // Smooth transition
       >
         {industries.map((ind, index) => (
           <IndustryCard

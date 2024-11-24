@@ -1,36 +1,13 @@
 "use client";
 
-import React from "react";
+import React, { useState, useRef } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
 function WhatTheySay() {
     const cardWidth = 600; // Width of one card in pixels
+    const move=cardWidth+50;
     const aboutUs = [
-        {
-            name: "Healthcare",
-            quate: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor in ",
-            image: "/images/img.png",
-            company: "HealthCo.Lcc",
-        },
-        {
-            name: "Technology",
-            quate: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor in ",
-            image: "/images/img.png",
-            company: "TechCorp.Lcc",
-        },
-        {
-            name: "Finance",
-            quate: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor in ",
-            image: "/images/img.png",
-            company: "FinanceCo.Lcc",
-        },
-        {
-            name: "Education",
-            quate: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor in ",
-            image: "/images/img.png",
-            company: "EduCorp.Lcc",
-        },
         {
             name: "Healthcare",
             quate: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor in ",
@@ -57,19 +34,58 @@ function WhatTheySay() {
         },
     ];
 
-    const totalCards = aboutUs.length; // Calculate total cards dynamically
+    const totalCards = aboutUs.length;
     const viewportWidth = 1000; // Approximate viewport width in pixels
-    const dragLeftConstraint = -(cardWidth * totalCards - viewportWidth); // Calculate left constraint dynamically
+    const maxRightConstraint = -(cardWidth * totalCards - viewportWidth); 
+    
+
+    const [currentPosition, setCurrentPosition] = useState(0);
+    const carouselRef = useRef(null);
+
+    // Handlers for moving carousel
+    const moveLeft = () => {
+        setCurrentPosition((prev) => Math.min(prev + move, 0)); 
+    };
+
+    const moveRight = () => {
+        setCurrentPosition((prev) => Math.max(prev - move, maxRightConstraint)); 
+    };
 
     return (
         <main className="h-[60vh] w-screen bg-white p-16 overflow-hidden">
-            <div className="w-auto mb-5">
+            <div className="w-auto mb-5 flex justify-between">
                 <h1 className="text-head capitalize">what they say about us</h1>
+                <div className="flex gap-5">
+                    <button
+                        onClick={moveLeft}
+                        className="px-4 py-2 bg-gray-300 rounded-l"
+                    >
+                        ←
+                    </button>
+                    {/* <div onClick={moveLeft}>
+                        <Buttons color="black" > Left </Buttons>
+                    </div> */}
+                    {/* <div onClick={moveRight}>
+                        <Buttons color="black" > Right </Buttons>
+                    </div> */}
+                    <button
+                        onClick={moveRight}
+                        className="px-4 py-2 bg-gray-300 rounded-r"
+                    >
+                        →
+                    </button>
+                </div>
             </div>
             <motion.div
                 className="right-image w-auto h-[40vh] flex overflow-x-visible"
+                ref={carouselRef}
                 drag="x"
-                dragConstraints={{ left: dragLeftConstraint, right: 0 }} // Dynamically calculated constraints
+                dragConstraints={{
+                    left: maxRightConstraint,
+                    right: 0,
+                }} 
+                animate={{ x: currentPosition }} 
+                transition={{ duration: 0.5, ease: "easeOut" }} 
             >
                 <AllAboutUs aboutUs={aboutUs} />
             </motion.div>
@@ -108,8 +124,8 @@ const AboutUsCard: React.FC<AboutUsCardProps> = ({ name, quate, image, company }
     return (
         <motion.div
             className="w-[650px] h-[100%] flex-shrink-0 flex items-center p-5"
-            whileHover={{ scale: 1.05 }} 
-            whileTap={{ scale: 0.95 }} 
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
         >
             <div className="relative rounded-xl overflow-hidden w-[40%] h-[90%]">
                 <Image
@@ -135,6 +151,7 @@ const AboutUsCard: React.FC<AboutUsCardProps> = ({ name, quate, image, company }
         </motion.div>
     );
 };
+
 
 
 

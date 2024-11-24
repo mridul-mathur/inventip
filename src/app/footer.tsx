@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
 
 type FooterSection = {
   title: string;
@@ -13,30 +12,6 @@ type FooterSection = {
 };
 
 const Footer: React.FC = () => {
-  const [isInView, setIsInView] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsInView(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    const footerElement = document.querySelector("#footer");
-    if (footerElement) {
-      observer.observe(footerElement);
-    }
-
-    return () => {
-      if (footerElement) {
-        observer.unobserve(footerElement);
-      }
-    };
-  }, []);
-
   // data 
 
   const footerSections: FooterSection[] = [
@@ -63,23 +38,14 @@ const Footer: React.FC = () => {
       title: "More",
       items: [
         { name: "Contact Us", link: "/contact" },
-        { name: "FAQs"   },
+        { name: "FAQs"    },
         { name: "Terms & Conditions" },
       ],
     },
   ];
 
   return (
-    <motion.footer
-      id="footer"
-      className="border h-[40vh] bg-white text-black rounded-t-[3rem] border-black flex"
-      initial={{ opacity: 0, y: 50 }}
-      animate={{
-        opacity: isInView ? 1 : 0,
-        y: isInView ? 0 : 50,
-      }}
-      transition={{ duration: 1 }}
-    >
+    <main className="border h-[40vh] bg-white text-black rounded-t-[3rem] border-black flex">
       <div className="logo-div w-[80%] p-5">
         <h1 className="text-head mt-[5rem] ml-[6rem]">iNvoat</h1>
       </div>
@@ -103,7 +69,7 @@ const Footer: React.FC = () => {
           ))}
         </div>
       </div>
-    </motion.footer>
+    </main>
   );
 };
 
