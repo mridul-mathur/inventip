@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 function WhatTheySay() {
     const cardWidth = 600; // Width of one card in pixels
-    const move=cardWidth+50;
+    const move = cardWidth + 50; // Distance to move per click
     const aboutUs = [
         {
             name: "Healthcare",
@@ -32,23 +32,29 @@ function WhatTheySay() {
             image: "/images/img.png",
             company: "EduCorp.Lcc",
         },
+        
     ];
 
     const totalCards = aboutUs.length;
+    const maxRightMoves = Math.max(totalCards - 2, 0); // Limit right movements based on the number of cards
     const viewportWidth = 1000; // Approximate viewport width in pixels
-    const maxRightConstraint = -(cardWidth * totalCards - viewportWidth); 
-    
+    const maxRightConstraint = -(cardWidth * totalCards - viewportWidth);
 
     const [currentPosition, setCurrentPosition] = useState(0);
+    const [currentMoveCount, setCurrentMoveCount] = useState(0); // Track the number of right moves
     const carouselRef = useRef(null);
 
     // Handlers for moving carousel
     const moveLeft = () => {
-        setCurrentPosition((prev) => Math.min(prev + move, 0)); 
+        setCurrentPosition((prev) => Math.min(prev + move, 0)); // Move left
+        if (currentMoveCount > 0) setCurrentMoveCount(currentMoveCount - 1); // Decrease move count
     };
 
     const moveRight = () => {
-        setCurrentPosition((prev) => Math.max(prev - move, maxRightConstraint)); 
+        if (currentMoveCount < maxRightMoves) {
+            setCurrentPosition((prev) => Math.max(prev - move, maxRightConstraint)); // Move right
+            setCurrentMoveCount(currentMoveCount + 1); // Increment move count
+        }
     };
 
     return (
@@ -62,15 +68,10 @@ function WhatTheySay() {
                     >
                         ←
                     </button>
-                    {/* <div onClick={moveLeft}>
-                        <Buttons color="black" > Left </Buttons>
-                    </div> */}
-                    {/* <div onClick={moveRight}>
-                        <Buttons color="black" > Right </Buttons>
-                    </div> */}
                     <button
                         onClick={moveRight}
-                        className="px-4 py-2 bg-gray-300 rounded-r"
+                        className={`px-4 py-2 bg-gray-300 rounded-r ${currentMoveCount >= maxRightMoves && "opacity-50 cursor-not-allowed"}`}
+                        disabled={currentMoveCount >= maxRightMoves} // Disable button after max moves
                     >
                         →
                     </button>
@@ -83,9 +84,9 @@ function WhatTheySay() {
                 dragConstraints={{
                     left: maxRightConstraint,
                     right: 0,
-                }} 
-                animate={{ x: currentPosition }} 
-                transition={{ duration: 0.5, ease: "easeOut" }} 
+                }}
+                animate={{ x: currentPosition }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
             >
                 <AllAboutUs aboutUs={aboutUs} />
             </motion.div>
@@ -151,7 +152,3 @@ const AboutUsCard: React.FC<AboutUsCardProps> = ({ name, quate, image, company }
         </motion.div>
     );
 };
-
-
-
-
