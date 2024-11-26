@@ -31,8 +31,7 @@ const Inovation: React.FC = () => {
     };
 
     return (
-        <main className="h-screen w-screen bg-white flex p-16" onClick={handleNextSlide}>
-
+        <main className="z-[1] h-fit min-h-[90vh] w-screen bg-white flex p-4 md:p-16 border" onClick={handleNextSlide}>
             <div className="w-full h-full p-4 flex flex-col justify-evenly space-y-8">
                 <h1 className="text-head capitalize">
                     These are our expertise where we stand for you and with you
@@ -55,16 +54,16 @@ const Inovation: React.FC = () => {
 
 
                 <div className="overflow-hidden ">
-                <motion.p
-                    className="py-4 w-80 text-gray-700	text-para leading-6"
-                    key={`para-${currentIndex}`}
-                    initial={{ y: -50, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    exit={{ y: 50, opacity: 0 }}
-                    transition={{ duration: 0.8 }}
-                >
-                    {slides[currentIndex].para}
-                </motion.p>
+                    <motion.p
+                        className="py-4 w-80 text-gray-700	text-para leading-6"
+                        key={`para-${currentIndex}`}
+                        initial={{ y: -50, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        exit={{ y: 50, opacity: 0 }}
+                        transition={{ duration: 0.8 }}
+                    >
+                        {slides[currentIndex].para}
+                    </motion.p>
                 </div>
 
 
@@ -83,12 +82,12 @@ const Inovation: React.FC = () => {
 
 
             <div className="w-full h-full flex justify-center items-center">
-                <div className="h-[90%] w-[80%] rounded-[3rem] overflow-hidden bg-slate-300 relative">
+                <div className="h-[80vh] w-[80%] rounded-[3rem] overflow-hidden bg-slate-300 relative border">
 
                     <motion.div
                         className="absolute w-full h-full"
                         animate={{ y: `-${currentIndex * 100}%` }}
-                        transition={{ duration: 0.8, ease: "easeInOut"  }}
+                        transition={{ duration: 0.8, ease: "easeInOut" }}
                     >
                         {slides.map((slide, index) => (
                             <img
@@ -102,7 +101,7 @@ const Inovation: React.FC = () => {
 
                     {/*  */}
 
-    
+
 
 
 

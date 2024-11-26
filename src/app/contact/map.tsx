@@ -57,7 +57,7 @@ const MapContainer: React.FC = () => {
       title: "Address 2",
       description: "JECRC Foundation",
       location:
-        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56989.134352403365!2d75.74629474863278!3d26.781978500000015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396dc9763e6030f1%3A0x4137675e5cf54360!2sJECRC%20Foundation!5e0!3m2!1sen!2sin!4v1732525863037!5m2!1sen!2sin" ,
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56989.134352403365!2d75.74629474863278!3d26.781978500000015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396dc9763e6030f1%3A0x4137675e5cf54360!2sJECRC%20Foundation!5e0!3m2!1sen!2sin!4v1732525863037!5m2!1sen!2sin",
     },
   ];
 
@@ -66,13 +66,13 @@ const MapContainer: React.FC = () => {
   );
 
   return (
-    <main className="h-fit w-full flex justify-center items-center p-16 pt-0">
+    <main className="h-fit w-full flex justify-center items-center p-4 md:p-16 pt-0">
       <div className="min-h-[70vh] border w-full bg-slate-300 rounded-[3rem] relative">
         {/* Map */}
         <Map location={currentLocation} />
 
         {/* Address List */}
-        <div className="outer absolute top-10 right-10 h-fit w-[40%] flex flex-col gap-3  items-end ">
+        <div className="outer absolute top-10 right-10 h-fit w-[40%] flex flex-col gap-3 items-end">
           {addresses.map((address, index) => (
             <AddressItem
               key={index}

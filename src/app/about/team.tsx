@@ -4,7 +4,7 @@ import { IoLogoLinkedin } from "react-icons/io5";
 
 function team() {
     return (
-        <main className="h-[100%] w-full p-16">
+        <main className="h-[100%] w-full p-4 sm:p-16">
             <div className="w-full">
                 <h1 className="text-head">Meet the people <br /> behind inventIP</h1>
             </div>
@@ -55,7 +55,7 @@ interface TeamCardProps {
 const TeamCade: React.FC<TeamCardProps> = ({ name, role, image, linkedin, mail }) => {
     return (
         <>
-            <div className="card border h-[37rem] w-[410px] rounded-3xl relative overflow-hidden group">
+            <div className="card border h-[33rem] sm:h-[37rem] w-[410px] rounded-3xl relative overflow-hidden group">
                 <img src={image} alt="" className="h-[100%] w-full" />
                 <div className="h-[16%] w-full border absolute bottom-0 rounded-xl backdrop-blur-[2px] flex shadow-inner">
                     <div className="name h-[100%] w-[100%] text-white flex flex-col justify-evenly p-4">

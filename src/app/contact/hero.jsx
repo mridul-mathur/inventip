@@ -5,16 +5,15 @@ import Buttons from '../buttons';
 
 const ContactUs = () => {
     return (
-        <main className="min-h-[100vh] w-full flex p-16 ">
-            {/* Left Section */}
-            <div className="w-[100%] min-h-[100%] px-10 pt-[5%] -r">
-                <h1 className="text-max">tell us contact us line here</h1>
+        <main className="min-h-[100vh] w-full flex flex-col md:flex-row p-4 md:p-16 pt-12">
+            <div className="w-full md:w-[50%] px-4 md:px-10 pt-6 md:pt-[5%]">
+            <h1 className="text-head sm:text-max">Tell us contact us line here</h1>
                 <p className="text-para leading-6 pt-4">
-                    this is some random lines about contact us and we will reply you in best of the time and other stuff comes in this line
+                    This is some random lines about contact us and we will reply to you in the best time and other stuff comes in this line.
                 </p>
             </div>
 
-            <div className="w-[100%] min-h-[100%] p-10">
+            <div className="w-full md:w-[50%] p-4 md:p-10">
                 <ContactForm />
             </div>
         </main>
@@ -48,7 +47,7 @@ const ContactForm = () => {
                             id={field.id}
                             type={field.type}
                             placeholder={field.placeholder}
-                            className="p-3 border  border-black rounded-md focus:outline-none focus:ring focus:ring-blue-300"
+                            className="p-3 border border-black rounded-md focus:outline-none focus:ring focus:ring-blue-300"
                         />
                     )}
                 </div>

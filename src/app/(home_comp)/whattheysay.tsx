@@ -32,7 +32,7 @@ function WhatTheySay() {
             image: "/images/img.png",
             company: "EduCorp.Lcc",
         },
-        
+
     ];
 
     const totalCards = aboutUs.length;
@@ -58,10 +58,10 @@ function WhatTheySay() {
     };
 
     return (
-        <main className="h-[60vh] w-screen bg-white p-16 overflow-hidden">
-            <div className="w-auto mb-5 flex justify-between">
+        <main className="z-[1] min-h-[60vh] w-screen bg-white p-4 md:p-16 overflow-hidden">
+            <div className="w-auto mb-5 flex flex-col md:flex-row justify-between">
                 <h1 className="text-head capitalize">what they say about us</h1>
-                <div className="flex gap-5">
+                <div className="flex gap-5 mt-5 md:mt-0">
                     <button
                         onClick={moveLeft}
                         className="px-4 py-2 bg-gray-300 rounded-l"

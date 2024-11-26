@@ -3,8 +3,8 @@ import Buttons from "../buttons";
 
 function Faq() {
     return (
-        <main className="min-h-[100vh] w-full flex p-16">
-            <div className="w-[100%] h-[100%] px-10 pt-[5%]">
+        <main className="min-h-[100vh] w-full flex flex-col md:flex-row p-4 md:p-16">
+            <div className="w-[100%] h-[100%] px-0 md:px-10 pt-[5%]">
                 <h1 className="text-head">To ask? We may already have an answer.</h1>
                 <div className="flex justify-between items-center mt-[10%] pr-10">
                     <p className="text-para leading-6">Is your question not listed?</p>
@@ -81,7 +81,7 @@ const FaqCard: React.FC<FaqCardProps> = ({ ques, ans, isOpen, onClick }) => {
             onClick={onClick}
         >
             <div className="flex justify-between items-center">
-                <h2 className="text-para">{ques}</h2>
+                <h2 className="text-para leading-[1.5rem] md:leading-normal">{ques}</h2>
                 <span className="text-lg">{isOpen ? "➖" : "➕"}</span>
             </div>
             <div
