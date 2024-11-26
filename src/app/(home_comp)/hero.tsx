@@ -27,14 +27,14 @@ const Hero = () => {
   return (
     <main
       ref={ref}
-      className="z-[1] h-[250vh] w-screen relative overflow-hidden"
+      className="z-[1] h-[250vh] w-screen relative overflow-hidden bg-white"
     >
       {/* Animated background box */}
       <motion.div
         style={{ scale: backgroundScale, scaleY: backgroundScaleY }}
         className="bg-black h-[100vh] w-[100vw] fixed top-0 left-0 rounded-[2rem] text-red-400 overflow-visible pointer-events-none"
       >
-        <div className="flex justify-center items-center h-screen">
+        <div className="flex justify-center items-center h-screen w-auto" >
           {/* Content container */}
           <div
             className="flex flex-col justify-center items-center gap-4 h-[50%] w-full  pointer-events-auto"

@@ -50,10 +50,10 @@ const Certified: React.FC = () => {
 
     return (
         <main
-            className="h-[90vh] w-screen bg-white flex p-16 overflow-hidden z-[1]"
+            className="min-h-[90vh] w-screen bg-white flex flex-col md:flex-row p-4 md:p-16 overflow-hidden z-[1]"
             onClick={handleNextSlide}
         >
-            <div className="left-detail h-full w-[50%] flex flex-col justify-evenly pl-2">
+            <div className="left-detail w-full md:w-[50%] flex flex-col justify-evenly gap-5 md:gap-0 pl-2">
                 <h1 className="text-head capitalize">
                     We are certified best in the industry
                 </h1>
@@ -77,7 +77,7 @@ const Certified: React.FC = () => {
                 </motion.div>
             </div>
             <div
-                className="right-image h-full w-[80%] flex items-center p-12 gap-x-4 overflow-x-scroll scrollbar-none mx-5"
+                className="right-image h-[80vh] w-full md:w-[80%] flex items-center p-4 md:p-12 gap-x-4 overflow-x-scroll scrollbar-none mx-2 md:mx-5"
                 ref={rightImageRef}
             >
                 {slides.map((slide, index) => (
@@ -87,11 +87,10 @@ const Certified: React.FC = () => {
                     >
                         <motion.div
                             key={`image-${index}`}
-                            className={`h-full w-full border rounded-[2rem] overflow-hidden ${
-                                currentIndex === index
-                                    ? "scale-110 bg-gray-300"
-                                    : "bg-white"
-                            }`}
+                            className={`h-full w-full border rounded-[2rem] overflow-hidden ${currentIndex === index
+                                ? "scale-110 bg-gray-300"
+                                : "bg-white"
+                                }`}
                             initial={{
                                 scale: currentIndex === index ? 1 : 0.9,
                                 x: currentIndex === index ? 0 : -50,

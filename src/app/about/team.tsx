@@ -8,7 +8,7 @@ function team() {
             <div className="w-full">
                 <h1 className="text-head">Meet the people <br /> behind inventIP</h1>
             </div>
-            <div className="w-full flex flex-wrap mt-[50px] gap-5 ">
+            <div className="w-full flex flex-wrap mt-[50px] gap-10 ">
                 <Team />
             </div>
         </main>

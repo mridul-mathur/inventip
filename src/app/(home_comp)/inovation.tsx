@@ -31,58 +31,57 @@ const Inovation: React.FC = () => {
     };
 
     return (
-        <main className="z-[1] h-fit min-h-[90vh] w-screen bg-white flex p-4 md:p-16 border" onClick={handleNextSlide}>
-            <div className="w-full h-full p-4 flex flex-col justify-evenly space-y-8">
-                <h1 className="text-head capitalize">
-                    These are our expertise where we stand for you and with you
-                </h1>
+        <main className="z-[1] h-fit min-h-[90vh] w-screen bg-white flex flex-col md:flex-row p-4 md:p-16 " onClick={handleNextSlide}>            <div className="w-full h-full p-4 flex flex-col justify-evenly space-y-8">
+            <h1 className="text-head capitalize">
+                These are our expertise where we stand for you and with you
+            </h1>
 
 
-                <div className="overflow-hidden ">
-                    <motion.h2
-                        className="text-subhead capitalize  "
-                        key={`subtitle-${currentIndex}`}
-                        initial={{ y: -50, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        exit={{ y: 50, opacity: 0 }}
-                        transition={{ duration: 0.5 }}
-                    >
-                        {slides[currentIndex].subtitle}
-                    </motion.h2>
+            <div className="overflow-hidden ">
+                <motion.h2
+                    className="text-subhead capitalize  "
+                    key={`subtitle-${currentIndex}`}
+                    initial={{ y: -50, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: 50, opacity: 0 }}
+                    transition={{ duration: 0.5 }}
+                >
+                    {slides[currentIndex].subtitle}
+                </motion.h2>
 
-                </div>
-
-
-                <div className="overflow-hidden ">
-                    <motion.p
-                        className="py-4 w-80 text-gray-700	text-para leading-6"
-                        key={`para-${currentIndex}`}
-                        initial={{ y: -50, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        exit={{ y: 50, opacity: 0 }}
-                        transition={{ duration: 0.8 }}
-                    >
-                        {slides[currentIndex].para}
-                    </motion.p>
-                </div>
+            </div>
 
 
-                <motion.div
-                    key={`button-${currentIndex}`}
+            <div className="overflow-hidden ">
+                <motion.p
+                    className="py-4 w-80 text-gray-700	text-para leading-6"
+                    key={`para-${currentIndex}`}
                     initial={{ y: -50, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     exit={{ y: 50, opacity: 0 }}
                     transition={{ duration: 0.8 }}
                 >
-                    <Buttons color="#191919">
-                        {slides[currentIndex].buttonText}
-                    </Buttons>
-                </motion.div>
+                    {slides[currentIndex].para}
+                </motion.p>
             </div>
 
 
+            <motion.div
+                key={`button-${currentIndex}`}
+                initial={{ y: -50, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: 50, opacity: 0 }}
+                transition={{ duration: 0.8 }}
+            >
+                <Buttons color="#191919">
+                    {slides[currentIndex].buttonText}
+                </Buttons>
+            </motion.div>
+        </div>
+
+
             <div className="w-full h-full flex justify-center items-center">
-                <div className="h-[80vh] w-[80%] rounded-[3rem] overflow-hidden bg-slate-300 relative border">
+                <div className="h-[80vh] w-full md:w-[80%] rounded-[3rem] overflow-hidden bg-slate-300 relative ">
 
                     <motion.div
                         className="absolute w-full h-full"

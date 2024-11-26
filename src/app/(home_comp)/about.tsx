@@ -5,10 +5,10 @@ import Buttons from "../buttons";
 
 const HomeAbout = () => {
   return (
-    <main className="bg-white z-[1] w-full h-fit min-h-screen flex flex-col justify-between items-center gap-16 py-[8rem]">
+    <main className="bg-slate-200 z-[1] w-screen h-fit min-h-screen flex flex-col justify-between items-center gap-16 p-4 sm:p-[8rem]">
       <AboutInfo />
       <BentoGrid />
-      
+
     </main>
   );
 };
@@ -35,16 +35,18 @@ const AboutInfo = () => {
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor in enim ac mattis. Duis blandit dolor eu commodo ultricies. Nulla placerat dui nec eros porta, aliquam lobortis libero vehicula. Vivamus imperdiet, dolor vel mattis pretium, turpis ligula hendrerit lacus, ut convallis tellus lorem ac lorem.";
   const slogan = "slogan and a line about why choose us and more";
   return (
-    <div className="w-full h-fit flex justify-center items-start gap-[8rem]">
-      <div className="w-2/5 h-full flex flex-col justify-between gap-[2rem] items-start">
+    <div className="w-full h-fit flex flex-col sm:flex-row justify-center items-start gap-4 sm:gap-[8rem]">
+      <div className="w-full sm:w-2/5 h-full flex flex-col justify-between gap-[2rem] items-start">
         <p className="text-head">{slogan}</p>
         <Buttons color="#191919">Know About Us</Buttons>
       </div>
-      <div className="h-fit w-3/5 justify-between items-start flex flex-col gap-[4rem]">
+      <div className="w-full sm:w-3/5 h-fit flex flex-col justify-between items-start gap-[4rem] border ">
         <p>{aboutdesc}</p>
-        <div className="flex w-full justify-between items-center">
+        <div className="flex w-full justify-between items-center ">
           {numbers.map((num, index) => (
-            <Numb numb={num.numb} key={index} text={num.text} />
+            <div className="  w-[100%]">
+              <Numb numb={num.numb} key={index} text={num.text} />
+            </div>
           ))}
         </div>
       </div>
