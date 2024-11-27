@@ -62,8 +62,8 @@ const Industries = () => {
   };
 
   return (
-    <main className="bg-white z-[1] h-fit py-[8rem] w-screen overflow-x-hidden border w-screen ">
-      <div className="w-[90%] mb-5 flex justify-between items-center pl-[5rem]">
+    <main className="bg-white z-[1] h-fit py-[8rem] w-screen overflow-x-hidden border ">
+      <div className="w-[100%] sm:w-[90%] mb-5 flex justify-between items-center pl-0 p-4 sm:pl-[5rem]">
         <h1 className="text-head capitalize">Industry we target</h1>
         <div className="flex gap-5">
           <button
@@ -87,7 +87,7 @@ const Industries = () => {
         </div>
       </div>
       <motion.div
-        className="px-16 flex gap-8 overflow-x-visible"
+        className="px-0 md:px-16 flex gap-8 overflow-x-visible"
         drag="x"
         dragConstraints={{ left: maxRightConstraint, right: 0 }}
         animate={{ x: currentPosition }} // Sync with button clicks

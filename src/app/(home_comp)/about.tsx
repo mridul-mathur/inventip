@@ -70,25 +70,26 @@ function Numb({ numb, text }: NumbProps) {
 
 const BentoGrid = () => {
   return (
-    <div className="w-full h-[95vh] grid grid-cols-3 grid-rows-6 gap-6">
-      <div className="col-span-1 row-span-3 flex justify-center items-center border border-[#191919] rounded-xl">
-        <p>Some Text 1</p>
-      </div>
-      <div className="col-span-1 row-span-4 flex justify-center items-center border border-[#191919] rounded-xl">
-        <p>Some Text 2</p>
-      </div>
-      <div className="col-span-1 row-span-3 flex justify-center items-center border border-[#191919] rounded-xl">
-        <p>Some Text 3</p>
-      </div>
-      <div className="col-span-1 row-span-3 flex justify-center items-center border border-[#191919] rounded-xl">
-        <p>Some Text 4</p>
-      </div>
-      <div className="col-span-1 row-span-3 flex justify-center items-center border border-[#191919] rounded-xl">
-        <p>Some Text 5</p>
-      </div>
-      <div className="col-span-1 row-span-2 flex justify-center items-center border border-[#191919] rounded-xl">
-        <p>Some Text 6</p>
-      </div>
+    <div className="w-full h-[95vh] grid sm:grid-cols-1 md:grid-cols-3 gap-6">
+    <div className="col-span-1 row-span-3 flex justify-center items-center border border-[#191919] rounded-xl">
+      <p>Some Text 1</p>
     </div>
+    <div className="col-span-1 row-span-4 flex justify-center items-center border border-[#191919] rounded-xl">
+      <p>Some Text 2</p>
+    </div>
+    <div className="col-span-1 row-span-3 flex justify-center items-center border border-[#191919] rounded-xl">
+      <p>Some Text 3</p>
+    </div>
+    <div className="col-span-1 row-span-3 flex justify-center items-center border border-[#191919] rounded-xl">
+      <p>Some Text 4</p>
+    </div>
+    <div className="col-span-1 row-span-3 flex justify-center items-center border border-[#191919] rounded-xl">
+      <p>Some Text 5</p>
+    </div>
+    <div className="col-span-1 row-span-2 flex justify-center items-center border border-[#191919] rounded-xl">
+      <p>Some Text 6</p>
+    </div>
+  </div>
+  
   );
 };
