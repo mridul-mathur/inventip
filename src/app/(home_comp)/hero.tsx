@@ -32,7 +32,7 @@ const Hero = () => {
       {/* Animated background box */}
       <motion.div
         style={{ scale: backgroundScale, scaleY: backgroundScaleY }}
-        className="bg-black h-[100vh] w-[100vw] fixed top-0 left-0 rounded-[2rem] text-red-400 overflow-visible pointer-events-none"
+        className="bg-slate-300 h-[100vh] w-[100vw] fixed top-0 left-0 rounded-[2rem] text-red-400 overflow-visible pointer-events-none"
       >
         <div className="flex justify-center items-center h-screen w-auto" >
           {/* Content container */}
@@ -43,14 +43,14 @@ const Hero = () => {
               {/* First heading */}
               <motion.h1
                 style={{ x: xFirstText, scale: textScale }}
-                className="text-[5rem] font-bold"
-              >
+                className="text-[1.4rem] font-bold md:text-[5rem]"
+                >
                 These are hero
               </motion.h1>
               {/* Second heading */}
               <motion.h1
                 style={{ x: xSecondText, scale: textScale }}
-                className="text-[5rem] font-bold"
+                className="text-[1.4rem] font-bold md:text-[5rem]"
               >
                 Line for investiP
               </motion.h1>

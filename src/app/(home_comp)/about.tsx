@@ -5,7 +5,7 @@ import Buttons from "../buttons";
 
 const HomeAbout = () => {
   return (
-    <main className="bg-slate-200 z-[1] w-screen h-fit min-h-screen flex flex-col justify-between items-center gap-16 p-4 sm:p-[8rem]">
+    <main className="bg-white z-[1] w-screen h-fit min-h-screen flex flex-col justify-between items-center gap-16 p-4 sm:p-[8rem]">
       <AboutInfo />
       <BentoGrid />
 
@@ -40,7 +40,7 @@ const AboutInfo = () => {
         <p className="text-head">{slogan}</p>
         <Buttons color="#191919">Know About Us</Buttons>
       </div>
-      <div className="w-full sm:w-3/5 h-fit flex flex-col justify-between items-start gap-[4rem] border ">
+      <div className="w-full sm:w-3/5 h-fit flex flex-col justify-between items-start gap-[4rem]  ">
         <p>{aboutdesc}</p>
         <div className="flex w-full justify-between items-center ">
           {numbers.map((num, index) => (
