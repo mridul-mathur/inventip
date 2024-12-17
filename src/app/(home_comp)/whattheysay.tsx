@@ -1,8 +1,10 @@
+
 "use client";
 
 import React, { useState, useRef } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+
 
 function WhatTheySay() {
     const cardWidth = 600; // Width of one card in pixels
@@ -32,7 +34,6 @@ function WhatTheySay() {
             image: "/images/img.png",
             company: "EduCorp.Lcc",
         },
-
     ];
 
     const totalCards = aboutUs.length;
@@ -58,7 +59,8 @@ function WhatTheySay() {
     };
 
     return (
-        <main className="z-[1] min-h-[60vh] w-screen bg-white p-4 md:p-16 overflow-hidden">
+        <main className="min-h-[60vh] w-screen bg-white p-4 md:p-16 overflow-hidden">
+
             <div className="w-auto mb-5 flex flex-col md:flex-row justify-between">
                 <h1 className="text-head capitalize">what they say about us</h1>
                 <div className="flex gap-5 mt-5 md:mt-0">
@@ -80,7 +82,7 @@ function WhatTheySay() {
             <motion.div
                 className="right-image w-auto h-[40vh] flex overflow-x-visible"
                 ref={carouselRef}
-                drag="x"
+                drag="x"  // Enabling drag functionality
                 dragConstraints={{
                     left: maxRightConstraint,
                     right: 0,
@@ -96,23 +98,31 @@ function WhatTheySay() {
 
 export default WhatTheySay;
 
-const AllAboutUs: React.FC<{ aboutUs: { name: string; quate: string; image: string; company: string }[] }> = ({
+const AllAboutUs: React.FC<{
+    aboutUs:
+    {
+        name: string;
+        quate: string
+        image: string;
+        company: string
+    }[]
+}> = ({
     aboutUs,
 }) => {
-    return (
-        <>
-            {aboutUs.map((item, index) => (
-                <AboutUsCard
-                    key={index}
-                    name={item.name}
-                    quate={item.quate}
-                    image={item.image}
-                    company={item.company}
-                />
-            ))}
-        </>
-    );
-};
+        return (
+            <>
+                {aboutUs.map((item, index) => (
+                    <AboutUsCard
+                        key={index}
+                        name={item.name}
+                        quate={item.quate}
+                        image={item.image}
+                        company={item.company}
+                    />
+                ))}
+            </>
+        );
+    };
 
 interface AboutUsCardProps {
     name: string;
@@ -125,8 +135,6 @@ const AboutUsCard: React.FC<AboutUsCardProps> = ({ name, quate, image, company }
     return (
         <motion.div
             className="w-[650px] h-[100%] flex-shrink-0 flex items-center p-5"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
         >
             <div className="relative rounded-xl overflow-hidden w-[40%] h-[90%]">
                 <Image

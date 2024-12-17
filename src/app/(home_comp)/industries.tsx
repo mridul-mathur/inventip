@@ -3,45 +3,16 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Buttons from "../buttons";
 
 const Industries = () => {
   const industries = [
-    {
-      name: "Healthcare",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor in enim ac mattis. Duis blandit dolor eu commodo ultricies. Nulla placerat",
-      image: "/images/img.png",
-      expertise: ["popular", "expertise", "of this", "industry"],
-    },
-    {
-      name: "Technology",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor in enim ac mattis. Duis blandit dolor eu commodo ultricies. Nulla placerat",
-      image: "/images/img.png",
-      expertise: ["popular", "expertise", "of this", "industry"],
-    },
-    {
-      name: "Finance",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor in enim ac mattis. Duis blandit dolor eu commodo ultricies. Nulla placerat",
-      image: "/images/img.png",
-      expertise: ["popular", "expertise", "of this", "industry"],
-    },
-    {
-      name: "Retail",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor in enim ac mattis. Duis blandit dolor eu commodo ultricies. Nulla placerat",
-      image: "/images/img.png",
-      expertise: ["popular", "expertise", "of this", "industry"],
-    },
-    {
-      name: "Automobile",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor in enim ac mattis. Duis blandit dolor eu commodo ultricies. Nulla placerat",
-      image: "/images/img.png",
-      expertise: ["popular", "expertise", "of this", "industry"],
-    },
-    {
-      name: "Education",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor in enim ac mattis. Duis blandit dolor eu commodo ultricies. Nulla placerat",
-      image: "/images/img.png",
-      expertise: ["popular", "expertise", "of this", "industry"],
-    },
+    { name: "Healthcare", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor in enim ac mattis. Duis blandit dolor eu commodo ultricies. Nulla placerat", image: "/images/img.png", expertise: ["popular", "expertise", "of this", "industry"] },
+    { name: "Healthcare", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor in enim ac mattis. Duis blandit dolor eu commodo ultricies. Nulla placerat", image: "/images/img.png", expertise: ["popular", "expertise", "of this", "industry"] },
+    { name: "Healthcare", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor in enim ac mattis. Duis blandit dolor eu commodo ultricies. Nulla placerat", image: "/images/img.png", expertise: ["popular", "expertise", "of this", "industry"] },
+    { name: "Healthcare", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor in enim ac mattis. Duis blandit dolor eu commodo ultricies. Nulla placerat", image: "/images/img.png", expertise: ["popular", "expertise", "of this", "industry"] },
+    { name: "Healthcare", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor in enim ac mattis. Duis blandit dolor eu commodo ultricies. Nulla placerat", image: "/images/img.png", expertise: ["popular", "expertise", "of this", "industry"] },
+    { name: "Healthcare", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor in enim ac mattis. Duis blandit dolor eu commodo ultricies. Nulla placerat", image: "/images/img.png", expertise: ["popular", "expertise", "of this", "industry"] },
   ];
 
   const cardWidth = 650; // Width of one card
@@ -62,7 +33,7 @@ const Industries = () => {
   };
 
   return (
-    <main className="bg-white z-[1] h-fit py-[8rem] w-screen overflow-x-hidden border ">
+    <main className="bg-white h-fit py-[8rem] w-screen overflow-x-hidden border ">
       <div className="w-[100%] sm:w-[90%] mb-5 flex justify-between items-center pl-0 p-4 sm:pl-[5rem]">
         <h1 className="text-head capitalize">Industry we target</h1>
         <div className="flex gap-5">
@@ -72,24 +43,25 @@ const Industries = () => {
           >
             ←
           </button>
-          {/* <div onClick={moveLeft}>
-                        <Buttons color="black" > Left </Buttons>
-                    </div> */}
-          {/* <div onClick={moveRight}>
-                        <Buttons color="black" > Right </Buttons>
-                    </div> */}
+
           <button
             onClick={moveRight}
             className="px-4 py-2 bg-gray-300 rounded-r"
           >
             →
           </button>
+     
+
+
+
+
         </div>
       </div>
       <motion.div
         className="px-0 md:px-16 flex gap-8 overflow-x-visible"
         drag="x"
         dragConstraints={{ left: maxRightConstraint, right: 0 }}
+        dragElastic={0.5} // Slight elastic effect for a smoother experience
         animate={{ x: currentPosition }} // Sync with button clicks
         transition={{ duration: 0.5, ease: "easeOut" }} // Smooth transition
       >
@@ -125,8 +97,6 @@ const IndustryCard: React.FC<IndustryCardProps> = ({
   return (
     <motion.div
       className="w-[650px] h-[100%] flex-shrink-0 flex items-center p-5 "
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
     >
       <div className="relative rounded-xl overflow-hidden w-[60%] h-[200px] ">
         <Image

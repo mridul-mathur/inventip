@@ -5,7 +5,7 @@ import Buttons from "../buttons";
 
 const HomeAbout = () => {
   return (
-    <main className="bg-white z-[1] w-screen h-fit min-h-screen flex flex-col justify-between items-center gap-16 p-4 sm:p-[8rem]">
+    <main className="bg-white w-screen h-fit min-h-screen flex flex-col justify-between items-center gap-16 p-4 sm:p-[8rem]">
       <AboutInfo />
       <BentoGrid />
 

@@ -4,6 +4,7 @@ import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Buttons from "../buttons";
 
+
 const Hero = () => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -16,8 +17,8 @@ const Hero = () => {
   const backgroundScaleY = useTransform(scrollYProgress, [0, 0.02], [1.07, 1]);
 
   // Transform for moving and scaling the <h1> elements
-  const xFirstText = useTransform(scrollYProgress, [0, 0.5], [0, -350]); // Slide left
-  const xSecondText = useTransform(scrollYProgress, [0, 0.5], [0, 350]); // Slide right
+  const xFirstText = useTransform(scrollYProgress, [0, 0.5], [0, -400]); // Slide left
+  const xSecondText = useTransform(scrollYProgress, [0, 0.5], [0, 400]); // Slide right
   const textScale = useTransform(scrollYProgress, [0, 0.5], [1, 2]); // Scale up
 
   // Separate transforms for buttons
@@ -25,14 +26,17 @@ const Hero = () => {
   const buttonScale = useTransform(scrollYProgress, [0, 0.5], [1, 2]); // Slight scaling effect
 
   return (
+    <>
+
     <main
       ref={ref}
       className="z-[1] h-[250vh] w-screen relative overflow-hidden bg-white"
     >
+
       {/* Animated background box */}
       <motion.div
         style={{ scale: backgroundScale, scaleY: backgroundScaleY }}
-        className="bg-slate-300 h-[100vh] w-[100vw] fixed top-0 left-0 rounded-[2rem] text-red-400 overflow-visible pointer-events-none"
+        className="bg-black h-[100vh] w-[100vw] fixed top-0 left-0 rounded-[2rem] text-red-400 overflow-visible pointer-events-none"
       >
         <div className="flex justify-center items-center h-screen w-auto" >
           {/* Content container */}
@@ -43,14 +47,14 @@ const Hero = () => {
               {/* First heading */}
               <motion.h1
                 style={{ x: xFirstText, scale: textScale }}
-                className="text-[1.4rem] font-bold md:text-[5rem]"
+                className="text-[1.4rem] font-bold md:text-[4rem]"
                 >
                 These are hero
               </motion.h1>
               {/* Second heading */}
               <motion.h1
                 style={{ x: xSecondText, scale: textScale }}
-                className="text-[1.4rem] font-bold md:text-[5rem]"
+                className="text-[1.4rem] font-bold md:text-[4rem]"
               >
                 Line for investiP
               </motion.h1>
@@ -78,6 +82,7 @@ const Hero = () => {
         </div>
       </motion.div>
     </main>
+    </>
   );
 };
 

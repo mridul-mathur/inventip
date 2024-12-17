@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Nav from "./nav";
 import Footer from "./footer";
+// import CursorFollower from "./cursorFollower"
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,12 +20,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      
+
       <body className={`${inter.className} font-suisse`}>
-        <Nav/>
+        <Nav />
+        {/* <CursorFollower size={40} /> */}
+
         {children}
-        <Footer/>
-        </body>
+        <Footer />
+      </body>
     </html>
   );
 }

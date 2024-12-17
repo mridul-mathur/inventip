@@ -1,8 +1,8 @@
-
 "use client";
 
 import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
+
 
 interface Slide {
     subtitle: string;
@@ -34,29 +34,36 @@ const Certified: React.FC = () => {
         },
     ];
 
-    const [currentIndex, setCurrentIndex] = useState<number>(0);
+    const [currentIndex, setCurrentIndex] = useState(0);
     const rightImageRef = useRef<HTMLDivElement | null>(null);
 
-    const handleNextSlide = (): void => {
-        const nextIndex = (currentIndex + 1) % slides.length;
-        setCurrentIndex(nextIndex);
+    const changeSlide = (direction: "next" | "prev") => {
+        setCurrentIndex((prevIndex) => {
+            const newIndex = direction === "next"
+                ? (prevIndex + 1) % slides.length
+                : (prevIndex - 1 + slides.length) % slides.length;
 
-        const rightImageContainer = rightImageRef.current;
-        if (rightImageContainer) {
-            const targetImage = rightImageContainer.children[nextIndex] as HTMLElement;
-            targetImage?.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
-        }
+            const rightImageContainer = rightImageRef.current;
+            if (rightImageContainer) {
+                const targetImage = rightImageContainer.children[newIndex] as HTMLElement;
+                targetImage?.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+            }
+
+            return newIndex;
+        });
+    };
+
+    const handleCardClick = (e: React.MouseEvent<HTMLDivElement>) => {
+        const cardWidth = e.currentTarget.offsetWidth;
+        const clickPosition = e.clientX - e.currentTarget.getBoundingClientRect().left;
+        changeSlide(clickPosition < cardWidth / 2 ? "prev" : "next");
     };
 
     return (
-        <main
-            className="min-h-[90vh] w-screen bg-white flex flex-col md:flex-row p-4 md:p-16 overflow-hidden z-[1]"
-            onClick={handleNextSlide}
-        >
+        <main className="min-h-[90vh] w-screen bg-white flex flex-col md:flex-row p-4 md:p-16 overflow-hidden z-[1]">
+
             <div className="left-detail w-full md:w-[50%] flex flex-col justify-evenly gap-5 md:gap-0 pl-2">
-                <h1 className="text-head capitalize">
-                    We are certified best in the industry
-                </h1>
+                <h1 className="text-head capitalize">We are certified best in the industry</h1>
                 <motion.div
                     key={`subtitle-${currentIndex}`}
                     initial={{ y: -50, opacity: 0 }}
@@ -76,36 +83,22 @@ const Certified: React.FC = () => {
                     <p className="text-para leading-6">{slides[currentIndex].para}</p>
                 </motion.div>
             </div>
+
             <div
                 className="right-image h-[80vh] w-full md:w-[80%] flex items-center p-4 md:p-12 gap-x-4 overflow-x-scroll scrollbar-none mx-2 md:mx-5"
                 ref={rightImageRef}
+                onClick={handleCardClick}
             >
                 {slides.map((slide, index) => (
-                    <div
-                        key={`container-${index}`}
-                        className="relative h-[80%] min-w-[280px] m-5 flex-shrink-0"
-                    >
+                    <div key={`container-${index}`} className="relative h-[80%] min-w-[280px] m-5 flex-shrink-0">
                         <motion.div
                             key={`image-${index}`}
-                            className={`h-full w-full border rounded-[2rem] overflow-hidden ${currentIndex === index
-                                ? "scale-110 bg-gray-300"
-                                : "bg-white"
-                                }`}
-                            initial={{
-                                scale: currentIndex === index ? 1 : 0.9,
-                                x: currentIndex === index ? 0 : -50,
-                            }}
-                            animate={{
-                                scale: currentIndex === index ? 1.2 : 0.9,
-                                x: 0,
-                            }}
+                            className={`h-full w-full border rounded-[2rem] overflow-hidden ${currentIndex === index ? "scale-110 bg-gray-300" : "bg-white"}`}
+                            initial={{ scale: currentIndex === index ? 1 : 0.9, x: currentIndex === index ? 0 : -50 }}
+                            animate={{ scale: currentIndex === index ? 1.2 : 0.9, x: 0 }}
                             transition={{ duration: 0.5 }}
                         >
-                            <img
-                                src={slide.img}
-                                alt={slide.subtitle}
-                                className="w-full h-full object-cover rounded-[2rem]"
-                            />
+                            <img src={slide.img} alt={slide.subtitle} className="w-full h-full object-cover rounded-[2rem]" />
                         </motion.div>
                     </div>
                 ))}
@@ -115,6 +108,3 @@ const Certified: React.FC = () => {
 };
 
 export default Certified;
-
-
-
