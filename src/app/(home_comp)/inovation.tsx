@@ -69,7 +69,7 @@ const Inovation: React.FC = () => {
             }}
         >
 
-            <motion.div className="sticky top-0 h-screen flex flex-col md:flex-row justify-between items-center p-4 lg:p-28">
+            <motion.div className="h-screen  sticky top-0 right-0 flex flex-col md:flex-row justify-between items-center p-4 lg:p-28">
                 <div className="w-full h-[80vh] md:w-[45%] space-y-8">
                     <motion.h1
                         className="text-head capitalize"

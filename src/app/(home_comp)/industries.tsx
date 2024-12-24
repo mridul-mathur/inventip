@@ -33,7 +33,7 @@ const Industries = () => {
   };
 
   return (
-    <main className="bg-white h-fit py-[8rem] w-screen overflow-x-hidden border ">
+    <main className="bg-white h-fit py-[8rem] w-screen overflow-x-hidden ">
       <div className="w-[100%] sm:w-[90%] mb-5 flex justify-between items-center pl-0 p-4 sm:pl-[5rem]">
         <h1 className="text-head capitalize">Industry we target</h1>
         <div className="flex gap-5">
@@ -50,7 +50,10 @@ const Industries = () => {
           >
             →
           </button>
-     
+          
+
+  
+
 
 
 

@@ -59,6 +59,7 @@ export default function Home() {
                 break;
               case "inovation":
                 setCursorProps({ show: true, text: "Scroll" });
+                console.log("inovation");
                 break;
               case "industries":
               case "whattheysay":

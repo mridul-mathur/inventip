@@ -47,7 +47,7 @@ const CursorFollower: React.FC<CursorFollowerProps> = ({ size = 50, text, show =
         transition: 'transform 0.1s ease-out',
       }}
     >
-      {text && <span style={{ color: '#01010', fontSize: '14px', fontWeight: 'bold' }}>{text}</span>}
+      {text && <p style={{ color: '#01010' }} className='text-paramin'>{text}</p>}
     </div>
   );
 };
