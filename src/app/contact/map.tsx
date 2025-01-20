@@ -35,7 +35,7 @@ const AddressItem: React.FC<{
 }> = ({ title, description, location, onClick }) => {
   return (
     <div
-      className="h-fit w-fit bg-white/50 backdrop-blur-sm p-5 rounded-2xl cursor-pointer hover:shadow-md border"
+      className="h-fit w-fit bg-primary/50 backdrop-blur-sm p-5 rounded-2xl cursor-pointer hover:shadow-md border"
       onClick={onClick}
     >
       <h1>{title}</h1>

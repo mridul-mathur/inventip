@@ -21,6 +21,7 @@ const ContactUs = () => {
 };
 
 const ContactForm = () => {
+    
     const formFields = [
         { id: "name", label: "Name", type: "text", placeholder: "Enter your name" },
         { id: "email", label: "Email", type: "email", placeholder: "Enter your email" },

@@ -2,7 +2,7 @@ import React from 'react'
 
 function tier() {
     return (
-        <main className='min-h-[80vh] border w-full flex flex-col md:flex-row p-4 md:p-0'>
+        <main className='min-h-[80vh] flex flex-col md:flex-row w-screen'>
             <div className="min-h-[100%] w-[100%] md:w-[70%] flex justify-center items-center">
                 <div className="box border h-[60vh] md:min-h-[60%] w-[100%] md:w-[80%] rounded-2xl bg-slate-300">
 

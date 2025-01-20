@@ -1,53 +1,53 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 interface CursorFollowerProps {
-  size?: number;  
-  text?: string; 
-  show?: boolean; 
+  size?: number;
+  text?: string;
+  show?: boolean;
 }
 
-const CursorFollower: React.FC<CursorFollowerProps> = ({ size = 50, text, show = true }) => {
-  const [position, setPosition] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
+const CursorFollower: React.FC<CursorFollowerProps> = ({
+  size = 50,
+  text,
+  show = true,
+}) => {
+  const [position, setPosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
-    if (!show) return; 
+    if (!show) return;
 
-    const updateCursorPosition = (e: MouseEvent) => {
-      setPosition({
-        x: e.clientX - size / 2, 
-        y: e.clientY - size / 2, 
-      });
-    };
+    const updateCursorPosition = ({ clientX, clientY }: MouseEvent) =>
+      setPosition({ x: clientX + 5, y: clientY + 5 });
 
-    window.addEventListener('mousemove', updateCursorPosition);
-
-    return () => {
-      window.removeEventListener('mousemove', updateCursorPosition);
-    };
-  }, [size, show]); 
+    window.addEventListener("mousemove", updateCursorPosition);
+    return () => window.removeEventListener("mousemove", updateCursorPosition);
+  }, [show]);
 
   if (!show) return null;
 
   return (
     <div
-      className="fixed pointer-events-none z-[9] flex justify-center items-center"
+      className={`fixed pointer-events-none z-10 flex items-center justify-center rounded-full border border-secondary backdrop-blur-md transition-transform duration-100`}
       style={{
         top: `${position.y}px`,
         left: `${position.x}px`,
         width: `${size}px`,
         height: `${size}px`,
-        background: 'rgba(255, 255, 255, 0.189)', 
-        borderRadius: '50%', 
-        border: '2px solid rgba(255, 255, 255, 0.18)',
-        backdropFilter: 'blur(19px)', 
-        WebkitBackdropFilter: 'blur(19px)', 
-        boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37)', 
-        transition: 'transform 0.1s ease-out',
       }}
     >
-      {text && <p style={{ color: '#01010' }} className='text-paramin'>{text}</p>}
+      {text && (
+        <span
+          className="text-sm text-black"
+          style={{
+            mixBlendMode: "difference",
+            color: "#191919",
+          }}
+        >
+          {text}
+        </span>
+      )}
     </div>
   );
 };

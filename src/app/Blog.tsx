@@ -1,13 +1,12 @@
 "use clients";
 
-import { h1 } from 'framer-motion/client';
 import React from 'react';
 import { MdArrowOutward } from "react-icons/md";
 
 
 function Blog() {
   return (
-    <main className="h-full w-full bg-white ">
+    <main className="h-full w-full bg-primary ">
       <div className="upper-blog">
         <h1 className="text-head capitalize">
           These are some <br /> of our blogs
@@ -84,7 +83,7 @@ const BlogsCard: React.FC<BlogsCardProps> = ({ heading, para, image }) => {
         />
 
         <div className="div absolute inset-0 flex items-center justify-center z-10">
-          <MdArrowOutward className="icn text-white text-6xl opacity-0 transition-opacity duration-1000 group-hover:opacity-100" />
+          <MdArrowOutward className="icn text-primary text-6xl opacity-0 transition-opacity duration-1000 group-hover:opacity-100" />
         </div>
       </div>
 

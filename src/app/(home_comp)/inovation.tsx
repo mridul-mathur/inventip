@@ -1,139 +1,174 @@
+"use client";
 
-import React, { useState, useEffect, useRef } from "react";
-import { motion } from "framer-motion";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence, delay } from "framer-motion";
 import Buttons from "../buttons";
+import Link from "next/link";
+import Image from "next/image";
+import { del } from "framer-motion/client";
 
 const Inovation: React.FC = () => {
-    const slides = [
-        {
-            subtitle: "Open Innovation",
-            para: "We look beyond conventional search strategies and work in a collaborative manner to generate actionable and practicable innovation, whereby we not only share the analysis and methodology but also keep the clients informed with interim updates and share sample output.",
-            img: "https://i.pinimg.com/736x/a2/b2/a1/a2b2a198e6de398b462ad29b0151c5ab.jpg",
-            buttonText: "View Open Innovation",
-        },
-        {
-            subtitle: "IP Research",
-            para: "We support global businesses in informed decision-making with respect to their potential IP investments, help them avoid running into troubled waters by safeguarding from potential invalidity/ infringement challenges, and partner with them to identify potential monetization opportunities.",
-            img: "https://i.pinimg.com/736x/cb/36/d7/cb36d7a621d6e0f9ae8ee80a7efdc0e1.jpg",
-            buttonText: "Explore IP Research",
-        },
-        {
-            subtitle: "IP Strategy",
-            para: "Creation of IP necessitates subsequent enforcement and ensuring sanctity of IP rights. At the same time, evaluating and subsequently adhering to IP boundaries set by competitors is equally important. Our strategic advisory is always in alignment with the commercial requirements of our clients.",
-            img: "https://i.pinimg.com/736x/4a/fb/4a/4afb4af9accbb57272dae6761cc0d8aa.jpg",
-            buttonText: "Discover IP Strategy",
-        },
-    ];
+  const slides = [
+    {
+      subtitle: "Open Innovation",
+      para: "We look beyond conventional search strategies and work collaboratively to generate actionable innovation, keeping clients informed with interim updates and sharing sample outputs.",
+      img: "/images/img.png",
+      buttonText: "View Open Innovation",
+      link: "/expertise/3",
+    },
+    {
+      subtitle: "IP Research",
+      para: "We support businesses in making informed IP investment decisions, safeguarding them from invalidity risks and identifying monetization opportunities.",
+      img: "/images/img.png",
+      buttonText: "Explore IP Research",
+      link: "/expertise/0",
+    },
+    {
+      subtitle: "IP Strategy",
+      para: "We align IP creation and enforcement strategies with commercial goals, ensuring adherence to competitive boundaries.",
+      img: "/images/img.png",
+      buttonText: "Discover IP Strategy",
+      link: "/expertise/1",
+    },
+    {
+      subtitle: "IP Portfolio Management",
+      para: "We manage IP portfolios, conduct audits, due diligence, and valuation, aligning IP assets with business objectives.",
+      img: "/images/img.png",
+      buttonText: "Manage IP Portfolio",
+      link: "/expertise/2",
+    },
+  ];
 
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const sectionRef = useRef<HTMLDivElement>(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [scrollDirection, setScrollDirection] = useState<"up" | "down">("down");
 
-    useEffect(() => {
-        const handleScroll = () => {
-            if (sectionRef.current) {
-                const { top, bottom, height } = sectionRef.current.getBoundingClientRect();
-                const sectionHeight = window.innerHeight;
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
 
-                // Check if the middle of the section is within the viewport
-                const middleOfSection = top + height / 2;
-                if (middleOfSection >= 0 && middleOfSection <= sectionHeight) {
-                    const activeIndex = Math.floor((middleOfSection / sectionHeight) * slides.length);
-                    setCurrentIndex(activeIndex);
-                }
-            }
-        };
-
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, [slides.length]);
-
-    const textVariants = {
-        initial: { opacity: 0, y: 50 },
-        animate: { opacity: 1, y: 0 },
-        exit: { opacity: 0, y: 50 },
+    const updateScrollDirection = () => {
+      const scrollY = window.scrollY;
+      setScrollDirection(scrollY > lastScrollY ? "down" : "up");
+      lastScrollY = scrollY;
     };
 
-    const imageVariants = {
-        initial: { opacity: 0, y: -200 },
-        animate: { opacity: 1, y: 0 },
-        exit: { opacity: 0, y: 200 },
+    window.addEventListener("scroll", updateScrollDirection);
+    return () => window.removeEventListener("scroll", updateScrollDirection);
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = document.querySelectorAll(".slide-section");
+      const midpoint = window.innerHeight / 2;
+
+      sections.forEach((section, index) => {
+        const { top } = section.getBoundingClientRect();
+        if (top >= 0 && top <= midpoint) {
+          setCurrentIndex(index);
+        }
+      });
     };
 
-    return (
-        <div
-            ref={sectionRef}
-            className="relative w-screen bg-white"
-            style={{
-                height: `${slides.length * 100}vh`,
-                transition: "background-color 0.5s ease ",
-            }}
-        >
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-            <motion.div className="h-screen  sticky top-0 right-0 flex flex-col md:flex-row justify-between items-center p-4 lg:p-28">
-                <div className="w-full h-[80vh] md:w-[45%] space-y-8">
-                    <motion.h1
-                        className="text-head capitalize"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 0.5 }}
-                    >
-                        These are our expertise where we stand for you and with you
-                    </motion.h1>
+  const variants = {
+    initial: (direction: "up" | "down") => ({
+      opacity: 1,
+      y: direction === "down" ? 200 : 200,
+    }),
+    animate: { opacity: 1, y: 0 },
+    exit: (direction: "up" | "down") => ({
+      opacity: 1,
+      y: direction === "down" ? 200 : 200,
+    }),
+  };
 
-                    <motion.h2
-                        className="text-subhead capitalize"
-                        key={`subtitle-${currentIndex}`}
-                        variants={textVariants}
-                        initial="initial"
-                        animate="animate"
-                        exit="exit"
-                        transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-                    >
-                        {slides[currentIndex]?.subtitle}
-                    </motion.h2>
+  const variants2 = {
+    initial: (direction: "up" | "down") => ({
+      opacity: 0,
+      y: direction === "down" ? 200 : -200,
+    }),
+    animate: {
+      opacity: 1,
+      y: 0,
+    },
+    exit: (direction: "up" | "down") => ({
+      opacity: 0,
+      y: direction === "down" ? -200 : 200,
+    }),
+  };
 
-                    <motion.p
-                        className="py-4 w-80 text-gray-700 text-para leading-6"
-                        key={`para-${currentIndex}`}
-                        variants={textVariants}
-                        initial="initial"
-                        animate="animate"
-                        exit="exit"
-                        transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-                    >
-                        {slides[currentIndex]?.para}
-                    </motion.p>
-
-                    <motion.div
-                        key={`button-${currentIndex}`}
-                        variants={textVariants}
-                        initial="initial"
-                        animate="animate"
-                        exit="exit"
-                        transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-                    >
-                        <Buttons color="#191919">
-                            {slides[currentIndex]?.buttonText}
-                        </Buttons>
-                    </motion.div>
-                </div>
-
-                <div className="w-full md:w-[40%] h-[75vh] rounded-[3rem] overflow-hidden">
-                    <motion.img
-                        src={slides[currentIndex]?.img}
-                        alt={`Slide ${currentIndex}`}
-                        className="h-full w-full object-cover"
-                        key={`img-${currentIndex}`}
-                        variants={imageVariants}
-                        initial="initial"
-                        animate="animate"
-                        exit="exit"
-                        transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-                    />
-                </div>
-            </motion.div>
+  return (
+    <div className="relative min-h-screen w-screen bg-primary">
+      <div className="sticky top-0 left-0 flex w-screen h-screen">
+        <div className="w-5/12 h-full flex flex-col justify-between p-16 py-36">
+          <motion.h1
+            className="text-head"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6 }}
+          >
+            These are our expertise where we stand for you and with you
+          </motion.h1>
+          <div className="w-fit h-fit overflow-hidden">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentIndex}
+                custom={scrollDirection}
+                variants={variants}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                transition={{ duration: 0.75, delay: 0.2 }}
+              >
+                <motion.h2 className="text-2xl font-semibold mb-4">
+                  {slides[currentIndex].subtitle}
+                </motion.h2>
+                <motion.p className="mb-4 w-[22rem]">
+                  {slides[currentIndex].para}
+                </motion.p>
+                <Link href={slides[currentIndex].link}>
+                  <Buttons color="dark" arrow={true} underline={true}>
+                    {slides[currentIndex].buttonText}
+                  </Buttons>
+                </Link>
+              </motion.div>
+            </AnimatePresence>
+          </div>
         </div>
-    );
+        <div className="w-7/12 h-screen flex items-center justify-center overflow-hidden">
+          <div className="w-[30rem] h-[36rem] relative overflow-hidden">
+            <AnimatePresence mode="wait">
+              <motion.div
+                className="w-[30rem] h-[36rem] relative overflow-hidden rounded-lg border border-secondary"
+                key={currentIndex}
+                custom={scrollDirection}
+                variants={variants2}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                transition={{ duration: 0.75 }}
+              >
+                <img
+                  src={slides[currentIndex].img}
+                  alt={`Slide ${currentIndex}`}
+                  className="w-full h-full object-cover"
+                />
+              </motion.div>
+            </AnimatePresence>
+          </div>
+        </div>
+      </div>
+      <AnimatePresence mode="sync">
+        <div>
+          {slides.map((_, index) => (
+            <div key={index} className="slide-section h-screen"></div>
+          ))}
+        </div>
+      </AnimatePresence>
+    </div>
+  );
 };
 
 export default Inovation;

@@ -2,59 +2,110 @@
 
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { button } from "framer-motion/client";
 
 interface ButtonsProps {
-  children: string;
-  color: string;
+  children: React.ReactNode;
+  color: "dark" | "light";
+  arrow?: boolean;
+  underline?: boolean;
+  textGrad?: boolean;
+  onClick?: () => void;
 }
 
-const Buttons: React.FC<ButtonsProps> = ({ children, color }) => {
+const Buttons = ({
+  children,
+  color,
+  arrow,
+  underline,
+  onClick,
+  textGrad,
+}: ButtonsProps) => {
+  const [buttonColor, setButtonColor] = useState("#191919");
+
+  useEffect(() => {
+    setButtonColor(color === "dark" ? "#191919" : "#f7f7f7");
+  }, [color]);
+
   const iconVariant = {
-    initial: { rotate: 0 },
-    hover: { rotate: 45, transition: { duration: 0.25, ease: "easeOut" } },
+    initial: { rotate: 0, fill: buttonColor },
+    hover: {
+      rotate: 45,
+      transition: { duration: 0.25 },
+    },
   };
-  const text1var = {
+
+  const iconVariant2 = {
+    initial: { rotate: 0, fill: buttonColor },
+    hover: {
+      fill: "url(#gradient)",
+      transition: { duration: 0.25, delay: 0.3 },
+    },
+  };
+
+  const slideVariants = {
     initial: { y: 0 },
-    hover: { y: -25, transition: { duration: 0.25, ease: "easeOut" } },
+    hover: { y: -30, transition: { duration: 0.5 } },
   };
-  const text2var = {
-    initial: { y: 25 },
-    hover: { y: 0, transition: { duration: 0.25, ease: "easeOut" } },
+
+  const slideVariants2 = {
+    initial: { y: 30 },
+    hover: { x: 0, y: 0, transition: { duration: 0.25 } },
   };
+
+  const underlineVariant = {
+    initial: { scaleX: 0 },
+    hover: { scaleX: 1, transition: { duration: 0.25, delay: 0.3 } },
+  };
+
   return (
     <motion.button
+      onClick={onClick}
       initial="initial"
       whileHover="hover"
-      className="customButton w-fit flex justify-center items-center gap-3 h-fit overflow-hidden border-none bg-none relative py-1 cursor-pointer"
+      className="relative flex items-center justify-center gap-1 py-1 px-1 overflow-hidden cursor-pointer bg-transparent border-none group"
     >
-      <motion.div className="flex-col h-full w-full flex">
-        <motion.span style={{ color: color }} variants={text1var}>
+      <motion.div className="relative flex items-center justify-center flex-col">
+        <motion.span
+          className="block text-para"
+          style={{ color: buttonColor }}
+          variants={slideVariants}
+        >
           {children}
         </motion.span>
         <motion.span
-          style={{ color: color }}
-          className="absolute"
-          variants={text2var}
+          className="absolute top-0 left-0 text-para"
+          style={{ color: buttonColor }}
+          variants={slideVariants2}
         >
           {children}
         </motion.span>
       </motion.div>
-
-      <motion.div variants={iconVariant}>
-        <svg
+      {underline && (
+        <motion.div
+          className="absolute bottom-0 left-0 h-[2px] w-full origin-bottom-left bg-gradient-to-r from-[#2DCCD8] to-[#2965DD]"
+          variants={underlineVariant}
+        />
+      )}
+      {arrow && (
+        <motion.svg
+          variants={iconVariant}
           xmlns="http://www.w3.org/2000/svg"
           width="28"
           height="28"
-          fill="none"
           viewBox="0 0 24 24"
         >
-          <path
+          <defs>
+            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#2DCCD8" />
+              <stop offset="100%" stopColor="#2965DD" />
+            </linearGradient>
+          </defs>
+          <motion.path
             d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"
-            fill={color}
+            variants={iconVariant2}
           />
-        </svg>
-      </motion.div>
+        </motion.svg>
+      )}
     </motion.button>
   );
 };

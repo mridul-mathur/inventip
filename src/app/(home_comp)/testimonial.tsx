@@ -17,12 +17,11 @@ const Testimonial = () => {
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In hac habitasse platea dictumst. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibhendrerit.",
       image: "/images/img.png",
     },
-    
   ];
   return (
-    <main className="bg-white z-[1] h-fit flex flex-col justify-between items-start gap-16 py-[8rem] overflow-hidden w-screen">
+    <main className="bg-primary z-[2] h-fit flex flex-col justify-between items-start gap-16 py-[8rem] overflow-hidden w-screen">
       <p className="text-head mx-16"> Testimonials </p>
-      <div className="px-16 bg-white w-full h-fit flex justify-start items-start gap-[4rem]">
+      <div className="px-16 bg-primary w-full h-fit flex justify-start items-start gap-[4rem]">
         {testimonials.map((testi, index) => (
           <TestiCards
             name={testi.name}

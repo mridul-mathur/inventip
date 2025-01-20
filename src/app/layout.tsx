@@ -5,7 +5,6 @@ import Nav from "./nav";
 import Footer from "./footer";
 // import CursorFollower from "./cursorFollower"
 
-
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -20,8 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-
-      <body className={`${inter.className} font-suisse`}>
+      <body className={`${inter.className} font-suisse bg-primary`}>
         <Nav />
         {/* <CursorFollower size={40} /> */}
 

@@ -74,20 +74,3 @@ body {
 
 
 
-.customButton::before {
-  content: "";
-  position: absolute;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  transform: scaleX(0);
-  transform-origin: bottom right;
-  background: currentColor;
-  transition: transform 0.25s ease-out;
-}
-
-.customButton:hover::before {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
