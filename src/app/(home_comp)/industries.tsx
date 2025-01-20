@@ -1,110 +1,75 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
+import { motion } from "framer-motion";
+
+interface IndustryCardProps {
+  name: string;
+  image: string;
+}
+const IndustryCard = ({ name, image }: IndustryCardProps) => (
+  <div className="col-span-1 flex justify-center items-center rounded-xl h-[30vh] relative group overflow-hidden">
+    <img
+      src={image}
+      alt={`${name} industry`}
+      className="w-full h-full object-cover rounded-xl transition-transform duration-500 group-hover:scale-105"
+    />
+    <div className="bg-secondary h-fit bg-clip-padding backdrop-filter backdrop-blur-2xl bg-opacity-30 absolute w-full flex justify-center items-center text-white text-subhead font-semibold py-2 transition-opacity duration-500 group-hover:opacity-90">
+      <div className="group-hover:bg-gradient-to-r group-hover:from-accent1 group-hover:to-accent2 group-hover:text-transparent group-hover:bg-clip-text duration-500">
+        {name}
+      </div>
+    </div>
+  </div>
+);
 
 const Industries = () => {
+  const industries = [
+    { name: "Healthcare", image: "/images/healthcare.jpg" },
+    { name: "Technology", image: "/images/technology.webp" },
+    { name: "Finance", image: "/images/fintech.webp" },
+    { name: "Retail", image: "/images/retail.png" },
+    { name: "Manufacturing", image: "/images/manu.jpg" },
+    { name: "Education", image: "/images/edu.jpg" },
+    { name: "Hospitality", image: "/images/hosp.jpg" },
+    { name: "Real Estate", image: "/images/realestate.jpeg" },
+  ];
+
   return (
-    <main className="bg-white z-[1] h-fit flex flex-col justify-between items-start gap-16 py-[8rem] overflow-hidden w-screen">
-      <p className="text-head mx-16"> Industries we target</p>
-      <AllIndustries />
-    </main>
+    <motion.main
+      whileHover="hover"
+      className="z-[2] bg-primary h-fit min-h-screen w-screen flex justify-center items-center py-16"
+    >
+      <div className="grid grid-cols-3 gap-4 w-full h-full min-h-screen p-4 justify-center items-center">
+        {industries.map(
+          (industry, index) =>
+            index < Math.floor(industries.length / 2) && (
+              <IndustryCard
+                key={index}
+                name={industry.name}
+                image={industry.image}
+              />
+            )
+        )}
+        <div className="col-span-1 flex flex-col items-center justify-center gap-2 h-fit">
+          <p className="text-para text-center">We cater to these</p>
+          <div className="text-max uppercase font-bold bg-gradient-to-r from-accent1 to-accent2 text-transparent bg-clip-text text-center">
+            Industries
+          </div>
+        </div>
+
+        {industries.map(
+          (industry, index) =>
+            index >= Math.floor(industries.length / 2) && (
+              <IndustryCard
+                key={index}
+                name={industry.name}
+                image={industry.image}
+              />
+            )
+        )}
+      </div>
+    </motion.main>
   );
 };
 
 export default Industries;
-
-const AllIndustries = () => {
-  const industries = [
-    {
-      name: "Healthcare",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor in enim ac mattis. Duis blandit dolor eu commodo ultricies. Nulla placerat",
-      image: "/images/img.png",
-      expertise: ["popular", "expertise", "of this", "industry"],
-    },
-    {
-      name: "Technology",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor in enim ac mattis. Duis blandit dolor eu commodo ultricies. Nulla placerat",
-      image: "/images/img.png",
-      expertise: ["popular", "expertise", "of this", "industry"],
-    },
-    {
-      name: "Finance",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor in enim ac mattis. Duis blandit dolor eu commodo ultricies. Nulla placerat",
-      image: "/images/img.png",
-      expertise: ["popular", "expertise", "of this", "industry"],
-    },
-    {
-      name: "Retail",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor in enim ac mattis. Duis blandit dolor eu commodo ultricies. Nulla placerat",
-      image: "/images/img.png",
-      expertise: ["popular", "expertise", "of this", "industry"],
-    },
-    {
-      name: "Automobile",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor in enim ac mattis. Duis blandit dolor eu commodo ultricies. Nulla placerat",
-      image: "/images/img.png",
-      expertise: ["popular", "expertise", "of this", "industry"],
-    },
-    {
-      name: "Education",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor in enim ac mattis. Duis blandit dolor eu commodo ultricies. Nulla placerat",
-      image: "/images/img.png",
-      expertise: ["popular", "expertise", "of this", "industry"],
-    },
-  ];
-  return (
-    <div className="px-16 bg-white w-full h-fit flex justify-start items-start gap-[4rem]">
-      {industries.map((ind, index) => (
-        <Industrycard
-          name={ind.name}
-          desc={ind.desc}
-          image={ind.image}
-          expertise={ind.expertise}
-          key={index}
-        />
-      ))}
-    </div>
-  );
-};
-
-interface IndustrycardProps {
-  name: string;
-  desc: string;
-  image: any;
-  expertise: string[];
-}
-
-const Industrycard: React.FC<IndustrycardProps> = ({
-  name,
-  desc,
-  image,
-  expertise,
-}) => {
-  return (
-    <div className="relative flex gap-8 justify-center items-center w-[70rem] h-fit">
-      <div className="relative rounded-xl overflow-hidden w-[480px] h-[240px]">
-        <Image
-          src={image}
-          fill
-          alt={name}
-          className="relative object-cover w-full h-full"
-        />
-      </div>
-      <div className="w-full flex flex-col justify-center items-start gap-8">
-        <p className="text-subhead font-medium">{name}</p>
-        <p className="text-para">{desc}</p>
-        <div className="flex justify-start items-center gap-4 w-full h-fit">
-          {expertise.map((exp, index) => (
-            <span
-              key={index}
-              className="text-min px-4 py-2 text-white bg-black rounded-md"
-            >
-              {exp}
-            </span>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-};

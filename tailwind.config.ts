@@ -33,11 +33,17 @@ const config: Config = {
         para: [
           "1.125rem",
           {
-            lineHeight: "2.5rem",
+            lineHeight: "1.5rem",
           },
         ],
         subhead: [
           "2.25rem",
+          {
+            lineHeight: "2.5rem",
+          },
+        ],
+        subheadmin: [
+          "2rem",
           {
             lineHeight: "2.5rem",
           },
@@ -58,5 +64,10 @@ const config: Config = {
     },
   },
   plugins: [],
+  variants: {
+    extend: {
+      backdropBlur: ["hover", "focus"],
+    },
+  },
 };
 export default config;
