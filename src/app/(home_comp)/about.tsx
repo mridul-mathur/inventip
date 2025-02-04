@@ -55,8 +55,8 @@ interface NumbProps {
 const Numb: React.FC<NumbProps> = ({ numb, text }) => {
   return (
     <div className="flex flex-col gap-4">
-      <p className="text-head">{numb}+</p>
-      <p className="text-paramin">{text}</p>
+      <p className="text-head font-medium">{numb}+</p>
+      <p className="text-paramin font-medium">{text}</p>
     </div>
   );
 };

@@ -8,30 +8,30 @@ import Buttons from "../buttons";
 function WhatTheySay() {
   const testimonials = [
     {
-      name: "RDX Sir",
+      name: "Joe Doe",
       quate:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor in ",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor in.",
       image: "/images/img.png",
-      company: "Mafia Solutions",
+      company: "Maffa Solutions",
     },
     {
-      name: "Uday Shetti",
+      name: "Joe Doe",
       quate:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor in ",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor in.",
       image: "/images/img.png",
       company: "Wealth ManageX",
     },
     {
-      name: "Majnu Bhai",
+      name: "Joe Doe",
       quate:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor in ",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor in.",
       image: "/images/img.png",
       company: "Weeky FinancHub",
     },
     {
-      name: "Ghungroo Seth",
+      name: "Joe Doe",
       quate:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor in ",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor in.",
       image: "/images/img.png",
       company: "Healthcare Solutions",
     },
@@ -44,6 +44,7 @@ function WhatTheySay() {
   ];
 
   const [activeIndex, setActiveIndex] = useState(1);
+  const cardWidth = 640; // Adjust card width as needed
 
   const handleNext = () => {
     setActiveIndex((prev) => prev + 1);
@@ -108,11 +109,11 @@ function WhatTheySay() {
           className="flex gap-8 cursor-grab w-full"
           drag="x"
           dragConstraints={{
-            left: -640 * (extendedTestimonials.length - 1),
+            left: -cardWidth * (extendedTestimonials.length - 1),
             right: 0,
           }}
-          initial={{ x: -activeIndex * 640 }}
-          animate={{ x: -activeIndex * 640 }}
+          initial={{ x: -activeIndex * cardWidth }}
+          animate={{ x: -activeIndex * cardWidth }}
           transition={{ type: "spring", stiffness: 300, damping: 30 }}
           onAnimationComplete={handleTransitionEnd}
         >

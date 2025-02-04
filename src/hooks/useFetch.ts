@@ -1,15 +1,21 @@
-export default async function UseFetch(url: string) {
-  const response = await fetch(url, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    mode: "cors",
-  });
+import useSWR from "swr";
 
-  if (!response.ok) {
-    throw new Error(`HTTP error! Status: ${response.status}`);
+const fetcher = async (url: string) => {
+  const res = await fetch(url);
+  if (!res.ok) {
+    throw new Error(`HTTP error! status: ${res.status}`);
   }
+  return res.json();
+};
 
-  return response.json();
-}
+const useBlogs = () => {
+  const { data, error, isLoading } = useSWR(
+    "https://inventip-admin.vercel.app/api",
+    fetcher,
+    { revalidateOnFocus: false, dedupingInterval: 60000 }
+  );
+
+  return { data, isLoading, error };
+};
+
+export default useBlogs;

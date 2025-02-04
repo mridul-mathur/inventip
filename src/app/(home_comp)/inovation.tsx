@@ -4,8 +4,6 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence, delay } from "framer-motion";
 import Buttons from "../buttons";
 import Link from "next/link";
-import Image from "next/image";
-import { del } from "framer-motion/client";
 
 const Inovation: React.FC = () => {
   const slides = [

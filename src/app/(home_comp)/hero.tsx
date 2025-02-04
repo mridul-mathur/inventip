@@ -37,7 +37,7 @@ const Hero = () => {
             />
           </motion.div>
           <motion.div className="z-[1] absolute w-screen inset-0 flex flex-col justify-center items-center text-center gap-6">
-            <motion.div className="flex gap-4 font-bold text-max">
+            <motion.div className="flex gap-4 text-max font-bold">
               <motion.h1
                 style={{ x: textXFirst }}
                 transition={{ ease: "easeOut", duration: 1 }}

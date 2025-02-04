@@ -102,8 +102,6 @@ export function Nav() {
     ? "flex flex-col lg:flex lg:flex-row lg:items-center w-full lg:w-auto mt-4 lg:mt-0"
     : "hidden lg:flex lg:flex-row lg:items-center w-full lg:w-auto mt-4 lg:mt-0";
 
-  const height = ref1.current?.clientHeight;
-  console.log("height:", height);
   return (
     <main
       ref={ref1}

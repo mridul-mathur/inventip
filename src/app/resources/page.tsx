@@ -1,10 +1,9 @@
 "use client";
 
 import React, { useEffect, useState, useRef } from "react";
-import UseFetch from "../../hooks/useFetch";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ExternalLink } from "lucide-react";
+import useSWR from "swr";
 
 interface Segment {
   _id: string;
@@ -23,28 +22,9 @@ interface BlogProps {
 }
 
 const Resources = () => {
-  const [blogs, setBlogs] = useState<BlogProps[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string | null>(null);
+  const { data, error, isLoading } = useSWR("http://localhost:3001/api");
 
-  useEffect(() => {
-    const loadBlogs = async () => {
-      try {
-        const data = await UseFetch(
-          "https://inventip-admin-portal.vercel.app/api"
-        );
-        setBlogs(data.blogs || []);
-      } catch (err) {
-        console.error("Error fetching blogs:", err);
-        setError("Failed to load blogs. Please try again.");
-      } finally {
-        setLoading(false);
-      }
-    };
-    loadBlogs();
-  }, []);
-
-  if (loading) {
+  if (isLoading) {
     return (
       <div className="w-full min-h-screen flex justify-center items-center">
         Loading...
@@ -54,11 +34,28 @@ const Resources = () => {
 
   if (error) {
     return (
-      <div className="w-full min-h-screen flex justify-center items-center flex-col">
+      <div className="w-full min-h-screen flex justify-center items-center">
+        <p>Something went wrong. Please try refreshing the page.</p>
+      </div>
+    );
+  }
+  const blogs: BlogProps[] = data?.blogs || [];
+
+  if (!blogs.length) {
+    return (
+      <div className="w-full min-h-screen flex justify-center items-center">
+        No blogs available at the moment. Check back later!
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="w-full min-h-screen flex justify-center items-center flex-col gap-5">
         <p>Something went wrong. Please try refreshing the page.</p>
         <button
           onClick={() => window.location.reload()}
-          className="mt-4 px-4 py-2 bg-blue-500 text-primary rounded"
+          className="px-4 py-2 bg-secondary text-primary rounded"
         >
           Retry
         </button>
@@ -73,7 +70,6 @@ const Resources = () => {
       </div>
     );
   }
-
   return (
     <div
       suppressHydrationWarning
@@ -87,7 +83,10 @@ const Resources = () => {
             the top blogs for this category, the latest industry news from us.
           </p>
         </div>
-        <Link href={`blogs/${blogs[blogs.length - 1]._id}`} className="w-full">
+        <Link
+          href={`resources/${blogs[blogs.length - 1]._id}`}
+          className="w-full"
+        >
           <div className="rounded-3xl overflow-hidden w-full h-[32rem] relative flex justify-start items-end">
             <div className="flex justify-center items-center bg-primary/10 bg-clip-padding backdrop-filter backdrop-blur-xl top-[1rem] left-[2rem] px-4 py-2 rounded-xl bg-opacity-10 absolute w-fit gap-3 text-primary">
               NEW
@@ -106,7 +105,7 @@ const Resources = () => {
                   {blogs[blogs.length - 1].brief}
                 </p>
               </div>
-              <Link href={`blogs/${blogs[blogs.length - 1]._id}`}>
+              <Link href={`resources/${blogs[blogs.length - 1]._id}`}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="64"
@@ -171,7 +170,7 @@ const BlogsCard = ({ title, brief, title_image, id }: BlogCardProps) => {
     }
   }, []);
   return (
-    <Link href={`blogs/${id}`} className="h-fit w-fit">
+    <Link href={`resources/${id}`} className="h-fit w-fit">
       <motion.div
         initial={{ scale: 1 }}
         whileHover="hover"
@@ -215,3 +214,5 @@ const BlogsCard = ({ title, brief, title_image, id }: BlogCardProps) => {
     </Link>
   );
 };
+
+export { BlogsCard };
