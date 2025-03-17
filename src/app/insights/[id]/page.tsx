@@ -1,8 +1,9 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import useSWR from "swr";
 import { notFound } from "next/navigation";
+import { useParams } from "next/navigation";
 
 interface BlogProps {
   _id: string;
@@ -20,8 +21,11 @@ interface Segment {
   seg_img: string;
 }
 
-const BlogPage = ({ params }: { params: { id: string } }) => {
-  const { data, error } = useSWR("http://localhost:3001/api");
+const BlogPage = () => {
+  const params = useParams();
+  const { data, error } = useSWR(
+    `${process.env.NEXT_PUBLIC_API_URL}/api/getdata/blogs`
+  );
 
   if (error) {
     return (
@@ -39,12 +43,12 @@ const BlogPage = ({ params }: { params: { id: string } }) => {
     );
   }
 
-  const blog = data.blogs.find((b: BlogProps) => b._id === params.id);
+  const blog = data.data.find((b: BlogProps) => b._id === params.id);
 
   if (!blog) {
     notFound();
   }
-
+  console.log(blog);
   return (
     <main
       key={blog._id}
@@ -60,23 +64,27 @@ const BlogPage = ({ params }: { params: { id: string } }) => {
         />
       </div>
       {blog.segments.map((segment: Segment, index: number) => (
-        <div key={segment._id} className=" flex flex-col w-full gap-[1rem]">
-          {segment.head ? (
+        <div
+          key={segment._id || index}
+          className=" flex flex-col w-full gap-[1rem] filter brightness-[0.1]"
+        >
+          {segment.head && (
             <h1 className="text-subhead font-semibold">{segment.head}</h1>
-          ) : null}
-          {segment.subhead ? (
+          )}
+          {segment.subhead && (
             <h3 className="text-subheadmin font-light">{segment.subhead}</h3>
-          ) : null}
+          )}
           <p className="text-para font-light">{segment.content}</p>
-          {segment.seg_img ? (
-            <div className="w-full h-auto overflow-hidden relative my-[2rem]">
-              <img
-                src={segment.seg_img}
-                alt={segment.head}
-                className="w-full h-full rounded-[0.5rem] object-cover"
-              />
-            </div>
-          ) : null}
+          {segment.seg_img &&
+            segment.seg_img !== "none" && (
+                <div className="w-full h-auto overflow-hidden relative my-[2rem]">
+                  <img
+                    src={segment.seg_img}
+                    alt={segment.head}
+                    className="w-full h-auto aspect-auto filter rounded-[0.5rem] object-cover"
+                  />
+                </div>
+              )}
         </div>
       ))}
     </main>

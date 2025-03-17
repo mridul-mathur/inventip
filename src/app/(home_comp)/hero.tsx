@@ -50,14 +50,24 @@ const Hero = () => {
                 transition={{ ease: "easeOut", duration: 1 }}
                 className="mix-blend-difference"
               >
-                Lines for inventiP
+                Lines for InventIP
               </motion.h1>
             </motion.div>
             <motion.div className="flex gap-6 justify-center items-center">
-              <Buttons color="dark" arrow={true} underline={true}>
+              <Buttons
+                color="dark"
+                arrow={true}
+                underline={true}
+                onClick={() => (window.location.href = "/#expertise")}
+              >
                 Our Expertise
               </Buttons>
-              <Buttons color="dark" arrow={true} underline={true}>
+              <Buttons
+                color="dark"
+                arrow={true}
+                underline={true}
+                onClick={() => (window.location.href = "/insights")}
+              >
                 More Insights
               </Buttons>
             </motion.div>

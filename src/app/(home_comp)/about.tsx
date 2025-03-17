@@ -2,6 +2,7 @@
 
 import React from "react";
 import Buttons from "../buttons";
+import { useRouter } from "next/router";
 
 const HomeAbout = () => {
   return (
@@ -20,7 +21,6 @@ const AboutInfo = () => {
     { numb: 100, text: "Successful Businesses" },
     { numb: 10, text: "Years of Experience" },
   ];
-
   const aboutdesc =
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor in enim ac mattis. Duis blandit dolor eu commodo ultricies. Nulla placerat dui nec eros porta, aliquam lobortis libero vehicula. Vivamus imperdiet, dolor vel mattis pretium, turpis ligula hendrerit lacus, ut convallis tellus lorem ac lorem.";
   const slogan = "Slogan and a line about why choose us and more.";
@@ -29,7 +29,12 @@ const AboutInfo = () => {
     <div className="w-full h-fit flex flex-col sm:flex-row justify-center items-start gap-4 sm:gap-[8rem]">
       <div className="w-full sm:w-2/5 h-full flex flex-col justify-between gap-[2rem] items-start">
         <p className="text-head">{slogan}</p>
-        <Buttons color="dark" arrow underline>
+        <Buttons
+          color="dark"
+          arrow
+          underline
+          onClick={() => (window.location.href = "/about")}
+        >
           Know About Us
         </Buttons>
       </div>

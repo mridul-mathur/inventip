@@ -12,7 +12,6 @@ type FooterSection = {
 };
 
 const Footer: React.FC = () => {
-
   const footerSections: FooterSection[] = [
     {
       title: "Menu",
@@ -20,7 +19,7 @@ const Footer: React.FC = () => {
         { name: "Home", link: "/" },
         { name: "About", link: "/about" },
         { name: "Expertise", link: "/expertise" },
-        { name: "Resources", link: "/resources" },
+        { name: "Insights", link: "/insights" },
         { name: "Careers", link: "/careers" },
       ],
     },

@@ -11,18 +11,18 @@ const fetcher = async (url: string) => {
   return res.json();
 };
 
-const ResourcesLayout = ({ children }: { children: React.ReactNode }) => {
+const InsightsLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <SWRConfig
       value={{
         fetcher,
-        revalidateOnFocus: false,
+        revalidateOnFocus: true,
         dedupingInterval: 60000,
       }}
     >
-      <div className="resources-layout">{children}</div>
+      <div className="insights-layout">{children}</div>
     </SWRConfig>
   );
 };
 
-export default ResourcesLayout;
+export default InsightsLayout;

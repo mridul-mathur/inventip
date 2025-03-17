@@ -23,7 +23,7 @@ const navLinks: NavLink[] = [
       { href: "/expertise/3", label: "Open Innovation" },
     ],
   },
-  { href: "/resources", label: "resources" },
+  { href: "/insights", label: "insights" },
   { href: "/careers", label: "careers" },
 ];
 
