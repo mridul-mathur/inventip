@@ -7,21 +7,25 @@ function ourmission() {
                 <h1 className='text-subhead'> Your success our mission</h1>
             </div>
             <div className="flex min-h-auto w-full mt-8 flex-col p-2 sm:flex-row">
-            <div className=" h-auto w-full pr-0 pt-10 sm:pr-20">
-                <p className='text-para leading-6'>To be valued by our clients for our quality work products and services. We partner
-                         with our clients to help navigate the complex maze of IP law and procedures and 
-                         provide speedy resolution to their challenges. We are not afraid to take risks,
-                          and with mutual collaboration, we endeavour to achieve excellence in both transactional
-                           and advisory capacities.</p>
-
+                <div className=" h-auto w-full pr-0 pt-10 sm:pr-20">
+                    <p className='text-para leading-6'>
+                        At InventIP, your success is at the heart of everything we do. We are committed to
+                        delivering high-quality work products and services that our clients truly value. By
+                        partnering closely with you, we simplify the complexities of intellectual property
+                        management, offering swift and effective resolutions to your challenges. We embrace calculated risks and foster mutual collaboration to achieve excellence
+                        in both our search and analytics roles.
+                    </p>
                 </div>
                 <div className="  min-h-auto w-[100%]  pl-0 pt-10 p-2 sm:pl-20 ">
-                    <p className='text-para leading-6'>The firm provides support in a transparent manner with relentless communication and
-                         interactions at priority with clients. The firm's technology-driven processes for IP
-                          management sets us apart from other firms and help us achieve higher returns for our
-                           clients. Our knowledge of the law, along with our strive for perfection,
-                         helps our clients to gain implementable solutions to their problems.</p>
-
+                    <p className='text-para leading-6'>
+                        Transparency and open communication are
+                        our priorities, ensuring you are always informed and supported throughout the
+                        process.
+                        Our technology-driven approach to IP management sets us apart, enabling us to
+                        deliver higher returns and implementable solutions tailored to your needs. With deep
+                        expertise and an unwavering pursuit of perfection, we strive to turn your challenges
+                        into opportunities for success.
+                    </p>
                 </div>
 
             </div>

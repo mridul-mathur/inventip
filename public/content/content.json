@@ -1,0 +1,78 @@
+{
+    "Home": {
+        "hero": {
+            "text1": "Sculpting Innovation from",
+            "text2": "Ideas to Reality",
+            "cta": [
+                {
+                    "text": "Our Expertise",
+                    "link": "/expertise"
+                },
+                {
+                    "text": "More Insights",
+                    "link": "/insights"
+                }
+            ]
+        },
+        "about": {
+            "title": "Converge. Disrupt. Outpace",
+            "text": "InventIP is a premier consulting firm specializing in patent analytics and open - innovation services. We empower forward - thinking businesses totransform complex IP data into strategic advantages, guided by our ethos: <b>Converge.Disrupt.Outpace</b>. InventIP doesn't just analyze patents—we turn them into momentum. Converge with possibilities. Disrupt the status quo. Outpace what's next.",
+            "cta": {
+                "text": "Know About Us",
+                "link": "/about"
+            },
+            "numbers": [
+                {
+                    "number": "100+",
+                    "text": "Satisfied Clients"
+                },
+                {
+                    "number": "100+",
+                    "text": "Successful Buisnesses"
+                },
+                {
+                    "number": "10+",
+                    "text": "Years of Experience"
+                }
+            ]
+        },
+        "industries": {
+            "subhead": "We cater to these",
+            "title": "Industries",
+            "cards": [
+                {
+                    "name": "Healthcare",
+                    "image": "/images/healthcare.jpg"
+                },
+                {
+                    "name": "Pharmaceuticals",
+                    "image": "/images/pharmaceuticals.jpg"
+                },
+                {
+                    "name": "Agriculture",
+                    "image": "/images/agriculture.jpg"
+                },
+                {
+                    "name": "Electrical & Electronics",
+                    "image": "/images/electrical-n-electronics.jpg"
+                },
+                {
+                    "name": "Material Science",
+                    "image": "/images/material-science.jpg"
+                },
+                {
+                    "name": "Mobility",
+                    "image": "/images/mobility.jpg"
+                },
+                {
+                    "name": "Oil & Energy",
+                    "image": "/images/oil-n-energy.jpg"
+                },
+                {
+                    "name": "Textile",
+                    "image": "/images/textile.jpg"
+                }
+            ]
+        }
+    }
+}

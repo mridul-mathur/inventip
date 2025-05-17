@@ -44,18 +44,17 @@ const AddressItem: React.FC<{
   );
 };
 
-// Main MapContainer Component
 const MapContainer: React.FC = () => {
   const addresses = [
     {
-      title: "Address 1",
-      description: "JECRC University, Jaipur, India",
+      title: "Noida Office:",
+      description: "InventIP Legal Services LLP Smartworks Corporate Park,Amity Rd, Sector 125, Noida,Uttar Pradesh 201303",
       location:
         "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56992.164416405474!2d75.83411437203732!3d26.775942370004156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396dc892b8f05399%3A0x43fbca7105eca800!2sJECRC%20University!5e0!3m2!1sen!2sin!4v1732524535160!5m2!1sen!2sin",
     },
     {
-      title: "Address 2",
-      description: "JECRC Foundation",
+      title: "Gurgaon Office",
+      description: "InventIP Legal Services LLP Unit 629-631, BPTP Park Centra, Jal Vayu Vihar, Sector 30, Gurugram, Haryana 122001",
       location:
         "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56989.134352403365!2d75.74629474863278!3d26.781978500000015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396dc9763e6030f1%3A0x4137675e5cf54360!2sJECRC%20Foundation!5e0!3m2!1sen!2sin!4v1732525863037!5m2!1sen!2sin",
     },
@@ -68,8 +67,9 @@ const MapContainer: React.FC = () => {
   return (
     <main className="h-fit w-full flex justify-center items-center p-4 md:p-16 pt-0">
       <div className="min-h-[70vh] border w-full bg-slate-300 rounded-[3rem] relative">
-        {/* Map */}
-        <Map location={currentLocation} />
+        <Map location={currentLocation}
+
+        />
 
         {/* Address List */}
         <div className="outer absolute top-10 right-10 h-fit w-[40%] flex flex-col gap-3 items-end">

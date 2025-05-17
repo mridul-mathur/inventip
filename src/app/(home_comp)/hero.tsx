@@ -20,53 +20,53 @@ const Hero = () => {
   const textXSecond = useTransform(scrollYProgress, [0, 0.5], [0, 100]);
 
   return (
-    <main ref={ref} className="relative h-[300vh] w-screen">
+    <main ref={ ref } className="text-primary relative h-[300vh] w-screen">
       <section className="w-screen h-screen sticky top-0 flex justify-center items-center bg-transparent">
         <motion.div className="relative w-full h-screen">
           <motion.div
             className="absolute inset-0 w-full h-full"
-            style={{
+            style={ {
               scale: backgroundScale,
-            }}
+            } }
           >
             <motion.img
-              src="/images/img.png"
+              src="/images/img.jpg"
               alt="Background"
               className="w-full h-full object-cover"
-              style={{ borderRadius: cornerRadius }}
+              style={ { borderRadius: cornerRadius } }
             />
           </motion.div>
           <motion.div className="z-[1] absolute w-screen inset-0 flex flex-col justify-center items-center text-center gap-6">
-            <motion.div className="flex gap-4 text-max font-bold">
+            <motion.div className="flex gap-4 text-5xl text-nowrap font-bold">
               <motion.h1
-                style={{ x: textXFirst }}
-                transition={{ ease: "easeOut", duration: 1 }}
+                style={ { x: textXFirst } }
+                transition={ { ease: "easeOut", duration: 1 } }
                 className="mix-blend-difference"
               >
-                These are Hero
+                Sculpting Innovation from
               </motion.h1>
               <motion.h1
-                style={{ x: textXSecond }}
-                transition={{ ease: "easeOut", duration: 1 }}
+                style={ { x: textXSecond } }
+                transition={ { ease: "easeOut", duration: 1 } }
                 className="mix-blend-difference"
               >
-                Lines for InventIP
+                Blueprint to Breakthrough
               </motion.h1>
             </motion.div>
             <motion.div className="flex gap-6 justify-center items-center">
               <Buttons
-                color="dark"
-                arrow={true}
-                underline={true}
-                onClick={() => (window.location.href = "/#expertise")}
+                color="light"
+                arrow={ true }
+                underline={ true }
+                onClick={ () => (window.location.href = "/#expertise") }
               >
                 Our Expertise
               </Buttons>
               <Buttons
-                color="dark"
-                arrow={true}
-                underline={true}
-                onClick={() => (window.location.href = "/insights")}
+                color="light"
+                arrow={ true }
+                underline={ true }
+                onClick={ () => (window.location.href = "/insights") }
               >
                 More Insights
               </Buttons>

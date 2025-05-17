@@ -18,10 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        suppressHydrationWarning
-        className={`${inter.className} font-suisse bg-primary`}
-      >
+      <body className={`${inter.className} font-suisse bg-primary`}>
         <Nav />
         {children}
         <Footer />

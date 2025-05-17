@@ -1,7 +1,14 @@
 import React, { useState } from "react";
 import Buttons from "../buttons";
 
-function Faq() {
+interface FaqProps {
+  faqs: {
+    question: string;
+    answer: string;
+  }[];
+}
+
+function Faq({ faqs }: FaqProps) {
   return (
     <main className="min-h-[75vh] w-screen flex flex-col md:flex-row p-4 md:p-16">
       <div className="w-[100%] h-[100%] px-0 md:px-10 pt-[5%]">
@@ -16,7 +23,7 @@ function Faq() {
         </div>
       </div>
       <div className="w-[100%] min-h-[100%] p-2 pt-[5%]">
-        <AllFaq />
+        <AllFaq faqs={faqs} />
       </div>
     </main>
   );
@@ -24,43 +31,27 @@ function Faq() {
 
 export default Faq;
 
-const AllFaq = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(1); // Index of the currently open FAQ
+interface AllFaqProps {
+  faqs: {
+    question: string;
+    answer: string;
+  }[];
+}
 
-  const Faqquestion = [
-    {
-      ques: "How is the area calculated?",
-      ans: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor in.",
-    },
-    {
-      ques: "Is there an Owners Association?",
-      ans: "Yes, there is an active and mandatory Owners Association, which ensures good building insurance, a multi-year maintenance plan, and management of the manager. An active homeowners association ensures that the site is well maintained and that the site always looks neat.",
-    },
-    {
-      ques: "What are the monthly homeowners association costs?",
-      ans: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor in.",
-    },
-    {
-      ques: "What is the location of an air conditioning unit?",
-      ans: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor in.",
-    },
-    {
-      ques: "Is there building insurance?",
-      ans: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor in.",
-    },
-  ];
+const AllFaq = ({ faqs }: AllFaqProps) => {
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const handleToggle = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index); // Toggle open/close
+    setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
     <>
-      {Faqquestion.map((item, index) => (
+      {faqs.map((item, index) => (
         <FaqCard
           key={index}
-          ques={item.ques}
-          ans={item.ans}
+          ques={item.question}
+          ans={item.answer}
           isOpen={openIndex === index}
           onClick={() => handleToggle(index)}
         />
@@ -87,9 +78,8 @@ const FaqCard: React.FC<FaqCardProps> = ({ ques, ans, isOpen, onClick }) => {
         <span className="text-lg">{isOpen ? "➖" : "➕"}</span>
       </div>
       <div
-        className={`overflow-hidden transition-all duration-800 ease-in-out ${
-          isOpen ? "max-h-[200px] mt-2" : "max-h-0"
-        }`}
+        className={`overflow-hidden transition-all duration-800 ease-in-out ${isOpen ? "max-h-[200px] mt-2" : "max-h-0"
+          }`}
       >
         <p className="text-paramin text-[#888888]">{ans}</p>
       </div>

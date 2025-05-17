@@ -7,8 +7,13 @@ import Inovation from "../../(home_comp)/inovation";
 import Faq from "../faq";
 import WhatTheySay from "../../(home_comp)/whattheysay";
 import CursorFollower from "../../cursorFollower";
+import { useParams } from "next/navigation";
+import expertiseContent from "../content.json";
 
-function Page() {
+const Page = () => {
+  const { id } = useParams();
+  const expertiseId = typeof id === 'string' ? parseInt(id) : 0;
+  const content = expertiseContent.expertise[expertiseId];
   const [cursorProps, setCursorProps] = useState<{
     show: boolean;
     text: string;
@@ -48,10 +53,14 @@ function Page() {
     }
   }, []);
 
+  if (!content) {
+    return <div>Expertise not found</div>;
+  }
+
   return (
     <main className="flex flex-col justify-center items-center w-full px-16 relative">
       <section id="hero">
-        <Hero />
+        <Hero title={content.title} introLine={content.introLine} detailed={content.detailed} services={content.services} conclusion={content.conclusion} />
       </section>
       <section id="tier">
         <Tier />
@@ -60,7 +69,7 @@ function Page() {
         <Inovation />
       </section>
       <section id="faq">
-        <Faq />
+        <Faq faqs={content.faqs} />
       </section>
       <section id="whattheysay">
         <WhatTheySay />

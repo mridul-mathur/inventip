@@ -5,9 +5,7 @@ function tier() {
         <main className='min-h-[80vh] flex flex-col md:flex-row w-screen'>
             <div className="min-h-[100%] w-[100%] md:w-[70%] flex justify-center items-center">
                 <div className="box border h-[60vh] md:min-h-[60%] w-[100%] md:w-[80%] rounded-2xl bg-slate-300">
-
                 </div>
-
             </div>
             <div className="min-h-[100%] w-[100%] pr-0 md:pr-[70px] flex flex-col justify-center">
                 <h1 className='text-head mb-5 mt-5 md:mt-0'>India’s Tier 1 Intellectual <br /> Property law firm</h1>

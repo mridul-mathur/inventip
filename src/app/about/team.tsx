@@ -22,32 +22,32 @@ export default team;
 const Team = () => {
   const teamData = [
     {
-      name: "John Doe",
-      role: "Frontend Developer",
+      name: "Ankush Bedi",
+      role: "Founding Partner",
       linkedin: "",
       mail: "john@example.com",
       image:
         "https://i.pinimg.com/736x/99/47/62/9947620a91a1e2c6f74b4711066941ae.jpg",
     },
     {
-      name: "Jane Smith",
-      role: "Backend Developer",
+      name: "Rahul Parmar",
+      role: "Founding Partner",
       linkedin: "",
       mail: "jane@example.com",
       image:
         "https://i.pinimg.com/736x/93/e7/62/93e7624c45f4631b8ca7568a7509bd99.jpg",
     },
     {
-      name: "Alex Johnson",
-      role: "Designer",
+      name: "Ken Sheets",
+      role: "US Advisor and Client Engagement Manager",
       linkedin: "",
       mail: "alex@example.com",
       image:
         "https://i.pinimg.com/736x/bd/c7/b8/bdc7b856ff45d369b620d8ca33d2d024.jpg",
     },
     {
-      name: "John Doe",
-      role: "Frontend Developer",
+      name: "Shubha Verma",
+      role: "Associate Partner",
       linkedin: "",
       mail: "john@example.com",
       image:

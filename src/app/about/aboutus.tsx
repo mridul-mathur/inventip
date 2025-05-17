@@ -6,31 +6,38 @@ function aboutus() {
             <div className=" w-full ">
                 <h1 className='text-subhead pb-5 sm:pt-0 '>About us</h1>
             </div>
-            <div className="flex min-h-[70vh] w-full items-center flex-col sm:flex-row">
-            <div className="box min-h-[60vh] w-full sm:w-[60%] border rounded-3xl bg-slate-300">
-
+            <div className="flex w-full items-center gap-12 flex-row">
+                <div className="box min-h-[60vh] w-2/5 border rounded-3xl bg-slate-300">
                 </div>
-                <div className="detail min-h-[55vh] w-full px-4 py-5 sm:px-12 flex flex-col justify-evenly">
-                    <p className='text-para leading-6'>InventIP is an India based Tier 1 Intellectual Property law firm that provides
-                        a wide range of IP services to clients across the globe with primary competencies
-                        in preparation, filing, and prosecution of Patents, Designs, Trademark and Copyrights.
-                        InventIP also helps clients in formulating IP strategy,
-                        facilitating technology commercialization, providing technology and commercial insights
-                        through focused patent search and analytics, performing IP audits, and providing IP
-                        management support. Additionally, InventIP provides
-                        legal advisory on technology law and related commercial agreements.
+                <div className="text-pretty detail w-3/5 text-lg py-5 flex flex-col justify-evenly">
+                    <p>
+                        InventIP is at the forefront of intellectual property intelligence and innovation
+                        strategy, empowering businesses to unlock the full potential of their ideas through
+                        advanced patent analytics and technology insights. We specialize in transforming
+                        complex IP data into actionable strategies, offering deep-dive patent searches,
+                        competitive landscape analysis, and whitespace mapping to identify untapped
+                        opportunities and emerging trends. Our expertise lies in decoding market dynamics,
+                        forecasting technological shifts, and aligning R&amp;D efforts with commercial
+                        goals—turning raw data into a roadmap for growth.
                     </p>
-                    <p className='text-para leading-6 pt-10 sm:pt-0'>With dynamic, seasoned and qualified team backed by rigorous and robust quality
-                        control processes, we offer unmatched services and tactical strategies ensuring optimum
-                        utilization of client's cost and time. Through our years of experience in the field of
-                        IP, we have built reliable relationships with quality patent attorneys and agents across
-                        the globe. We therefore have
-                        the capability to facilitate IP filing and prosecution across multiple jurisdictions.</p>
-
+                    <br />
+                    <p>
+                        Backed by a multidisciplinary team of technical analysts and industry experts, we
+                        deliver precision and depth in every project. From optimizing IP portfolios to scouting
+                        disruptive innovations, our methodologies bridge the gap between research and real-
+                        world impact. We combine cutting-edge tools with domain-specific knowledge to help
+                        you navigate fast-evolving tech ecosystems, mitigate risks, and capitalize on high-
+                        value breakthroughs.
+                    </p>
+                    <br />
+                    <p>
+                        At InventIP, we don't just analyze patents—we architect innovation pathways.
+                        Partner with us to transform intellectual assets into strategic advantages, backed by
+                        insights that drive smarter decisions, foster collaboration, and position your business
+                        at the forefront of tomorrow's breakthroughs.
+                    </p>
                 </div>
-
             </div>
-
         </main>
     )
 }
