@@ -1,8 +1,15 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Buttons from "../buttons";
+import TextFormatter from "@/components/text-format";
+
+interface HeroContent {
+  text1: string;
+  text2: string;
+  cta: { text: string; link: string }[];
+}
 
 const Hero = () => {
   const ref = useRef(null);
@@ -18,6 +25,19 @@ const Hero = () => {
   const backgroundScale = useTransform(scrollYProgress, [0, 0.4], [1, 0.75]);
   const textXFirst = useTransform(scrollYProgress, [0, 0.5], [0, -100]);
   const textXSecond = useTransform(scrollYProgress, [0, 0.5], [0, 100]);
+
+  const [content, setContent] = useState<HeroContent | null>(null);
+
+  useEffect(() => {
+    fetch('/content/content.json')
+      .then(response => response.json())
+      .then(data => setContent(data.Home.hero))
+      .catch(error => console.error('Error fetching content:', error));
+  }, []);
+
+  if (!content) {
+    return null;
+  }
 
   return (
     <main ref={ ref } className="text-primary relative h-[300vh] w-screen">
@@ -43,33 +63,28 @@ const Hero = () => {
                 transition={ { ease: "easeOut", duration: 1 } }
                 className="mix-blend-difference"
               >
-                Sculpting Innovation from
+                <TextFormatter text={ content?.text1 || '' } />
               </motion.h1>
               <motion.h1
                 style={ { x: textXSecond } }
                 transition={ { ease: "easeOut", duration: 1 } }
                 className="mix-blend-difference"
               >
-                Blueprint to Breakthrough
+                <TextFormatter text={ content?.text2 || '' } />
               </motion.h1>
             </motion.div>
             <motion.div className="flex gap-6 justify-center items-center">
-              <Buttons
-                color="light"
-                arrow={ true }
-                underline={ true }
-                onClick={ () => (window.location.href = "/#expertise") }
-              >
-                Our Expertise
-              </Buttons>
-              <Buttons
-                color="light"
-                arrow={ true }
-                underline={ true }
-                onClick={ () => (window.location.href = "/insights") }
-              >
-                More Insights
-              </Buttons>
+              { content.cta.map((button: { text: string; link: string }, index: number) => (
+                <Buttons
+                  key={ index }
+                  color="light"
+                  arrow={ true }
+                  underline={ true }
+                  onClick={ () => (window.location.href = button.link) }
+                >
+                  { button.text }
+                </Buttons>
+              )) }
             </motion.div>
           </motion.div>
         </motion.div>

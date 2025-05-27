@@ -23,31 +23,31 @@ const CursorFollower: React.FC<CursorFollowerProps> = ({
 
     window.addEventListener("mousemove", updateCursorPosition);
     return () => window.removeEventListener("mousemove", updateCursorPosition);
-  }, [show]);
+  }, []);
 
   if (!show) return null;
 
   return (
     <div
-      className={`fixed pointer-events-none z-10 flex items-center justify-center rounded-full border border-secondary backdrop-blur-md transition-transform duration-100`}
-      style={{
-        top: `${position.y}px`,
-        left: `${position.x}px`,
-        width: `${size}px`,
-        height: `${size}px`,
-      }}
+      className={ `fixed pointer-events-none z-10 flex items-center justify-center rounded-full border border-secondary backdrop-blur-md transition-transform duration-100` }
+      style={ {
+        top: `${ position.y }px`,
+        left: `${ position.x }px`,
+        width: `${ size }px`,
+        height: `${ size }px`,
+      } }
     >
-      {text && (
+      { text && (
         <span
           className="text-sm text-black"
-          style={{
+          style={ {
             mixBlendMode: "difference",
             color: "#191919",
-          }}
+          } }
         >
-          {text}
+          { text }
         </span>
-      )}
+      ) }
     </div>
   );
 };

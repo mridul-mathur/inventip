@@ -7,7 +7,7 @@ import Aboutus from "./aboutus";
 import Ourmission from "./ourmission";
 import Certified from "../certified";
 import Team from "./team";
-import CursorFollower from "../cursorFollower"; //
+import CursorFollower from "../cursorFollower";
 
 const AboutPage = () => {
   const [cursorProps, setCursorProps] = useState<{ show: boolean; text: string }>({ show: false, text: "" });
@@ -58,8 +58,7 @@ const AboutPage = () => {
       <section id="team">
         <Team />
       </section>
-
-      <CursorFollower size={50} text={cursorProps.text} show={cursorProps.show} />
+      <CursorFollower size={ 50 } text={ cursorProps.text } show={ cursorProps.show } />
     </div>
   );
 };

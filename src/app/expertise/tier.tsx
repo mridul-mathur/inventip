@@ -8,7 +8,7 @@ function tier() {
                 </div>
             </div>
             <div className="min-h-[100%] w-[100%] pr-0 md:pr-[70px] flex flex-col justify-center">
-                <h1 className='text-head mb-5 mt-5 md:mt-0'>India’s Tier 1 Intellectual <br /> Property law firm</h1>
+                <h1 className='text-head mb-5 mt-5 md:mt-0'>India's Tier 1 Intellectual <br /> Property law firm</h1>
                 <div className="flex flex-col mt-10 ">
                     <p className='text-para leading-6'>InventIP is an India based Tier 1 Intellectual Property law firm that provides a wide range of
                         IP services to clients across the globe with primary competencies in preparation, filing, and

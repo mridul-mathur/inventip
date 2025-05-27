@@ -23,15 +23,15 @@
             },
             "numbers": [
                 {
-                    "number": "100+",
+                    "number": 100,
                     "text": "Satisfied Clients"
                 },
                 {
-                    "number": "100+",
+                    "number": 100,
                     "text": "Successful Buisnesses"
                 },
                 {
-                    "number": "10+",
+                    "number": 10,
                     "text": "Years of Experience"
                 }
             ]
@@ -42,37 +42,363 @@
             "cards": [
                 {
                     "name": "Healthcare",
-                    "image": "/images/healthcare.jpg"
+                    "image": "./images/healthcare.jpg"
                 },
                 {
                     "name": "Pharmaceuticals",
-                    "image": "/images/pharmaceuticals.jpg"
+                    "image": "./images/pharmaceuticals.jpg"
                 },
                 {
                     "name": "Agriculture",
-                    "image": "/images/agriculture.jpg"
+                    "image": "./images/agriculture.jpg"
                 },
                 {
                     "name": "Electrical & Electronics",
-                    "image": "/images/electrical-n-electronics.jpg"
+                    "image": "./images/electrical-n-electronics.jpg"
                 },
                 {
                     "name": "Material Science",
-                    "image": "/images/material-science.jpg"
+                    "image": "./images/material-science.jpg"
                 },
                 {
                     "name": "Mobility",
-                    "image": "/images/mobility.jpg"
+                    "image": "./images/mobility.jpg"
                 },
                 {
                     "name": "Oil & Energy",
-                    "image": "/images/oil-n-energy.jpg"
+                    "image": "./images/oil-n-energy.jpg"
                 },
                 {
                     "name": "Textile",
-                    "image": "/images/textile.jpg"
+                    "image": "./images/textile.jpg"
+                }
+            ]
+        },
+        "expertise": {
+            "title": "These are our expertise where we stand for you and with you",
+            "cards": [
+                {
+                    "name": "IP Research",
+                    "description": "Harness IP intelligence and market assessment to unlock strategic insights—fuel innovation, protect assets, and gain a competitive edge with precise, data-driven decisions.",
+                    "image": "/images/ip-research.jpg",
+                    "buttonText": "Explore IP Research",
+                    "link": "/expertise/0"
+                },
+                {
+                    "name": "IP Strategy",
+                    "description": "Transform IP challenges into opportunities—enforce rights, mitigate risks, and sharpen your competitive edge with data-driven strategies.",
+                    "image": "/images/ip-strategy.jpg",
+                    "buttonText": "Discover IP Strategy",
+                    "link": "/expertise/1"
+                },
+                {
+                    "name": "IP Portfolio Management",
+                    "description": "Transform your IP portfolio into a strategic powerhouse that drives innovation, mitigates risks, and unlocks sustainable growth.",
+                    "image": "/images/ip-portfolio-management.jpg",
+                    "buttonText": "Manage IP Portfolio",
+                    "link": "/expertise/2"
+                },
+                {
+                    "name": "Open Innovation",
+                    "description": "Where your ideas meet action—unlocking untapped opportunities and transforming innovation into impactful success.",
+                    "image": "/images/open-innovation.jpg",
+                    "buttonText": "View Open Innovation",
+                    "link": "/expertise/3"
+                }
+            ]
+        },
+        "certifications": {
+            "title": "We are certified best in the industry",
+            "cards": [
+                {
+                    "name": "ISO 9001:2015",
+                    "description": "We are certified best in the industry",
+                    "image": "/images/iso-9001-2015.jpg"
+                },
+                {
+                    "name": "ISO 14001:2015",
+                    "description": "We are certified best in the industry",
+                    "image": "/images/iso-14001-2015.jpg"
+                }
+            ]
+        },
+        "testimonials": {
+            "title": "What TheySay About Us",
+            "cards": [
+                {
+                    "name": "Faiz Ur Rehman",
+                    "quate": "In our search for a law firm with strong technical expertise in patent drafting and prosecution, we discovered InventIP and have been impressed with their work.Over the past two years, InventIP has successfully handled a significant portion of our annual filings and prosecutions.Our in -house attorneys and inventors consistently praise their deep understanding of the technologies involved and the high quality of their patent applications.Notably, the grant rates for patents handled by InventIP,both in India and the US, have been excellent.",
+                    "image": "/images/img.png",
+                    "company": "Head IP and Innovation at Infosys"
+                },
+                {
+                    "name": "Rajiv Trehan",
+                    "quate": "As a fellow startup and partner, I can&#39;t speak highly enough about InventIP.Their commitment to quality and integrity has made them an invaluable asset to our journey.Their supportive approach and unwavering ethical standards make them the perfect partner for any startup looking to thrive.",
+                    "image": "/images/img.png",
+                    "company": "CTO and Founder at Merlin Fit"
+                },
+                {
+                    "name": "Thomas D. Franklin",
+                    "quate": "I have tried several patent drafting firms for patent applications, but the quality is typically very poor.InventIP is an exception.I would put their work quality on par or better with any well- known domestic patent firm.Their staff is articulate and have a natural curiosity that translates into a well - done work product.InventIP is my go - to firm in India.I would put their work quality on par or better with any well - known domestic patent firm.Their staff is articulate and have a natural curiosity that translates into a well - done work product.InventIP is my go - to firm in India.",
+                    "image": "/images/img.png",
+                    "company": "Founder Triangle IP (US)"
+                },
+                {
+                    "name": "Mohammed Faisal",
+                    "quate": "I have had the pleasure of working with InventIP on multiple projects, and I must say that their commitment to delivering high- quality results within the stipulated timeframe is unparalleled.It &#39;s rare to find a company that excels in both aspects.",
+                    "image": "/images/img.png",
+                    "company": "GM and Head IP at Tata Motors"
+                },
+                {
+                    "name": "Chetan Kumar Chenappa",
+                    "quate": "I was recommended of InventIP through a professional connect.Our IP portfolio was spread across multiple law firms and service providers, and we needed one- stop solution provider.We are happy that we went along with them.The handover was efficient and smooth.The global filings and renewal management has become fuss free.Their work quality is great.They take ownership and ensure timely delivery to every task assigned to them.They have also helped us with technology insights to build our portfolio.I would highly recommend them to anyone who could use their services.",
+                    "image": "/images/img.png",
+                    "company": "Chief Patent Counsel at HCL Technologies"
+                },
+                {
+                    "name": "Dhruv Sud",
+                    "quate": "Over the course of our collaboration for the last several years, the InventIP team has proven to be an invaluable partner in securing and safeguarding our intellectualproperty, particularly in the complex and evolving domain of machine learning inhealthcare.Their team of seasoned professionals consistently demonstrates aprofound understanding of patent applications and legal intricacies. As leaders, whatsets Ankush and Rahul apart is not only their expertise but also their unwaveringdedication to our success.They provide strategic guidance, ensuring that our patentsalign with our business objectives, and their efficiency and responsiveness havebeen instrumental in meeting critical deadlines.InventIP maintains transparentcommunication throughout the entire process, keeping us informed about progressand potential challenges.",
+                    "image": "/images/img.png",
+                    "company": "CTO at Cloud physician"
                 }
             ]
         }
-    }
+    },
+    "About": {
+        "hero": {
+            "title": "InventIP: Today's Lab, Tomorrow's Landscape",
+            "image": "/images/about-hero.jpg"
+        },
+        "about": {
+            "title": "About Us",
+            "text": "InventIP is at the forefront of intellectual property intelligence and innovation strategy, empowering businesses to unlock the full potential of their ideas through advanced patent analytics and technology insights. We specialize in transforming complex IP data into actionable strategies, offering deep-dive patent searches, competitive landscape analysis, and whitespace mapping to identify untapped opportunities and emerging trends. Our expertise lies in decoding market dynamics, forecasting technological shifts, and aligning R&D efforts with commercial goals—turning raw data into a roadmap for growth. | Backed by a multidisciplinary team of technical analysts and industry experts, we deliver precision and depth in every project. From optimizing IP portfolios to scouting disruptive innovations, our methodologies bridge the gap between research and real- world impact. We combine cutting-edge tools with domain-specific knowledge to help you navigate fast-evolving tech ecosystems, mitigate risks, and capitalize on high- value breakthroughs. | At InventIP, we don't just analyze patents—we architect innovation pathways. Partner with us to transform intellectual assets into strategic advantages, backed by insights that drive smarter decisions, foster collaboration, and position your business at the forefront of tomorrow's breakthroughs.",
+            "image": "/images/about-image.jpg"
+        },
+        "mission": {
+            "title": "Your success our mission",
+            "text1": "At InventIP, your success is at the heart of everything we do. We are committed to delivering high-quality work products and services that our clients truly value. By partnering closely with you, we simplify the complexities of intellectual property management, offering swift and effective resolutions to your challenges. We embrace calculated risks and foster mutual collaboration to achieve excellence in both our search and analytics roles.",
+            "text2": "Transparency and open communication are our priorities, ensuring you are always informed and supported throughout the process. Our technology-driven approach to IP management sets us apart, enabling us to deliver higher returns and implementable solutions tailored to your needs. With deep expertise and an unwavering pursuit of perfection, we strive to turn your challenges into opportunities for success.",
+            "image": "/images/mission-image.jpg"
+        },
+        "our-team": {
+            "title": "Meet the people | behind inventIP",
+            "cards": [
+                {}
+            ]
+        }
+    },
+    "expertise": [
+        {
+            "title": "IP Research",
+            "intro": "Harness IP intelligence and market assessment to unlock strategic insights—fuel innovation, protect assets, and gain a competitive edge with precise, data-driven decisions.",
+            "details": "We help businesses navigate the complex IP landscape with data-driven intelligence. Our approach goes beyond identifying patentable inventions—we streamline costs, mitigate risks, and unlock monetization opportunities.",
+            "services": [
+                {
+                    "name": "Novelty & Patentability Search",
+                    "description": "Ensure your innovation stands strong before filing by thoroughly identifying existing patents and prior art. This service provides the clarity and confidence needed to move forward with your patent application."
+                },
+                {
+                    "name": "Invalidity & Validity Studies",
+                    "description": "Strengthen IP protection and mitigate litigation risks through comprehensive analysis of existing patents and prior art. Receive clear, actionable insights to support legal and business strategies."
+                },
+                {
+                    "name": "State of the Art & Technology Landscape Studies",
+                    "description": "Gain a 360-degree view of emerging trends, technologies, and key players in your field. These studies deliver actionable insights to inform R&D, innovation, and strategic decisions."
+                },
+                {
+                    "name": "Trademark & Design Search",
+                    "description": "Safeguard your brand and product designs with thorough searches that identify existing trademarks and designs, helping you avoid conflicts and secure your intellectual property with confidence."
+                },
+                {
+                    "name": "IP/Product Watch",
+                    "description": "Stay ahead of competitors by monitoring industry activity, tracking new patents, products, and market developments relevant to your business. Receive timely insights to support strategic decision-making and innovation."
+                }
+            ],
+            "faq": [
+                {
+                    "question": "What is a Patentability Search, and why is it essential for my innovation?",
+                    "answer": "A Patentability Search helps evaluate whether your innovation is novel and non-obvious by reviewing existing patents and technical literature. Conducting this search early ensures that your invention has the potential for patent protection and reduces the risk of costly rejections later in the process."
+                },
+                {
+                    "question": "Who should perform a Patentability Search?",
+                    "answer": "Inventors, businesses, and legal teams should conduct a Patentability Search to better understand the competitive landscape and determine if pursuing a patent is worthwhile. This search gives a clearer picture of whether your idea stands out in its field."
+                },
+                {
+                    "question": "How does a Patent Landscape study benefit my business?",
+                    "answer": "A Patent Landscape study offers a comprehensive view of existing technologies, market trends, and key players in your field. It enables you to identify opportunities for innovation, stay ahead of competitors, and make informed decisions regarding your own IP strategy."
+                },
+                {
+                    "question": "Why is an Invalidity Study important for my business?",
+                    "answer": "An Invalidity Study examines existing patents to identify weaknesses in a competitor’s patent. If you’re involved in a patent dispute or seeking to protect your own IP, this study can help you challenge the validity of opposing patents and defend your own assets effectively."
+                },
+                {
+                    "question": "Why should I conduct a Trademark and Design Search?",
+                    "answer": "A Trademark and Design Search ensures that your brand name, logo, or product design is unique and does not infringe on existing intellectual property. This search minimizes the risk of legal conflicts and ensures your brand is protected from potential challenges."
+                },
+                {
+                    "question": "What is an IP/Product Watch, and how can it help my business?",
+                    "answer": "An IP/Product Watch continuously monitors new patent filings, trademarks, product launches, and market developments. This service helps you stay informed about competitor activities and emerging trends, allowing you to make timely strategic decisions and protect your innovations."
+                },
+                {
+                    "question": "How often should I perform an IP/Product Watch?",
+                    "answer": "The frequency of an IP/Product Watch depends on your industry and business needs. For fast-evolving sectors, continuous monitoring is ideal, while periodic checks may be sufficient for industries with slower changes. We can tailor the frequency to ensure you stay informed without unnecessary disruption."
+                },
+                {
+                    "question": "What is a State-of-the-Art Search, and how does it benefit my innovation process?",
+                    "answer": "A State-of-the-Art Search reviews the latest technologies and trends in your field. This helps you stay up to date with current advancements, ensuring that your innovations are aligned with industry standards and identifying areas for further development."
+                }
+            ]
+        },
+        {
+            "title": "IP Strategy",
+            "intro": "Transform IP challenges into opportunities—enforce rights, mitigate risks, and sharpen your competitive edge with data-driven strategies.",
+            "details": "A strong IP strategy is more than just protection—it’s about staying ahead, mitigating risks, and unlocking commercial opportunities. We provide businesses with the intelligence needed to enforce their rights, navigate legal complexities, and make informed strategic decisions.",
+            "services": [
+                {
+                    "name": "Infringement Search",
+                    "description": "Identify potential patent violations early to safeguard your innovations and maintain market exclusivity. Thorough analyses detect possible risks, enabling informed business decisions and effective protection of intellectual property rights."
+                },
+                {
+                    "name": "Evidence of Use Study",
+                    "description": "Receive well-documented, proof-backed insights to support legal and licensing strategies. By mapping patent claims to real-world products or processes, this service enhances negotiation power and supports confident decision-making."
+                },
+                {
+                    "name": "Competitive Intelligence Study",
+                    "description": "Gain a comprehensive understanding of competitor strategies, emerging technologies, and market trends. Actionable insights help refine IP positioning and support informed decisions for business growth."
+                }
+            ],
+            "faq": [
+                {
+                    "question": "What is an Infringement Search, and how does it help my business?",
+                    "answer": "An Infringement Search identifies whether your IP rights are being violated by competitors or other entities. It helps protect your intellectual property by providing insight into potential infringements, allowing you to take proactive steps to enforce your rights and safeguard your assets."
+                },
+                {
+                    "question": "Why should I conduct an Evidence of Use Study?",
+                    "answer": "An Evidence of Use Study gathers data to demonstrate that a competitor’s product or technology infringes on your patent. This study is essential for building a strong case in the event of an infringement dispute or licensing negotiation, ensuring you have the necessary proof to defend or assert your patent rights."
+                },
+                {
+                    "question": "How does a Competitive Intelligence Study benefit my IP strategy?",
+                    "answer": "A Competitive Intelligence Study provides a detailed analysis of your competitors’ patents, products, and strategies. By understanding their strengths, weaknesses, and innovation trajectories, you can make more informed decisions about your own IP portfolio, identify potential threats, and seize new opportunities in the market."
+                },
+                {
+                    "question": "Who should perform these IP strategy services?",
+                    "answer": "Businesses, IP managers, and legal teams should consider conducting these IP strategy services to protect their innovations, enhance their IP portfolios, and gain a competitive edge. Whether you're dealing with potential infringement, looking to defend your IP, or analyzing the competitive landscape, these services offer valuable insights for making informed decisions."
+                },
+                {
+                    "question": "How can an Infringement Search help in potential legal disputes?",
+                    "answer": "An Infringement Search helps identify whether your IP rights are being violated before you take legal action. It provides early warning signs, enabling you to take preventive steps or initiate discussions with infringers, potentially avoiding costly and lengthy legal proceedings."
+                },
+                {
+                    "question": "How do the results from a Competitive Intelligence Study inform my IP portfolio management?",
+                    "answer": "The findings from a Competitive Intelligence Study allow you to refine your IP portfolio by identifying areas where your competitors are innovating and highlighting gaps in your own portfolio. This strategic insight helps you decide where to focus your development efforts, making sure your IP portfolio is aligned with market needs and trends."
+                },
+                {
+                    "question": "How often should these IP strategy services be performed?",
+                    "answer": "The frequency depends on your business needs and the pace of innovation in your industry. Regular updates are recommended, especially in fast-evolving sectors, to ensure that your IP strategy remains relevant and proactive. Services like the Competitive Intelligence Study may benefit from quarterly or annual reviews, while Infringement Searches and Evidence of Use Studies may be performed as needed based on potential risks or disputes."
+                },
+                {
+                    "question": "Can these services support my licensing or partnership negotiations?",
+                    "answer": "Yes, these services are instrumental in licensing or partnership negotiations. An Evidence of Use Study, for example, can provide strong evidence to support licensing discussions, while a Competitive Intelligence Study helps you understand how your IP fits within the broader market, ensuring you're positioned well for strategic deals."
+                }
+            ]
+        },
+        {
+            "title": "IP Portfolio Management",
+            "intro": "Transform your IP portfolio into a strategic powerhouse that drives innovation, mitigates risks, and unlocks sustainable growth.",
+            "details": "A well-structured IP portfolio is more than just a collection of patents—it’s a strategic asset that drives innovation, mitigates risks, and maximizes business value. We help businesses assess, optimize, and manage their intellectual property to ensure alignment with commercial objectives and long-term growth.",
+            "services": [
+                {
+                    "name": "IP Due Diligence & Audits",
+                    "description": "Uncover the true potential of your IP assets through comprehensive evaluations of agreements, licensing, and portfolio strength. Identify risks and opportunities to ensure your intellectual property supports your strategic goals with confidence."
+                },
+                {
+                    "name": "Freedom to Operate (FTO) Studies",
+                    "description": "Identify potential patent roadblocks and ensure a clear commercialization pathway before market entry. Analysis of existing patents and legal risks enables confident product launches while minimizing infringement concerns."
+                },
+                {
+                    "name": "Clearance Searches",
+                    "description": "Assess risks early to avoid costly legal disputes and strengthen go-to-market strategies. Potential patent infringements are identified, supporting product launches with greater confidence and legal clarity."
+                },
+                {
+                    "name": "Portfolio Analysis & Optimization",
+                    "description": "Pinpoint high-value patents, eliminate weak assets, and refine IP strategies for maximum return on investment. Receive clear, actionable insights to strengthen your portfolio and align it with business goals."
+                },
+                {
+                    "name": "IP Watch & Competitive Monitoring",
+                    "description": "Stay ahead by continuously tracking new patent filings, emerging competitors, and industry trends. This proactive approach delivers timely insights for strategic decision-making and maintaining a competitive edge."
+                }
+            ],
+            "faq": [
+                {
+                    "question": "What is IP Due Diligence, and when should I perform it?",
+                    "answer": "IP Due Diligence involves a comprehensive review of your intellectual property assets to assess their value, ownership, and legal standing. It is especially critical during mergers, acquisitions, partnerships, or investment rounds to ensure that IP assets are accurately represented and aligned with business strategy."
+                },
+                {
+                    "question": "How does a Freedom to Operate (FTO) Study help my product development?",
+                    "answer": "An FTO Study analyzes existing patents to identify potential infringement risks before launching a new product. It ensures that your innovations can be commercialized without violating third-party IP rights, reducing legal exposure and costly litigation."
+                },
+                {
+                    "question": "What is the difference between a Clearance Search and a Patentability Search?",
+                    "answer": "A Patentability Search evaluates whether your idea is novel and eligible for patent protection, while a Clearance Search determines whether your product infringes on existing patents. Both are essential at different stages—Patentability during innovation, and Clearance before market entry."
+                },
+                {
+                    "question": "How can Portfolio Analysis & Optimization add value to my business?",
+                    "answer": "This service helps identify underutilized or obsolete patents, optimize maintenance costs, and focus on high-value assets. It ensures your IP investments are strategically aligned with business goals and deliver maximum ROI."
+                },
+                {
+                    "question": "Why is ongoing IP Watch and Competitive Monitoring important?",
+                    "answer": "Continuous monitoring of patent activity and market trends allows you to anticipate threats, track competitor innovations, and identify opportunities early. This proactive approach ensures your business remains agile, informed, and competitive."
+                },
+                {
+                    "question": "How often should I conduct IP Audits or Portfolio Reviews?",
+                    "answer": "IP Audits and Portfolio Reviews should be conducted regularly—ideally annually or during major strategic events such as funding rounds, M&A, or new product launches. These reviews help ensure your IP remains aligned with your evolving business strategy."
+                }
+            ]
+        },
+        {
+            "title": "Open Innovation",
+            "intro": "Accelerate breakthroughs with strategic IP insights—bridge internal R&D with external ecosystems to drive open innovation.",
+            "details": "We help businesses embrace open innovation by identifying white spaces, collaboration opportunities, and IP co-development strategies. Leverage our data-driven insights to co-create solutions, identify partners, and generate value beyond organizational boundaries.",
+            "services": [
+                {
+                    "name": "White Space Analysis",
+                    "description": "Discover untapped innovation zones by analyzing existing IP landscapes. Identify areas with little or no patent activity where your business can explore new product development, partnerships, or IP investments."
+                },
+                {
+                    "name": "Partner & Licensing Opportunity Identification",
+                    "description": "Find the right collaborators, licensees, or licensors for your technology. We help match your innovation capabilities with external opportunities to accelerate time to market and maximize the value of your IP assets."
+                },
+                {
+                    "name": "IP Co-Development & Collaboration Strategy",
+                    "description": "Design frameworks for collaborative innovation and joint IP creation. Navigate legal, strategic, and operational complexities to build successful partnerships and shared IP ownership models."
+                }
+            ],
+            "faq": [
+                {
+                    "question": "What is White Space Analysis, and how does it fuel innovation?",
+                    "answer": "White Space Analysis identifies areas with minimal patent activity where innovation opportunities exist. It enables businesses to develop new products or technologies in less crowded domains, minimizing competitive overlap and enhancing the potential for unique value creation."
+                },
+                {
+                    "question": "How can I identify the right partners for IP licensing or collaboration?",
+                    "answer": "We assess technical compatibility, IP strengths, and strategic fit to recommend ideal partners for licensing or joint development. This targeted approach ensures that partnerships are aligned with your innovation goals and market opportunities."
+                },
+                {
+                    "question": "Why is an IP Collaboration Strategy important in Open Innovation?",
+                    "answer": "An effective IP Collaboration Strategy helps structure legal and operational frameworks for co-creating intellectual property. It mitigates risks related to ownership, revenue sharing, and confidentiality while fostering innovation across organizational boundaries."
+                },
+                {
+                    "question": "Who benefits from Open Innovation services?",
+                    "answer": "Startups, large enterprises, academic institutions, and R&D organizations benefit from Open Innovation services. Whether you're seeking partners, exploring new markets, or aiming to co-develop technologies, these services help maximize value from external collaboration."
+                },
+                {
+                    "question": "How does licensing opportunity identification support IP monetization?",
+                    "answer": "By identifying companies interested in your technology, we help you monetize underutilized IP assets through licensing deals. This approach generates new revenue streams, expands market reach, and enhances ROI on R&D investments."
+                },
+                {
+                    "question": "What are the risks involved in co-developing IP, and how are they managed?",
+                    "answer": "Co-development poses challenges like IP ownership disputes and confidentiality issues. We help you mitigate these risks through well-defined agreements, clear roles, and robust legal frameworks that govern joint innovation and IP rights."
+                }
+            ]
+        }
+    ]
 }

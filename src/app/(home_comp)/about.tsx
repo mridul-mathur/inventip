@@ -1,55 +1,63 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Buttons from "../buttons";
-import { useRouter } from "next/router";
+import TextFormatter from "@/components/text-format";
+
+interface AboutContent {
+  title: string;
+  text: string;
+  cta: {
+    text: string;
+    link: string;
+  };
+  numbers: Array<{
+    number: number;
+    text: string;
+  }>;
+}
 
 const HomeAbout = () => {
+  const [content, setContent] = useState<AboutContent | null>(null);
+
+  useEffect(() => {
+    fetch('/content/content.json')
+      .then(response => response.json())
+      .then(data => setContent(data.Home.about))
+      .catch(error => console.error('Error fetching content:', error));
+  }, []);
+
   return (
     <main className="z-[2] bg-primary w-screen h-fit min-h-screen flex flex-col justify-between items-center gap-16 p-4 sm:p-[8rem]">
-      <AboutInfo />
+      <div className="w-full h-fit flex flex-col sm:flex-row justify-center items-start gap-4 sm:gap-[8rem]">
+        <div className="w-full sm:w-2/5 h-full flex flex-col justify-between gap-[2rem] items-start">
+          <p className="text-head">{ content?.title }</p>
+          <Buttons
+            color="dark"
+            arrow
+            underline
+            onClick={ () => (window.location.href = "/about") }
+          >
+            Know About Us
+          </Buttons>
+        </div>
+        <div className="w-full sm:w-3/5 h-fit flex flex-col justify-between items-start gap-[4rem]">
+          <p><TextFormatter text={ content?.text || '' } /></p>
+          <div className="flex w-full justify-start items-center gap-16">
+            { content?.numbers.map((number, index) => (
+              <div className="" key={ index }>
+                <Numb numb={ number.number } text={ number.text } />
+              </div>
+            )) }
+          </div>
+        </div>
+      </div>
       <BentoGrid />
     </main>
   );
 };
 
 export default HomeAbout;
-
-const AboutInfo = () => {
-  const numbers = [
-    { numb: 150, text: "Number of Clients" },
-    { numb: 10, text: "Years of Experience" },
-  ];
-  const aboutdesc =
-    "InventIP is a premier consulting firm specializing in patent analytics and open - innovation services.We empower forward - thinking businesses totransform complex IP data into strategic advantages, guided by our ethos: Converge.Disrupt.Outpace. InventIP doesn't just analyze patents—we turn them into momentum. Converge with possibilities.Disrupt the status quo.Outpace what’s next.";
-  const slogan = "Converge. Disrupt. Outpace";
-
-  return (
-    <div className="w-full h-fit flex flex-col sm:flex-row justify-center items-start gap-4 sm:gap-[8rem]">
-      <div className="w-full sm:w-2/5 h-full flex flex-col justify-between gap-[2rem] items-start">
-        <p className="text-head">{ slogan }</p>
-        <Buttons
-          color="dark"
-          arrow
-          underline
-          onClick={ () => (window.location.href = "/about") }
-        >
-          Know About Us
-        </Buttons>
-      </div>
-      <div className="w-full sm:w-3/5 h-fit flex flex-col justify-between items-start gap-[4rem]">
-        <p>{ aboutdesc }</p>
-        <div className="flex w-full justify-start items-center gap-16">
-          { numbers.map((num, index) => (
-            <div className="" key={ index }>
-              <Numb numb={ num.numb } text={ num.text } />
-            </div>
-          )) }
-        </div>
-      </div>
-    </div>
-  );
-};
 
 interface NumbProps {
   numb: number;

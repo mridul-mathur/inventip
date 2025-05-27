@@ -1,13 +1,29 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { MdMarkEmailUnread } from "react-icons/md";
 import { IoLogoLinkedin } from "react-icons/io5";
+import TextFormatter from "@/components/text-format";
+
+interface AboutTeamContent {
+  title: string,
+  cards: [
+    {}
+  ]
+}
 
 function team() {
+  const [content, setContent] = useState<AboutTeamContent | null>(null);
+
+  useEffect(() => {
+    fetch('/content/content.json')
+      .then(response => response.json())
+      .then(data => setContent(data.About.about))
+      .catch(error => console.error('Error fetching content:', error));
+  }, []);
   return (
     <main className="h-[100%] w-full p-4 sm:p-16">
       <div className="w-full">
         <h1 className="text-head">
-          Meet the people <br /> behind inventIP
+          <TextFormatter text={ content?.title || '' } />
         </h1>
       </div>
       <div className="w-full flex flex-wrap mt-[50px] gap-10 ">
@@ -65,16 +81,16 @@ const Team = () => {
 
   return (
     <>
-      {teamData.map((item, index) => (
+      { teamData.map((item, index) => (
         <TeamCade
-          key={index}
-          name={item.name}
-          role={item.role}
-          image={item.image}
-          linkedin={item.linkedin}
-          mail={item.mail}
+          key={ index }
+          name={ item.name }
+          role={ item.role }
+          image={ item.image }
+          linkedin={ item.linkedin }
+          mail={ item.mail }
         />
-      ))}
+      )) }
     </>
   );
 };
@@ -97,11 +113,11 @@ const TeamCade: React.FC<TeamCardProps> = ({
   return (
     <>
       <div className="card border h-[33rem] sm:h-[37rem] w-[410px] rounded-3xl relative overflow-hidden group">
-        <img src={image} alt="" className="h-[100%] w-full" />
+        <img src={ image } alt="" className="h-[100%] w-full" />
         <div className="h-[16%] w-full border absolute bottom-0 rounded-xl backdrop-blur-[2px] flex shadow-inner">
           <div className="name h-[100%] w-[100%] text-primary flex flex-col justify-evenly p-4">
-            <h1 className="text-2xl font-bold">{name}</h1>
-            <p className="font-thin text-sm">{role}</p>
+            <h1 className="text-2xl font-bold">{ name }</h1>
+            <p className="font-thin text-sm">{ role }</p>
           </div>
           <div className="link h-[100%] w-[70%] flex gap-2 items-center">
             <div className="ixon-box h-[50%] w-[30%] overflow-hidden border opacity-0 transition-opacity duration-1000 group-hover:opacity-100 rounded-md flex items-center justify-center">

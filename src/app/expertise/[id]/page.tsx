@@ -8,12 +8,44 @@ import Faq from "../faq";
 import WhatTheySay from "../../(home_comp)/whattheysay";
 import CursorFollower from "../../cursorFollower";
 import { useParams } from "next/navigation";
-import expertiseContent from "../content.json";
+
+interface ExpertiseContent {
+  title: string;
+  intro: string;
+  details: string;
+  services: [{
+    name: string;
+    description: string;
+  }];
+  faq: [{
+    question: string;
+    answer: string;
+  }]
+}
 
 const Page = () => {
   const { id } = useParams();
   const expertiseId = typeof id === 'string' ? parseInt(id) : 0;
-  const content = expertiseContent.expertise[expertiseId];
+  const [content, setContent] = useState<ExpertiseContent | null>(null);
+
+  useEffect(() => {
+    fetch('/content/content.json')
+      .then(response => response.json())
+      .then(data => {
+
+        const expertiseArray = data.expertise;
+        if (expertiseArray && expertiseArray[expertiseId]) {
+          setContent(expertiseArray[expertiseId]);
+        } else {
+          setContent(null);
+        }
+      })
+      .catch(error => {
+        console.error('Error fetching content:', error);
+        setContent(null);
+      });
+  }, [expertiseId]);
+
   const [cursorProps, setCursorProps] = useState<{
     show: boolean;
     text: string;
@@ -60,7 +92,7 @@ const Page = () => {
   return (
     <main className="flex flex-col justify-center items-center w-full px-16 relative">
       <section id="hero">
-        <Hero title={content.title} introLine={content.introLine} detailed={content.detailed} services={content.services} conclusion={content.conclusion} />
+        <Hero title={ content?.title || '' } intro={ content?.intro || '' } />
       </section>
       <section id="tier">
         <Tier />
@@ -69,16 +101,16 @@ const Page = () => {
         <Inovation />
       </section>
       <section id="faq">
-        <Faq faqs={content.faqs} />
+        <Faq faqs={ content?.faq || [] } />
       </section>
       <section id="whattheysay">
         <WhatTheySay />
       </section>
 
       <CursorFollower
-        size={50}
-        text={cursorProps.text}
-        show={cursorProps.show}
+        size={ 50 }
+        text={ cursorProps.text }
+        show={ cursorProps.show }
       />
     </main>
   );

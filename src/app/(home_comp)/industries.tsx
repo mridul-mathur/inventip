@@ -1,7 +1,8 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import TextFormatter from "@/components/text-format";
 
 interface IndustryCardProps {
   name: string;
@@ -16,26 +17,26 @@ const IndustryCard = ({ name, image }: IndustryCardProps) => (
     />
     <div className="bg-secondary h-fit bg-clip-padding backdrop-filter backdrop-blur-2xl bg-opacity-30 absolute w-full flex justify-center items-center text-white text-subhead font-semibold py-2 transition-opacity duration-500 group-hover:opacity-90">
       <div className="group-hover:bg-gradient-to-r group-hover:from-accent1 group-hover:to-accent2 group-hover:text-transparent group-hover:bg-clip-text duration-500">
-        { name }
+        <TextFormatter text={ name } />
       </div>
     </div>
   </div>
 );
 
+interface IndustryContent {
+  subhead: string,
+  title: string,
+  cards: [IndustryCardProps]
+}
 const Industries = () => {
-  const industries = [
-    { name: "Healthcare", image: "/images/healthcare.jpg" },
-    { name: "Pharmaceuticals", image: "/images/pharmaceuticals.jpg" },
-    { name: "Agriculture", image: "/images/agriculture.jpg" },
-    // { name: "Cosmetics", image: "/images/cosmetics.jpg" },
-    { name: "Electrical & Electronics", image: "/images/electrical-n-electronics.jpg" },
-    { name: "Material Science", image: "/images/material-science.jpg" },
-    { name: "Mobility", image: "/images/mobility.jpg" },
-    { name: "Oil & Energy", image: "/images/oil-n-energy.jpg" },
-    // { name: "Semiconductors", image: "/images/semiconductors.jpg" },
-    { name: "Textile", image: "/images/textile.jpg" },
+  const [content, setContent] = useState<IndustryContent | null>(null);
 
-  ];
+  useEffect(() => {
+    fetch('/content/content.json')
+      .then(response => response.json())
+      .then(data => setContent(data.Home.industries))
+      .catch(error => console.error('Error fetching content:', error));
+  }, []);
 
   return (
     <motion.main
@@ -43,9 +44,9 @@ const Industries = () => {
       className="z-[2] bg-primary h-fit min-h-screen w-screen flex justify-center items-center py-16"
     >
       <div className="grid grid-cols-3 gap-4 w-full h-full min-h-screen p-4 justify-center items-center">
-        { industries.map(
+        { content?.cards && content?.cards.map(
           (industry, index) =>
-            index < Math.floor(industries.length / 2) && (
+            index < Math.floor(content.cards.length / 2) && (
               <IndustryCard
                 key={ index }
                 name={ industry.name }
@@ -60,9 +61,9 @@ const Industries = () => {
           </div>
         </div>
 
-        { industries.map(
+        { content?.cards && content?.cards.map(
           (industry, index) =>
-            index >= Math.floor(industries.length / 2) && (
+            index >= Math.floor(content?.cards.length / 2) && (
               <IndustryCard
                 key={ index }
                 name={ industry.name }
