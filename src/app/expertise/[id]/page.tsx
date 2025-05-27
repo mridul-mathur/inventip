@@ -12,11 +12,17 @@ import { useParams } from "next/navigation";
 interface ExpertiseContent {
   title: string;
   intro: string;
-  details: string;
-  services: [{
-    name: string;
-    description: string;
-  }];
+  details: {
+    title: string;
+    content: string;
+  }
+  services: {
+    title: string;
+    cards: {
+      name: string;
+      description: string;
+    }[];
+  };
   faq: [{
     question: string;
     answer: string;
@@ -95,10 +101,19 @@ const Page = () => {
         <Hero title={ content?.title || '' } intro={ content?.intro || '' } />
       </section>
       <section id="tier">
-        <Tier />
+        <Tier title={ content.details.title } para={ content.details.content } />
       </section>
       <section id="inovation">
-        <Inovation />
+        { content && (
+          <Inovation
+            title={ content.services.title }
+            cards={ content.services.cards.map((service, idx) => ({
+              name: service.name,
+              description: service.description,
+              image: '/images/default.jpg',
+            })) }
+          />
+        ) }
       </section>
       <section id="faq">
         <Faq faqs={ content?.faq || [] } />

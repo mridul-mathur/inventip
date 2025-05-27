@@ -6,25 +6,18 @@ import Buttons from "../buttons";
 import Link from "next/link";
 import TextFormatter from "@/components/text-format";
 
-interface ExpertiseContent {
+export interface ExpertiseContent {
   title: string;
-  cards: [{
+  cards: {
     name: string;
     description: string;
     image: string;
-    buttonText: string,
-    link: string
-  }]
+    buttonText?: string;
+    link?: string;
+  }[];
 }
-const Inovation: React.FC = () => {
-  const [content, setContent] = useState<ExpertiseContent | null>(null);
+const Inovation: React.FC<ExpertiseContent> = ({ title, cards }) => {
 
-  useEffect(() => {
-    fetch('/content/content.json')
-      .then(response => response.json())
-      .then(data => setContent(data.Home.expertise))
-      .catch(error => console.error('Error fetching content:', error));
-  }, []);
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [scrollDirection, setScrollDirection] = useState<"up" | "down">("down");
@@ -96,7 +89,7 @@ const Inovation: React.FC = () => {
             animate={ { opacity: 1 } }
             transition={ { duration: 0.6 } }
           >
-            <TextFormatter text={ content?.title || '' } />
+            <TextFormatter text={ title || '' } />
           </motion.h1>
           <div className="w-fit h-fit overflow-hidden">
             <AnimatePresence mode="wait">
@@ -110,15 +103,15 @@ const Inovation: React.FC = () => {
                 transition={ { duration: 0.75, delay: 0.2 } }
               >
                 <motion.h2 className="text-2xl font-semibold mb-4">
-                  <TextFormatter text={ content?.cards[currentIndex].name || '' } />
+                  <TextFormatter text={ cards[currentIndex]?.name || '' } />
                 </motion.h2>
                 <motion.p className="mb-4 w-[22rem]">
-                  <TextFormatter text={ content?.cards[currentIndex].description || '' } />
+                  <TextFormatter text={ cards[currentIndex]?.description || '' } />
                 </motion.p>
-                { content?.cards[currentIndex].link && (
-                  <Link href={ content?.cards[currentIndex].link }>
+                { cards[currentIndex]?.link && (
+                  <Link href={ cards[currentIndex].link }>
                     <Buttons color="dark" arrow={ true } underline={ true }>
-                      <TextFormatter text={ content?.cards[currentIndex].buttonText || '' } />
+                      <TextFormatter text={ cards[currentIndex].buttonText || '' } />
                     </Buttons>
                   </Link>
                 ) }
@@ -140,7 +133,7 @@ const Inovation: React.FC = () => {
                 transition={ { duration: 0.75 } }
               >
                 <img
-                  src={ content?.cards[currentIndex].image }
+                  src={ cards[currentIndex]?.image }
                   alt={ `Slide ${ currentIndex }` }
                   className="w-full h-full object-cover"
                 />
@@ -151,7 +144,7 @@ const Inovation: React.FC = () => {
       </div>
       <AnimatePresence mode="sync">
         <div>
-          { content?.cards.map((_, index) => (
+          { cards.map((_, index) => (
             <div key={ index } className="slide-section h-screen"></div>
           )) }
         </div>

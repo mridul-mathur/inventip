@@ -14,7 +14,7 @@ function ourmission() {
     useEffect(() => {
         fetch('/content/content.json')
             .then(response => response.json())
-            .then(data => setContent(data.About.about))
+            .then(data => setContent(data.About.mission))
             .catch(error => console.error('Error fetching content:', error));
     }, []);
     return (

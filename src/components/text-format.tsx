@@ -61,9 +61,8 @@ const TextFormatter: React.FC<TextFormatterProps> = ({ text }) => {
             paraNodes.push(...parseHTMLTags(para.slice(lastIndex)));
         }
         nodes.push(...paraNodes);
-        // Add two <br/> after each paragraph except the last
         if (idx < paragraphs.length - 1) {
-            nodes.push(<br key={ `br1-${ idx }` } />, <br key={ `br2-${ idx }` } />);
+            nodes.push(<br key={ `br1-${ idx }` } />);
         }
     });
     return <>{ nodes }</>;
