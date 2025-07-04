@@ -47,7 +47,7 @@ const Insights = () => {
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    fetch(`${ process.env.NEXT_PUBLIC_API_URL }/api/getdata/blogs`)
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/getdata/blogs`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch blogs");
@@ -63,7 +63,7 @@ const Insights = () => {
         setBlogsLoading(false);
       });
 
-    fetch(`${ process.env.NEXT_PUBLIC_API_URL }/api/getdata/tags`)
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/getdata/tags`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch tags");
@@ -82,7 +82,7 @@ const Insights = () => {
         setTagsError(error);
         setTagsLoading(false);
       });
-    fetch(`${ process.env.NEXT_PUBLIC_API_URL }/api/getdata/categories`)
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/getdata/categories`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch categories");
@@ -172,9 +172,9 @@ const Insights = () => {
             the top blogs for this category, the latest industry news from us.
           </p>
         </div>
-        { featuredBlog && (
+        {featuredBlog && (
           <Link
-            href={ `insights/${ blogs[blogs.length - 1]._id }` }
+            href={`insights/${blogs[blogs.length - 1]._id}`}
             className="w-full"
           >
             <div className="rounded-3xl overflow-hidden w-full h-[32rem] relative flex justify-start items-end">
@@ -182,18 +182,18 @@ const Insights = () => {
                 NEW
               </div>
               <img
-                src={ featuredBlog.title_image }
-                alt={ featuredBlog.title }
+                src={featuredBlog.title_image}
+                alt={featuredBlog.title}
                 className="w-full h-full object-cover"
               />
               <div className="flex justify-between items-center bg-primary/10 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-10 absolute w-full p-4 px-8 gap-3 text-primary">
                 <div className="flex flex-col w-3/4 gap-4">
                   <h2 className="text-subhead text-left">
-                    { featuredBlog.title }
+                    {featuredBlog.title}
                   </h2>
-                  <p className="text-paramin text-left">{ featuredBlog.brief }</p>
+                  <p className="text-paramin text-left">{featuredBlog.brief}</p>
                 </div>
-                <Link href={ `insights/${ featuredBlog._id }` }>
+                <Link href={`insights/${featuredBlog._id}`}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="64"
@@ -207,7 +207,7 @@ const Insights = () => {
               </div>
             </div>
           </Link>
-        ) }
+        )}
       </div>
       <div className="w-full flex flex-col gap-16 py-12">
         <div className="flex w-full justify-between items-center gap-8">
@@ -215,12 +215,12 @@ const Insights = () => {
             Here are some more blogs from us
           </h1>
           <div className="flex gap-4">
-            <div className="relative min-w-48" ref={ dropdownRef }>
+            <div className="relative min-w-48" ref={dropdownRef}>
               <div
                 className="flex items-center justify-between px-4 py-2 bg-primary border rounded-lg border-secondary cursor-pointer"
-                onClick={ () => setIsDropdownOpen(!isDropdownOpen) }
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
               >
-                <span className="text-secondary">{ selectedCategory }</span>
+                <span className="text-secondary">{selectedCategory}</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -231,44 +231,47 @@ const Insights = () => {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className={ `transition-transform duration-200 ${ isDropdownOpen ? "rotate-180" : ""
-                    }` }
+                  className={`transition-transform duration-200 ${
+                    isDropdownOpen ? "rotate-180" : ""
+                  }`}
                 >
                   <polyline points="6 9 12 15 18 9"></polyline>
                 </svg>
               </div>
 
-              { isDropdownOpen && (
+              {isDropdownOpen && (
                 <div className="absolute z-10 w-full mt-1 bg-primary border border-secondary rounded-lg shadow-lg max-h-60 overflow-auto">
                   <div
-                    className={ `px-4 py-2 cursor-pointer transition-all duration-200 hover:bg-gradient-to-r hover:from-accent1/50 hover:to-accent2/50 ${ selectedCategory === "All Categories"
+                    className={`px-4 py-2 cursor-pointer transition-all duration-200 hover:bg-gradient-to-r hover:from-accent1/50 hover:to-accent2/50 ${
+                      selectedCategory === "All Categories"
                         ? "bg-gradient-to-l from-accent1/50 to-accent2/50"
                         : ""
-                      }` }
-                    onClick={ () => {
+                    }`}
+                    onClick={() => {
                       setSelectedCategory("All Categories");
                       setIsDropdownOpen(false);
-                    } }
+                    }}
                   >
                     All Categories
                   </div>
-                  { Object.entries(categories).map(([id, name]) => (
+                  {Object.entries(categories).map(([id, name]) => (
                     <div
-                      key={ id }
-                      className={ `px-4 py-2 cursor-pointer transition-all duration-200 hover:duration-300 hover:bg-gradient-to-r hover:from-accent1/50 hover:to-accent2/50 ${ selectedCategory === name
+                      key={id}
+                      className={`px-4 py-2 cursor-pointer transition-all duration-200 hover:duration-300 hover:bg-gradient-to-r hover:from-accent1/50 hover:to-accent2/50 ${
+                        selectedCategory === name
                           ? "bg-gradient-to-l from-accent1/50 to-accent2/50"
                           : ""
-                        }` }
-                      onClick={ () => {
+                      }`}
+                      onClick={() => {
                         setSelectedCategory(name);
                         setIsDropdownOpen(false);
-                      } }
+                      }}
                     >
-                      { name }
+                      {name}
                     </div>
-                  )) }
+                  ))}
                 </div>
-              ) }
+              )}
             </div>
 
             <div className="relative min-w-96">
@@ -276,8 +279,8 @@ const Insights = () => {
                 type="text"
                 placeholder="Search blogs by title, tag, or brief..."
                 className="w-full px-4 py-2 pl-10 border border-secondary rounded-lg text-secondary focus:outline-none focus:ring-1 focus:ring-secondary bg-primary"
-                value={ searchQuery }
-                onChange={ (e) => setSearchQuery(e.target.value) }
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
               />
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -294,7 +297,7 @@ const Insights = () => {
                 <circle cx="11" cy="11" r="8"></circle>
                 <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
               </svg>
-              { searchQuery && (
+              {searchQuery && (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -306,27 +309,27 @@ const Insights = () => {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   className="absolute right-3 top-1/2 transform -translate-y-1/2 text-secondary/70 cursor-pointer hover:text-secondary"
-                  onClick={ () => setSearchQuery("") }
+                  onClick={() => setSearchQuery("")}
                 >
                   <line x1="18" y1="6" x2="6" y2="18"></line>
                   <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
-              ) }
+              )}
             </div>
           </div>
         </div>
         <div className="w-full grid grid-cols-4 gap-4 h-fit min-h-[50vh]">
-          { filteredBlogs.length > 0 &&
+          {filteredBlogs.length > 0 &&
             filteredBlogs.map((blog, index: number) => (
               <BlogsCard
-                key={ index }
-                id={ blog._id }
-                title={ blog.title }
-                brief={ blog.brief }
-                tags={ blog.tags.map((tagId) => tags[tagId]) }
-                title_image={ blog.title_image }
+                key={index}
+                id={blog._id}
+                title={blog.title}
+                brief={blog.brief}
+                tags={blog.tags.map((tagId) => tags[tagId])}
+                title_image={blog.title_image}
               />
-            )) }
+            ))}
         </div>
       </div>
     </div>

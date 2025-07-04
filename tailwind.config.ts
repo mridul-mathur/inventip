@@ -21,37 +21,37 @@ const config: Config = {
         min: [
           "0.75rem",
           {
-            lineHeight: "0.95rem",
+            lineHeight: "125%",
           },
         ],
         paramin: [
           "0.875rem",
           {
-            lineHeight: "1.3125rem",
+            lineHeight: "125%",
           },
         ],
         para: [
           "1.125rem",
           {
-            lineHeight: "1.5875rem",
+            lineHeight: "125%",
           },
         ],
         subhead: [
           "2.25rem",
           {
-            lineHeight: "2.7375rem",
+            lineHeight: "125%",
           },
         ],
         subheadmin: [
           "1.875rem",
           {
-            lineHeight: "1.2125rem",
+            lineHeight: "125%",
           },
         ],
         head: [
           "3rem",
           {
-            lineHeight: "3.5rem",
+            lineHeight: "125%",
           },
         ],
         max: [

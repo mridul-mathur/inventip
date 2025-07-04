@@ -48,7 +48,6 @@ const BlogPage = () => {
   if (!blog) {
     notFound();
   }
-  console.log(blog);
   return (
     <main
       key={blog._id}
@@ -75,16 +74,15 @@ const BlogPage = () => {
             <h3 className="text-subheadmin font-light">{segment.subhead}</h3>
           )}
           <p className="text-para font-light">{segment.content}</p>
-          {segment.seg_img &&
-            segment.seg_img !== "none" && (
-                <div className="w-full h-auto overflow-hidden relative my-[2rem]">
-                  <img
-                    src={segment.seg_img}
-                    alt={segment.head}
-                    className="w-full h-auto aspect-auto filter rounded-[0.5rem] object-cover"
-                  />
-                </div>
-              )}
+          {segment.seg_img && segment.seg_img !== "none" && (
+            <div className="w-full h-auto overflow-hidden relative my-[2rem]">
+              <img
+                src={segment.seg_img}
+                alt={segment.head}
+                className="w-full h-auto aspect-auto filter rounded-[0.5rem] object-cover"
+              />
+            </div>
+          )}
         </div>
       ))}
     </main>

@@ -15,7 +15,7 @@
             ]
         },
         "about": {
-            "title": "Converge. Disrupt. Outpace",
+            "title": "Converge. Disrupt. Outpace.",
             "text": "InventIP is a premier consulting firm specializing in patent analytics and open - innovation services. We empower forward - thinking businesses totransform complex IP data into strategic advantages, guided by our ethos: | <b>Converge.Disrupt.Outpace</b>. | | InventIP doesn't just analyze patents—we turn them into momentum. Converge with possibilities. Disrupt the status quo. Outpace what's next.",
             "cta": {
                 "text": "Know About Us",
@@ -80,28 +80,28 @@
                 {
                     "name": "IP Research",
                     "description": "Harness IP intelligence and market assessment to unlock strategic insights—fuel innovation, protect assets, and gain a competitive edge with precise, data-driven decisions.",
-                    "image": "/images/ip-research.jpg",
+                    "image": "/images/cosmetics.jpg",
                     "buttonText": "Explore IP Research",
                     "link": "/expertise/0"
                 },
                 {
                     "name": "IP Strategy",
                     "description": "Transform IP challenges into opportunities—enforce rights, mitigate risks, and sharpen your competitive edge with data-driven strategies.",
-                    "image": "/images/ip-strategy.jpg",
+                    "image": "/images/healthcare.jpg",
                     "buttonText": "Discover IP Strategy",
                     "link": "/expertise/1"
                 },
                 {
                     "name": "IP Portfolio Management",
                     "description": "Transform your IP portfolio into a strategic powerhouse that drives innovation, mitigates risks, and unlocks sustainable growth.",
-                    "image": "/images/ip-portfolio-management.jpg",
+                    "image": "/images/img.jpg",
                     "buttonText": "Manage IP Portfolio",
                     "link": "/expertise/2"
                 },
                 {
                     "name": "Open Innovation",
                     "description": "Where your ideas meet action—unlocking untapped opportunities and transforming innovation into impactful success.",
-                    "image": "/images/open-innovation.jpg",
+                    "image": "/images/edu.jpg",
                     "buttonText": "View Open Innovation",
                     "link": "/expertise/3"
                 }
@@ -235,7 +235,7 @@
                 },
                 {
                     "question": "Why is an Invalidity Study important for my business?",
-                    "answer": "An Invalidity Study examines existing patents to identify weaknesses in a competitor’s patent. If you’re involved in a patent dispute or seeking to protect your own IP, this study can help you challenge the validity of opposing patents and defend your own assets effectively."
+                    "answer": "An Invalidity Study examines existing patents to identify weaknesses in a competitor's patent. If you're involved in a patent dispute or seeking to protect your own IP, this study can help you challenge the validity of opposing patents and defend your own assets effectively."
                 },
                 {
                     "question": "Why should I conduct a Trademark and Design Search?",
@@ -260,7 +260,7 @@
             "intro": "Transform IP challenges into opportunities—enforce rights, mitigate risks, and sharpen your competitive edge with data-driven strategies.",
             "details": {
                 "title": "This needs to be added",
-                "content": "A strong IP strategy is more than just protection—it’s about staying ahead, mitigating risks, and unlocking commercial opportunities. We provide businesses with the intelligence needed to enforce their rights, navigate legal complexities, and make informed strategic decisions."
+                "content": "A strong IP strategy is more than just protection—it's about staying ahead, mitigating risks, and unlocking commercial opportunities. We provide businesses with the intelligence needed to enforce their rights, navigate legal complexities, and make informed strategic decisions."
             },
             "services": {
                 "title": "IP Strategy services",
@@ -286,11 +286,11 @@
                 },
                 {
                     "question": "Why should I conduct an Evidence of Use Study?",
-                    "answer": "An Evidence of Use Study gathers data to demonstrate that a competitor’s product or technology infringes on your patent. This study is essential for building a strong case in the event of an infringement dispute or licensing negotiation, ensuring you have the necessary proof to defend or assert your patent rights."
+                    "answer": "An Evidence of Use Study gathers data to demonstrate that a competitor's product or technology infringes on your patent. This study is essential for building a strong case in the event of an infringement dispute or licensing negotiation, ensuring you have the necessary proof to defend or assert your patent rights."
                 },
                 {
                     "question": "How does a Competitive Intelligence Study benefit my IP strategy?",
-                    "answer": "A Competitive Intelligence Study provides a detailed analysis of your competitors’ patents, products, and strategies. By understanding their strengths, weaknesses, and innovation trajectories, you can make more informed decisions about your own IP portfolio, identify potential threats, and seize new opportunities in the market."
+                    "answer": "A Competitive Intelligence Study provides a detailed analysis of your competitor's patents, products, and strategies. By understanding their strengths, weaknesses, and innovation trajectories, you can make more informed decisions about your own IP portfolio, identify potential threats, and seize new opportunities in the market."
                 },
                 {
                     "question": "Who should perform these IP strategy services?",
@@ -319,7 +319,7 @@
             "intro": "Transform your IP portfolio into a strategic powerhouse that drives innovation, mitigates risks, and unlocks sustainable growth.",
             "details": {
                 "title": "This needs to be added",
-                "content": "A well-structured IP portfolio is more than just a collection of patents—it’s a strategic asset that drives innovation, mitigates risks, and maximizes business value. We help businesses assess, optimize, and manage their intellectual property to ensure alignment with commercial objectives and long-term growth."
+                "content": "A well-structured IP portfolio is more than just a collection of patents—it's a strategic asset that drives innovation, mitigates risks, and maximizes business value. We help businesses assess, optimize, and manage their intellectual property to ensure alignment with commercial objectives and long-term growth."
             },
             "services": {
                 "title": "IP Portfolio Management Services",
@@ -375,54 +375,177 @@
         },
         {
             "title": "Open Innovation",
-            "intro": "Accelerate breakthroughs with strategic IP insights—bridge internal R&D with external ecosystems to drive open innovation.",
+            "intro": "Where your ideas meet action—unlocking untapped opportunities and transforming innovation into impactful success.",
             "details": {
                 "title": "This needs to be added",
-                "content": "We help businesses embrace open innovation by identifying white spaces, collaboration opportunities, and IP co-development strategies. Leverage our data-driven insights to co-create solutions, identify partners, and generate value beyond organizational boundaries."
+                "content": "Innovation without execution is just a concept. We transform ideas into reality with a collaborative, insight-driven approach to open innovation, helping businesses not only innovate but also commercialize their breakthroughs."
             },
             "services": {
                 "title": "Open Innovation Services",
                 "cards": [
                     {
-                        "name": "White Space Analysis",
-                        "description": "Discover untapped innovation zones by analyzing existing IP landscapes. Identify areas with little or no patent activity where your business can explore new product development, partnerships, or IP investments."
+                        "name": "Technology Scouting",
+                        "description": "Identifying new and emerging technologies to drive business growth. Systematic scanning of the innovation landscape uncovers opportunities, helping you stay ahead of industry trends and make informed strategic decisions."
                     },
                     {
-                        "name": "Partner & Licensing Opportunity Identification",
-                        "description": "Find the right collaborators, licensees, or licensors for your technology. We help match your innovation capabilities with external opportunities to accelerate time to market and maximize the value of your IP assets."
+                        "name": "Technology Whitespace Analysis",
+                        "description": "Spotting unexplored market opportunities for strategic advantage. By highlighting gaps in current technology landscapes, this service targets innovation efforts where competition is low and potential is high, supporting smarter R&amp;D and business growth."
                     },
                     {
-                        "name": "IP Co-Development & Collaboration Strategy",
-                        "description": "Design frameworks for collaborative innovation and joint IP creation. Navigate legal, strategic, and operational complexities to build successful partnerships and shared IP ownership models."
+                        "name": "Technology Feasibility &amp; Maturity Assessment",
+                        "description": "Evaluating the practicalityand readiness of innovations Analysis of technical viability, development stage, and potential challenges enables informed decisions and accelerates successful implementation."
+                    },
+                    {
+                        "name": "Technology Monitoring",
+                        "description": "Keeping you updated on the latest market and research advancements relevant to your field. Tracking emerging trends and competitor activities provides actionable insights for strategic decision- making."
+                    },
+                    {
+                        "name": "Market Research &amp; Intelligence",
+                        "description": "Aligning innovation with business and consumer needs. Actionable insights on market trends, competitive landscapes, and customer preferences empower informed strategic decisions and maximize market potential."
                     }
                 ]
             },
             "faq": [
                 {
-                    "question": "What is White Space Analysis, and how does it fuel innovation?",
+                    "question": "What is Technology Scouting, and how does it benefit my busines?",
                     "answer": "White Space Analysis identifies areas with minimal patent activity where innovation opportunities exist. It enables businesses to develop new products or technologies in less crowded domains, minimizing competitive overlap and enhancing the potential for unique value creation."
                 },
                 {
-                    "question": "How can I identify the right partners for IP licensing or collaboration?",
+                    "question": "Why should I perform a Technology Feasibility &amp; Maturity Assessment?",
                     "answer": "We assess technical compatibility, IP strengths, and strategic fit to recommend ideal partners for licensing or joint development. This targeted approach ensures that partnerships are aligned with your innovation goals and market opportunities."
                 },
                 {
-                    "question": "Why is an IP Collaboration Strategy important in Open Innovation?",
-                    "answer": "An effective IP Collaboration Strategy helps structure legal and operational frameworks for co-creating intellectual property. It mitigates risks related to ownership, revenue sharing, and confidentiality while fostering innovation across organizational boundaries."
+                    "question": "How does Technology Monitoring support my innovation strategy?",
+                    "answer": "Technology Monitoring involves keeping track of advancements in technology, industry trends, and competitor activities. By continuously monitoring the landscape, you can adapt your innovation strategy, ensuring your business remains competitive and aligned with the latest developments in your field."
                 },
                 {
-                    "question": "Who benefits from Open Innovation services?",
+                    "question": "What is Market Research &amp; Intelligence, and why is it crucial for innovation?",
                     "answer": "Startups, large enterprises, academic institutions, and R&D organizations benefit from Open Innovation services. Whether you're seeking partners, exploring new markets, or aiming to co-develop technologies, these services help maximize value from external collaboration."
                 },
                 {
-                    "question": "How does licensing opportunity identification support IP monetization?",
-                    "answer": "By identifying companies interested in your technology, we help you monetize underutilized IP assets through licensing deals. This approach generates new revenue streams, expands market reach, and enhances ROI on R&D investments."
+                    "question": "Who should perform these Open Innovation services?",
+                    "answer": "Businesses, R&amp;D teams, and innovation managers should consider engaging in these Open Innovation services to identify new technologies, evaluate the feasibility of innovations, and ensure that their products are market-ready. These services are particularly valuable for organizations looking to enhance their innovation capabilities and expand into new markets."
                 },
                 {
-                    "question": "What are the risks involved in co-developing IP, and how are they managed?",
-                    "answer": "Co-development poses challenges like IP ownership disputes and confidentiality issues. We help you mitigate these risks through well-defined agreements, clear roles, and robust legal frameworks that govern joint innovation and IP rights."
+                    "question": "How can Market Research &amp; Intelligence help with my product development process?",
+                    "answer": "Market Research &amp; Intelligence provides insights into customer needs and market dynamics, helping you align your product development with real-world demand. This ensures that your innovations resonate with the target audience, increasing the likelihood of success and accelerating time-to-market."
+                },
+                {
+                    "question": "How often should I update my Technology Scouting and Monitoring efforts?",
+                    "answer": "Technology Scouting and Monitoring should be ongoing, especially for businesses in fast-evolving industries. Regular updates ensure that you remain aware of emerging trends, new technologies, and competitive shifts, allowing your business to continuously innovate and stay ahead in the market."
                 }
             ]
         }
-    ]
+    ],
+    "Careers": {
+        "hero": {
+            "title": "Join Us at InventIP",
+            "image": "/images/careers-hero.jpg"
+        },
+        "whyJoinUs": {
+            "title": "Why Join Us?",
+            "image": "/whyus.png",
+            "subhead": "At InventIP Legal Services LLP, we offer more than just jobs; we offer journeys. Join a team of brilliant minds and innovative thinkers who are redefining intellectual property law. | | Join us at InventIP Legal Services LLP and embark on a dynamic and inspiring career. Together, we will shape the future of intellectual property law and create a legacy of excellence.",
+            "reasons": [
+                {
+                    "title": "Be a Trailblazer",
+                    "description": "Work on groundbreaking cases that shape the future of innovation. We empower you to think outside the box and make a lasting impact."
+                },
+                {
+                    "title": "Innovate and Inspire",
+                    "description": "Embrace change and leverage cutting-edge tools to deliver exceptional results. Your creativity and ingenuity will be celebrated."
+                },
+                {
+                    "title": "Collaborate with Visionaries",
+                    "description": "Gain insights from some of the brightest legal minds in the industry. We foster an environment where ideas flourish and collective intelligence thrives."
+                },
+                {
+                    "title": "Thrive in a Supportive Culture",
+                    "description": "We prioritize your well-being and professional growth. Our inclusive culture ensures you have the resources and mentorship needed to excel."
+                },
+                {
+                    "title": "Make a Difference",
+                    "description": "Participate in pro bono initiatives and community outreach programs. We are committed to driving meaningful change and giving back to society."
+                }
+            ]
+        },
+        "lifeAtInventIP": {
+            "title": "Life at InventIP",
+            "cards": []
+        },
+        "ourCulture": {
+            "title": "Our Culture",
+            "subhead": "At InventIP, we believe in fostering a culture of respect, diversity, and inclusion. Our core values of integrity, innovation, and client focus guide everything we do. We are dedicated to creating a supportive and collaborative work environment where every team member can succeed.",
+            "cards": [
+                {
+                    "title": "Diversity and Inclusion",
+                    "description": "We are committed to promoting diversity and inclusion within our firm. Our initiatives include diversity training, mentorship programs, and community outreach efforts to ensure that everyone feels welcome and valued."
+                },
+                {
+                    "title": "Community Involvement",
+                    "description": "InventIP is dedicated to giving back to the community. We actively participate in pro bono work and support various charitable organizations. Our team members are encouraged to volunteer and make a positive impact in the community."
+                }
+            ]
+        },
+        "howToApply": {
+            "process": {
+                "title": "Ready to join our team? Here's how to apply",
+                "steps": [
+                    {
+                        "title": "Submit Your Application",
+                        "description": "Send your resume and cover letter to careers@inventip.in."
+                    },
+                    {
+                        "title": "Application Review",
+                        "description": "Our HR team will review your application and contact you if you are shortlisted."
+                    },
+                    {
+                        "title": "Interviews",
+                        "description": "Participate in a series of interviews, including phone, video, and in-person interviews."
+                    },
+                    {
+                        "title": "Offer",
+                        "description": "If selected, you will receive an offer letter with details about your role and benefits."
+                    }
+                ]
+            },
+            "tips": [
+                "Tailor your resume and cover letter to highlight relevant experience and skills.",
+                "Be prepared to discuss your previous work and how it aligns with the role you are applying for.",
+                "Show enthusiasm for the firm and the position during your interviews."
+            ]
+        },
+        "internProgram": {
+            "title": "Internship Opportunities",
+            "subhead": "Kickstart your career with an internship at InventIP. Our internship programs offer hands-on experience, mentorship, and the opportunity to work on real projects.",
+            "programDetails": {
+                "duration": "6 months",
+                "eligibility": "Students in their final year of study or recent graduates",
+                "applicationProcess": "Submit your resume, cover letter, and academic transcripts to internships@inventip.in."
+            },
+            "learningOpportunities": "As an intern, you will gain valuable experience in intellectual property law, work closely with our attorneys, and participate in training sessions and workshops. Our goal is to provide you with the skills and knowledge needed to succeed in your career."
+        },
+        "benefits": {
+            "title": "Benefits and Perks",
+            "description": "Career Development: At InventIP, we are committed to your professional growth. Our mentorship programs provide guidance and support from experienced colleagues, helping you navigate your career path. | | We offer clear career advancement opportunities and ongoing training to ensure you continue to develop your skills and expertise.",
+            "items": [
+                {
+                    "title": "Health and Wellness",
+                    "description": "Comprehensive health insurance plans, wellness programs, and mental health support."
+                },
+                {
+                    "title": "Professional Development",
+                    "description": "Opportunities for professional growth through training programs, workshops, and conferences."
+                },
+                {
+                    "title": "Work-Life Balance",
+                    "description": "Flexible working hours, remote work options, and generous vacation policies."
+                },
+                {
+                    "title": "Additional Perks",
+                    "description": "Team-building activities, office amenities, and employee recognition programs."
+                }
+            ]
+        }
+    }
 }
