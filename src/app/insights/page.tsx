@@ -163,7 +163,10 @@ const Insights = () => {
     );
   }
   return (
-    <div className="w-full flex flex-col items-center px-16 gap-8 pt-[4rem]">
+    <div
+      data-theme="light"
+      className="w-full flex flex-col items-center px-16 gap-8 pt-[4rem]"
+    >
       <div className="w-full min-h-screen flex flex-col justify-center items-center gap-12">
         <div className="w-full flex-col flex justify-center items-center gap-6">
           <h1 className="text-max text-center">Writings from our team</h1>

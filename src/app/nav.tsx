@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Buttons from "./buttons";
 import { CiMenuKebab } from "react-icons/ci";
@@ -27,13 +27,49 @@ const navLinks: NavLink[] = [
   { href: "/careers", label: "careers" },
 ];
 
-const Dropdown: React.FC<{ label: string; subLinks: NavLink["subLinks"] }> = ({
-  label,
-  subLinks,
-}) => (
+export function useNavContrast(): "dark" | "light" {
+  const [contrast, setContrast] = useState<"dark" | "light">("light");
+  const barRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!barRef.current) return;
+    const barHeight = barRef.current.getBoundingClientRect().height;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const sectionTheme = entry.target.getAttribute("data-theme") as
+              | "dark"
+              | "light"
+              | null;
+            if (sectionTheme) {
+              setContrast(sectionTheme === "dark" ? "light" : "dark");
+            }
+          }
+        });
+      },
+      {
+        rootMargin: `-${barHeight}px 0px 0px 0px`,
+        threshold: 0.01,
+      }
+    );
+    document
+      .querySelectorAll<HTMLElement>("section[data-theme]")
+      .forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+  (useNavContrast as any).barRef = barRef;
+  return contrast;
+}
+
+const Dropdown: React.FC<{
+  label: string;
+  subLinks: NavLink["subLinks"];
+  textColour?: "dark" | "light";
+}> = ({ label, subLinks, textColour = "dark" }) => (
   <div className=" relative group z-50">
     <span className="cursor-pointer flex items-center justify-center lg:justify-start">
-      <Buttons color="dark" underline={true}>
+      <Buttons color={textColour} underline={true}>
         {label}
       </Buttons>
     </span>
@@ -51,9 +87,9 @@ const Dropdown: React.FC<{ label: string; subLinks: NavLink["subLinks"] }> = ({
           <Link
             key={index}
             href={subLink.href}
-            className="px-4 py-2 group bg-primary/50 hover:bg-primary duration-500 whitespace-nowrap"
+            className="px-4 py-2 group bg-primary hover:bg-primary duration-500 whitespace-nowrap"
           >
-            <Buttons color="dark">
+            <Buttons color={textColour}>
               <div className="group-hover:bg-gradient-to-r group-hover:from-accent1 group-hover:to-accent2 group-hover:text-transparent group-hover:bg-clip-text duration-500">
                 {subLink.label}
               </div>
@@ -68,12 +104,13 @@ const Dropdown: React.FC<{ label: string; subLinks: NavLink["subLinks"] }> = ({
 const NavLinkComponent: React.FC<{
   link: NavLink;
   onClick?: () => void;
-}> = ({ link, onClick }) => {
+  textColour?: "dark" | "light";
+}> = ({ link, onClick, textColour = "dark" }) => {
   if (link.subLinks && link.label.toLowerCase() !== "expertise") {
     return (
       <p key={link.href}>
         <Link href={link.subLinks[0].href} onClick={onClick}>
-          <Buttons color="dark" underline={true}>
+          <Buttons color={textColour} underline={true}>
             {link.label}
           </Buttons>
         </Link>
@@ -81,11 +118,15 @@ const NavLinkComponent: React.FC<{
     );
   }
   return link.subLinks ? (
-    <Dropdown label={link.label} subLinks={link.subLinks} />
+    <Dropdown
+      label={link.label}
+      subLinks={link.subLinks}
+      textColour={textColour}
+    />
   ) : (
     <p key={link.href}>
       <Link href={link.href || "#"} onClick={onClick}>
-        <Buttons color="dark" underline={true}>
+        <Buttons color={textColour} underline={true}>
           {link.label}
         </Buttons>
       </Link>
@@ -94,7 +135,8 @@ const NavLinkComponent: React.FC<{
 };
 
 export function Nav() {
-  const ref1 = useRef<HTMLDivElement>(null);
+  const textColour = useNavContrast();
+  const barRef = (useNavContrast as any).barRef;
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen((prev) => !prev);
@@ -104,13 +146,17 @@ export function Nav() {
 
   return (
     <main
-      ref={ref1}
-      className="fixed top-0 w-full backdrop-blur py-1 z-40 border-b border-[#191919]"
+      ref={barRef}
+      className={`fixed top-0 w-full backdrop-blur py-1 z-40 border-b border-[#191919]`}
     >
       <nav className="flex items-center justify-between py-3 px-6 lg:px-12 text-submin">
         <Link href="/" className="capitalize font-bold text-lg">
           <img
-            src="/images/inventIPblack.png"
+            src={
+              textColour === "dark"
+                ? "/images/inventIPblack.png"
+                : "/images/inventIP.png"
+            }
             alt="inventIP"
             className="h-6 w-auto"
           />
@@ -119,7 +165,12 @@ export function Nav() {
         <div className={menuClass}>
           <div className="flex flex-col lg:flex-row lg:gap-8 text-center lg:text-left capitalize relative">
             {navLinks.map((link, index) => (
-              <NavLinkComponent key={index} link={link} onClick={toggleMenu} />
+              <NavLinkComponent
+                key={index}
+                link={link}
+                onClick={toggleMenu}
+                textColour={textColour}
+              />
             ))}
           </div>
         </div>
@@ -130,7 +181,7 @@ export function Nav() {
 
         <div className="hidden lg:block">
           <Link href="/contact">
-            <Buttons color="dark" arrow={true} underline={true}>
+            <Buttons color={textColour} arrow underline>
               Contact Us
             </Buttons>
           </Link>

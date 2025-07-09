@@ -12,10 +12,11 @@ import { useParams } from "next/navigation";
 interface ExpertiseContent {
   title: string;
   intro: string;
+  image: string;
   details: {
     title: string;
     content: string;
-  }
+  };
   services: {
     title: string;
     cards: {
@@ -23,22 +24,23 @@ interface ExpertiseContent {
       description: string;
     }[];
   };
-  faq: [{
-    question: string;
-    answer: string;
-  }]
+  faq: [
+    {
+      question: string;
+      answer: string;
+    }
+  ];
 }
 
 const Page = () => {
   const { id } = useParams();
-  const expertiseId = typeof id === 'string' ? parseInt(id) : 0;
+  const expertiseId = typeof id === "string" ? parseInt(id) : 0;
   const [content, setContent] = useState<ExpertiseContent | null>(null);
 
   useEffect(() => {
-    fetch('/content/content.json')
-      .then(response => response.json())
-      .then(data => {
-
+    fetch("/content/content.json")
+      .then((response) => response.json())
+      .then((data) => {
         const expertiseArray = data.expertise;
         if (expertiseArray && expertiseArray[expertiseId]) {
           setContent(expertiseArray[expertiseId]);
@@ -46,8 +48,8 @@ const Page = () => {
           setContent(null);
         }
       })
-      .catch(error => {
-        console.error('Error fetching content:', error);
+      .catch((error) => {
+        console.error("Error fetching content:", error);
         setContent(null);
       });
   }, [expertiseId]);
@@ -96,39 +98,40 @@ const Page = () => {
   }
 
   return (
-    <main className="flex flex-col justify-center items-center w-full px-16 relative">
-      <section id="hero">
-        <Hero title={ content?.title || '' } intro={ content?.intro || '' } />
+    <main
+      data-theme="light"
+      className="flex flex-col justify-center items-center w-full px-16 relative"
+    >
+      <section id="hero" data-theme="light">
+        <Hero
+          image={content.image}
+          title={content?.title || ""}
+          intro={content?.intro || ""}
+        />
       </section>
-      <section id="tier">
-        <Tier title={ content.details.title } para={ content.details.content } />
+      <section id="tier" data-theme="light">
+        <Tier title={content.details.title} para={content.details.content} />
       </section>
-      <section id="inovation">
-        { content && (
+      <section id="inovation" data-theme="light">
+        {content && (
           <Inovation
-            title={ content.services.title }
-            cards={ content.services.cards.map((service, idx) => ({
+            title={content.services.title}
+            cards={content.services.cards.map((service, idx) => ({
               name: service.name,
               description: service.description,
-              image: '/images/default.jpg',
-            })) }
+              image: "/images/default.jpg",
+            }))}
           />
-        ) }
+        )}
       </section>
-      <section id="faq">
-        <Faq faqs={ content?.faq || [] } />
+      <section id="faq" data-theme="light">
+        <Faq faqs={content?.faq || []} />
       </section>
-      <section id="whattheysay">
+      <section id="whattheysay" data-theme="light">
         <WhatTheySay />
       </section>
-
-      <CursorFollower
-        size={ 50 }
-        text={ cursorProps.text }
-        show={ cursorProps.show }
-      />
     </main>
   );
-}
+};
 
 export default Page;

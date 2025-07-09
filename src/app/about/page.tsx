@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useEffect, useState } from "react";
@@ -10,7 +9,10 @@ import Team from "./team";
 import CursorFollower from "../cursorFollower";
 
 const AboutPage = () => {
-  const [cursorProps, setCursorProps] = useState<{ show: boolean; text: string }>({ show: false, text: "" });
+  const [cursorProps, setCursorProps] = useState<{
+    show: boolean;
+    text: string;
+  }>({ show: false, text: "" });
 
   useEffect(() => {
     const sections = document.querySelectorAll("section");
@@ -43,22 +45,21 @@ const AboutPage = () => {
 
   return (
     <div className="overflow-x-hidden relative">
-      <section id="hero">
+      <section data-theme="light" id="hero">
         <Hero />
       </section>
-      <section id="aboutus">
+      <section data-theme="light" id="aboutus">
         <Aboutus />
       </section>
-      <section id="ourmission">
+      <section data-theme="light" id="ourmission">
         <Ourmission />
       </section>
-      <section id="certified">
+      <section data-theme="light" id="certified">
         <Certified />
       </section>
-      <section id="team">
+      <section data-theme="light" id="team">
         <Team />
       </section>
-      <CursorFollower size={ 50 } text={ cursorProps.text } show={ cursorProps.show } />
     </div>
   );
 };

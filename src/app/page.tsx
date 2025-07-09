@@ -14,33 +14,33 @@ export default function Home() {
   const [content, setContent] = useState<ExpertiseContent | null>(null);
 
   useEffect(() => {
-    fetch('/content/content.json')
-      .then(response => response.json())
-      .then(data => setContent(data.Home.expertise))
-      .catch(error => console.error('Error fetching content:', error));
+    fetch("/content/content.json")
+      .then((response) => response.json())
+      .then((data) => setContent(data.Home.expertise))
+      .catch((error) => console.error("Error fetching content:", error));
   }, []);
 
   return (
     <main className="flex flex-col justify-center items-center w-full px-16 relative">
-      <section>
+      <section data-theme="dark">
         <Hero />
       </section>
-      <section>
+      <section data-theme="light">
         <HomeAbout />
       </section>
-      <section>
+      <section data-theme="light">
         <Industries />
       </section>
-      <section>
+      {/* <section data-theme="light">
         <Showreel />
+      </section> */}
+      <section data-theme="light">
+        {content && <Inovation title={content.title} cards={content.cards} />}
       </section>
-      <section>
-        { content && <Inovation title={ content.title } cards={ content.cards } /> }
-      </section>
-      <section>
+      <section data-theme="light">
         <Certified />
       </section>
-      <section>
+      <section data-theme="light">
         <Whattheysay />
       </section>
     </main>

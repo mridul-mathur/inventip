@@ -28,7 +28,11 @@ const HomeAbout = () => {
   }, []);
 
   return (
-    <main className="z-[2] bg-primary w-screen h-fit min-h-screen flex flex-col justify-between items-center gap-16 p-4 sm:p-[8rem]">
+    <section
+      data-theme="light"
+      style={{ minHeight: "100vh" }}
+      className="z-[2] bg-primary w-screen h-fit flex flex-col justify-between items-center gap-16 p-4 sm:p-[8rem]"
+    >
       <div className="w-full h-fit flex flex-col sm:flex-row justify-center items-start gap-4 sm:gap-[8rem]">
         <div className="w-full sm:w-2/5 h-full flex flex-col justify-between gap-[2rem] items-start">
           <p className="text-head">{content?.title}</p>
@@ -55,7 +59,7 @@ const HomeAbout = () => {
         </div>
       </div>
       <BentoGrid />
-    </main>
+    </section>
   );
 };
 
@@ -80,21 +84,21 @@ const BentoGrid = () => {
     <div className="w-full h-[64rem] grid sm:grid-cols-1 md:grid-cols-3 grid-rows-7 gap-6">
       <div className="relative overflow-hidden col-span-2 row-span-3 flex justify-center items-center rounded-xl">
         <img
-          src="/images/search_patent.jpg"
+          src="/images/scope-s.webp"
           alt={`S`}
           className="w-full h-full object-cover"
         />
       </div>
       <div className="relative overflow-hidden col-span-1 row-span-3 flex justify-center items-center rounded-xl">
         <img
-          src="/images/comp_mi.jpeg"
+          src="/images/scope-c.webp"
           alt={`C`}
           className="w-full h-full object-cover"
         />
       </div>
       <div className="relative overflow-hidden col-span-1 row-span-4 flex justify-center items-center rounded-xl">
         <img
-          src="/images/operation.jpeg"
+          src="/images/scope-o.webp"
           alt={`O`}
           className="w-full h-full object-cover"
         />
@@ -106,15 +110,15 @@ const BentoGrid = () => {
       </div>
       <div className="relative overflow-hidden col-span-1 row-span-4 flex justify-center items-center rounded-xl">
         <img
-          src="/images/portfolio.jpg"
-          alt={`P`}
+          src="/images/scope-e.webp"
+          alt={`E`}
           className="w-full h-full object-cover"
         />
       </div>
       <div className="relative overflow-hidden col-span-1 row-span-3 flex justify-center items-center rounded-xl">
         <img
-          src="/images/emerge.jpg"
-          alt={`E`}
+          src="/images/scope-p.webp"
+          alt={`P`}
           className="w-full h-full object-cover"
         />
       </div>

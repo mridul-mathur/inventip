@@ -3,6 +3,7 @@
         "hero": {
             "text1": "Sculpting Innovation from",
             "text2": "Ideas to Reality",
+            "image": "/images/hero.webp",
             "cta": [
                 {
                     "text": "Our Expertise",
@@ -34,6 +35,9 @@
                     "number": 10,
                     "text": "Years of Experience"
                 }
+            ],
+            "bento": [
+                {}
             ]
         },
         "industries": {
@@ -42,35 +46,35 @@
             "cards": [
                 {
                     "name": "Healthcare",
-                    "image": "./images/healthcare.jpg"
+                    "image": "./images/healthcare-industry.webp"
                 },
                 {
                     "name": "Pharmaceuticals",
-                    "image": "./images/pharmaceuticals.jpg"
+                    "image": "./images/pharma-industry.webp"
                 },
                 {
                     "name": "Agriculture",
-                    "image": "./images/agriculture.jpg"
+                    "image": "./images/agriculture-industry.webp"
                 },
                 {
                     "name": "Electrical & Electronics",
-                    "image": "./images/electrical.jpg"
+                    "image": "./images/electronics-industry.webp"
                 },
                 {
                     "name": "Material Science",
-                    "image": "./images/material-science.jpg"
+                    "image": "./images/science-industry.webp"
                 },
                 {
                     "name": "Mobility",
-                    "image": "./images/mobility.jpg"
+                    "image": "./images/mobility-industry.webp"
                 },
                 {
                     "name": "Oil & Energy",
-                    "image": "./images/oil-n-energy.jpg"
+                    "image": "./images/oil-industry.webp"
                 },
                 {
                     "name": "Textile",
-                    "image": "./images/textile.jpg"
+                    "image": "./images/textile-industry.webp"
                 }
             ]
         },
@@ -80,28 +84,28 @@
                 {
                     "name": "IP Research",
                     "description": "Harness IP intelligence and market assessment to unlock strategic insights—fuel innovation, protect assets, and gain a competitive edge with precise, data-driven decisions.",
-                    "image": "/images/cosmetics.jpg",
+                    "image": "/images/ip-research.webp",
                     "buttonText": "Explore IP Research",
                     "link": "/expertise/0"
                 },
                 {
                     "name": "IP Strategy",
                     "description": "Transform IP challenges into opportunities—enforce rights, mitigate risks, and sharpen your competitive edge with data-driven strategies.",
-                    "image": "/images/healthcare.jpg",
+                    "image": "/images/ip-strategy.webp",
                     "buttonText": "Discover IP Strategy",
                     "link": "/expertise/1"
                 },
                 {
                     "name": "IP Portfolio Management",
                     "description": "Transform your IP portfolio into a strategic powerhouse that drives innovation, mitigates risks, and unlocks sustainable growth.",
-                    "image": "/images/img.jpg",
+                    "image": "/images/ip-management.webp",
                     "buttonText": "Manage IP Portfolio",
                     "link": "/expertise/2"
                 },
                 {
                     "name": "Open Innovation",
                     "description": "Where your ideas meet action—unlocking untapped opportunities and transforming innovation into impactful success.",
-                    "image": "/images/edu.jpg",
+                    "image": "/images/open-innovation.webp",
                     "buttonText": "View Open Innovation",
                     "link": "/expertise/3"
                 }
@@ -167,18 +171,18 @@
     "About": {
         "hero": {
             "title": "InventIP: Today's Lab, Tomorrow's Landscape",
-            "image": "/images/about-hero.jpg"
+            "image": "/images/about-hero.webp"
         },
         "about": {
             "title": "About Us",
             "text": "InventIP is at the forefront of intellectual property intelligence and innovation strategy, empowering businesses to unlock the full potential of their ideas through advanced patent analytics and technology insights. We specialize in transforming complex IP data into actionable strategies, offering deep-dive patent searches, competitive landscape analysis, and whitespace mapping to identify untapped opportunities and emerging trends. Our expertise lies in decoding market dynamics, forecasting technological shifts, and aligning R&D efforts with commercial goals—turning raw data into a roadmap for growth. | Backed by a multidisciplinary team of technical analysts and industry experts, we deliver precision and depth in every project. From optimizing IP portfolios to scouting disruptive innovations, our methodologies bridge the gap between research and real- world impact. We combine cutting-edge tools with domain-specific knowledge to help you navigate fast-evolving tech ecosystems, mitigate risks, and capitalize on high- value breakthroughs. | At InventIP, we don't just analyze patents—we architect innovation pathways. Partner with us to transform intellectual assets into strategic advantages, backed by insights that drive smarter decisions, foster collaboration, and position your business at the forefront of tomorrow's breakthroughs.",
-            "image": "/images/about-image.jpg"
+            "image": "/images/about-about.webp"
         },
         "mission": {
             "title": "Your success our mission",
             "text1": "At InventIP, your success is at the heart of everything we do. We are committed to delivering high-quality work products and services that our clients truly value. By partnering closely with you, we simplify the complexities of intellectual property management, offering swift and effective resolutions to your challenges. We embrace calculated risks and foster mutual collaboration to achieve excellence in both our search and analytics roles.",
             "text2": "Transparency and open communication are our priorities, ensuring you are always informed and supported throughout the process. Our technology-driven approach to IP management sets us apart, enabling us to deliver higher returns and implementable solutions tailored to your needs. With deep expertise and an unwavering pursuit of perfection, we strive to turn your challenges into opportunities for success.",
-            "image": "/images/mission-image.jpg"
+            "image": "/images/vision-mission.webp"
         },
         "our_team": {
             "title": "Meet the people | behind inventIP",
@@ -190,8 +194,10 @@
     "expertise": [
         {
             "title": "IP Research",
+            "image": "/images/ip-research.webp",
             "intro": "Harness IP intelligence and market assessment to unlock strategic insights—fuel innovation, protect assets, and gain a competitive edge with precise, data-driven decisions.",
             "details": {
+                "image": "/images/ip-research2.webp",
                 "title": "This needs to be added",
                 "content": "We help businesses navigate the complex IP landscape with data-driven intelligence. Our approach goes beyond identifying patentable inventions—we streamline costs, mitigate risks, and unlock monetization opportunities."
             },
@@ -257,8 +263,10 @@
         },
         {
             "title": "IP Strategy",
+            "image": "/images/ip-strategy.webp",
             "intro": "Transform IP challenges into opportunities—enforce rights, mitigate risks, and sharpen your competitive edge with data-driven strategies.",
             "details": {
+                "image": "/images/ip-strategy2.webp",
                 "title": "This needs to be added",
                 "content": "A strong IP strategy is more than just protection—it's about staying ahead, mitigating risks, and unlocking commercial opportunities. We provide businesses with the intelligence needed to enforce their rights, navigate legal complexities, and make informed strategic decisions."
             },
@@ -316,8 +324,10 @@
         },
         {
             "title": "IP Portfolio Management",
+            "image": "/images/ip-management.webp",
             "intro": "Transform your IP portfolio into a strategic powerhouse that drives innovation, mitigates risks, and unlocks sustainable growth.",
             "details": {
+                "image": "/images/ip-management2.webp",
                 "title": "This needs to be added",
                 "content": "A well-structured IP portfolio is more than just a collection of patents—it's a strategic asset that drives innovation, mitigates risks, and maximizes business value. We help businesses assess, optimize, and manage their intellectual property to ensure alignment with commercial objectives and long-term growth."
             },
@@ -375,8 +385,10 @@
         },
         {
             "title": "Open Innovation",
+            "image": "/images/open-innovation.webp",
             "intro": "Where your ideas meet action—unlocking untapped opportunities and transforming innovation into impactful success.",
             "details": {
+                "image": "/images/open-innovation2.webp",
                 "title": "This needs to be added",
                 "content": "Innovation without execution is just a concept. We transform ideas into reality with a collaborative, insight-driven approach to open innovation, helping businesses not only innovate but also commercialize their breakthroughs."
             },

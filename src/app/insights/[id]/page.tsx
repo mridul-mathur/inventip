@@ -50,6 +50,7 @@ const BlogPage = () => {
   }
   return (
     <main
+      data-theme="light"
       key={blog._id}
       className="min-h-screen h-full w-screen px-[16rem] py-[8rem] flex flex-col items-center justify-center space-y-[4rem]"
     >
