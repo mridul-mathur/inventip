@@ -58,7 +58,7 @@ export default function CareerCard({
           arrow
           onClick={() =>
             window.open(
-              "https://mail.google.com/mail/u/0/?fs=1&to=careers@inventip.in&su=&body=&tf=cm"
+              "https://mail.google.com/mail/u/0/?fs=1&to=letstalk@inventip.in.in&su=&body=&tf=cm"
             )
           }
         >

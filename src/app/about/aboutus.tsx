@@ -30,7 +30,7 @@ function aboutus() {
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="text-pretty detail w-3/5 text-lg py-5 flex flex-col justify-evenly">
+        <div className="text-pretty detail w-3/5 text-para py-5 flex flex-col justify-evenly">
           <TextFormatter text={content ? content.text : ""} />
         </div>
       </div>

@@ -16,12 +16,14 @@ interface ExpertiseContent {
   details: {
     title: string;
     content: string;
+    image: string;
   };
   services: {
     title: string;
     cards: {
       name: string;
       description: string;
+      image: string;
     }[];
   };
   faq: [
@@ -98,11 +100,8 @@ const Page = () => {
   }
 
   return (
-    <main
-      data-theme="light"
-      className="flex flex-col justify-center items-center w-full px-16 relative"
-    >
-      <section id="hero" data-theme="light">
+    <main className="flex flex-col justify-center items-center w-full px-16 relative">
+      <section id="hero" data-theme="dark">
         <Hero
           image={content.image}
           title={content?.title || ""}
@@ -110,7 +109,11 @@ const Page = () => {
         />
       </section>
       <section id="tier" data-theme="light">
-        <Tier title={content.details.title} para={content.details.content} />
+        <Tier
+          image={content.details.image}
+          title={content.details.title}
+          para={content.details.content}
+        />
       </section>
       <section id="inovation" data-theme="light">
         {content && (
@@ -119,7 +122,7 @@ const Page = () => {
             cards={content.services.cards.map((service, idx) => ({
               name: service.name,
               description: service.description,
-              image: "/images/default.jpg",
+              image: service.image,
             }))}
           />
         )}

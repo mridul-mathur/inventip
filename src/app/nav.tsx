@@ -5,6 +5,7 @@ import Link from "next/link";
 import Buttons from "./buttons";
 import { CiMenuKebab } from "react-icons/ci";
 import { motion } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 type NavLink = {
   href?: string;
@@ -27,12 +28,18 @@ const navLinks: NavLink[] = [
   { href: "/careers", label: "careers" },
 ];
 
-export function useNavContrast(): "dark" | "light" {
-  const [contrast, setContrast] = useState<"dark" | "light">("light");
-  const barRef = useRef<HTMLDivElement>(null);
+// Refactored useNavContrast to return both contrast and barRef
+export function useNavContrast(): [
+  "dark" | "light",
+  React.RefObject<HTMLDivElement | null>
+] {
+  const [contrast, setContrast] = useState<"dark" | "light">("dark");
+  const barRef = useRef<HTMLDivElement | null>(null);
+  const pathname = usePathname();
 
   useEffect(() => {
     if (!barRef.current) return;
+
     const barHeight = barRef.current.getBoundingClientRect().height;
     const observer = new IntersectionObserver(
       (entries) => {
@@ -49,17 +56,24 @@ export function useNavContrast(): "dark" | "light" {
         });
       },
       {
+        root: null,
         rootMargin: `-${barHeight}px 0px 0px 0px`,
         threshold: 0.01,
       }
     );
-    document
-      .querySelectorAll<HTMLElement>("section[data-theme]")
-      .forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
-  }, []);
-  (useNavContrast as any).barRef = barRef;
-  return contrast;
+
+    // Observe all sections with data-theme
+    const sections = document.querySelectorAll<HTMLElement>(
+      "section[data-theme]"
+    );
+    sections.forEach((el) => observer.observe(el));
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [pathname, barRef.current]); // re-run on route change or ref change
+
+  return [contrast, barRef];
 }
 
 const Dropdown: React.FC<{
@@ -135,8 +149,7 @@ const NavLinkComponent: React.FC<{
 };
 
 export function Nav() {
-  const textColour = useNavContrast();
-  const barRef = (useNavContrast as any).barRef;
+  const [textColour, barRef] = useNavContrast();
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen((prev) => !prev);

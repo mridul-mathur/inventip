@@ -81,26 +81,26 @@ const Numb: React.FC<NumbProps> = ({ numb, text }) => {
 
 const BentoGrid = () => {
   return (
-    <div className="w-full h-[64rem] grid sm:grid-cols-1 md:grid-cols-3 grid-rows-7 gap-6">
+    <div className="w-full h-[48rem] grid sm:grid-cols-1 md:grid-cols-3 grid-rows-7 gap-6">
       <div className="relative overflow-hidden col-span-2 row-span-3 flex justify-center items-center rounded-xl">
         <img
           src="/images/scope-s.webp"
           alt={`S`}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-center"
         />
       </div>
       <div className="relative overflow-hidden col-span-1 row-span-3 flex justify-center items-center rounded-xl">
         <img
           src="/images/scope-c.webp"
           alt={`C`}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-center"
         />
       </div>
       <div className="relative overflow-hidden col-span-1 row-span-4 flex justify-center items-center rounded-xl">
         <img
           src="/images/scope-o.webp"
           alt={`O`}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-center"
         />
       </div>
       <div className="relative border border-accent1 overflow-hidden col-span-1 row-span-1 flex justify-center items-center rounded-xl">
@@ -112,14 +112,14 @@ const BentoGrid = () => {
         <img
           src="/images/scope-e.webp"
           alt={`E`}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-center"
         />
       </div>
       <div className="relative overflow-hidden col-span-1 row-span-3 flex justify-center items-center rounded-xl">
         <img
           src="/images/scope-p.webp"
           alt={`P`}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-right"
         />
       </div>
     </div>

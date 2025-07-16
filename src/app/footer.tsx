@@ -26,10 +26,10 @@ const Footer: React.FC = () => {
     {
       title: "Our Expertise",
       items: [
-        { name: "IP Strategy" },
-        { name: "IP Research" },
-        { name: "IP Portfolio Management" },
-        { name: "Open Innovation" },
+        { name: "IP Research", link: "/expertise/0" },
+        { name: "IP Strategy", link: "/expertise/1" },
+        { name: "IP Portfolio Management", link: "/expertise/2" },
+        { name: "Open Innovation", link: "/expertise/3" },
       ],
     },
     {

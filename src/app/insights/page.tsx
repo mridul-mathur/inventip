@@ -321,7 +321,7 @@ const Insights = () => {
             </div>
           </div>
         </div>
-        <div className="w-full grid grid-cols-4 gap-4 h-fit min-h-[50vh]">
+        <div className="w-full grid grid-cols-3 gap-12 h-fit min-h-[50vh]">
           {filteredBlogs.length > 0 &&
             filteredBlogs.map((blog, index: number) => (
               <BlogsCard

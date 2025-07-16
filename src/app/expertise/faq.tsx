@@ -16,7 +16,12 @@ function Faq({ faqs }: FaqProps) {
         <div className="flex justify-between items-center mt-[10%] pr-10">
           <p className="text-para leading-6">Is your question not listed?</p>
           <div className="px-5 py-1 rounded-2xl bg-black">
-            <Buttons color="light" underline={true} arrow={true}>
+            <Buttons
+              color="light"
+              onClick={() => (window.location.href = "/contact")}
+              underline={true}
+              arrow={true}
+            >
               Contact
             </Buttons>
           </div>
@@ -78,8 +83,9 @@ const FaqCard: React.FC<FaqCardProps> = ({ ques, ans, isOpen, onClick }) => {
         <span className="text-lg">{isOpen ? "➖" : "➕"}</span>
       </div>
       <div
-        className={`overflow-hidden transition-all duration-800 ease-in-out ${isOpen ? "max-h-[200px] mt-2" : "max-h-0"
-          }`}
+        className={`overflow-hidden transition-all duration-800 ease-in-out ${
+          isOpen ? "max-h-[200px] mt-2" : "max-h-0"
+        }`}
       >
         <p className="text-paramin text-[#888888]">{ans}</p>
       </div>

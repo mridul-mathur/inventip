@@ -1,13 +1,13 @@
 {
     "Home": {
         "hero": {
-            "text1": "Sculpting Innovation from",
-            "text2": "Ideas to Reality",
+            "text1": "Crafting innovation ",
+            "text2": "from ideas to reality",
             "image": "/images/hero.webp",
             "cta": [
                 {
-                    "text": "Our Expertise",
-                    "link": "/expertise"
+                    "text": "IP Research",
+                    "link": "/expertise/0"
                 },
                 {
                     "text": "More Insights",
@@ -137,13 +137,13 @@
                 },
                 {
                     "name": "Rajiv Trehan",
-                    "quate": "As a fellow startup and partner, I can&#39;t speak highly enough about InventIP.Their commitment to quality and integrity has made them an invaluable asset to our journey.Their supportive approach and unwavering ethical standards make them the perfect partner for any startup looking to thrive.",
+                    "quate": "As a fellow startup and partner, I can't speak highly enough about InventIP. Their commitment to quality and integrity has made them an invaluable asset to our journey. Their supportive approach and unwavering ethical standards make them the perfect partner for any startup looking to thrive.",
                     "image": "/images/img.png",
                     "company": "CTO and Founder at Merlin Fit"
                 },
                 {
                     "name": "Thomas D. Franklin",
-                    "quate": "I have tried several patent drafting firms for patent applications, but the quality is typically very poor.InventIP is an exception.I would put their work quality on par or better with any well- known domestic patent firm.Their staff is articulate and have a natural curiosity that translates into a well - done work product.InventIP is my go - to firm in India.I would put their work quality on par or better with any well - known domestic patent firm.Their staff is articulate and have a natural curiosity that translates into a well - done work product.InventIP is my go - to firm in India.",
+                    "quate": "I have tried several patent drafting firms for patent applications, but the quality is typically very poor.InventIP is an exception. I would put their work quality on par or better with any well- known domestic patent firm. Their staff is articulate and have a natural curiosity that translates into a well - done work product. InventIP is my go - to firm in India.I would put their work quality on par or better with any well - known domestic patent firm.Their staff is articulate and have a natural curiosity that translates into a well - done work product.InventIP is my go - to firm in India.",
                     "image": "/images/img.png",
                     "company": "Founder Triangle IP (US)"
                 },
@@ -155,13 +155,13 @@
                 },
                 {
                     "name": "Chetan Kumar Chenappa",
-                    "quate": "I was recommended of InventIP through a professional connect.Our IP portfolio was spread across multiple law firms and service providers, and we needed one- stop solution provider.We are happy that we went along with them.The handover was efficient and smooth.The global filings and renewal management has become fuss free.Their work quality is great.They take ownership and ensure timely delivery to every task assigned to them.They have also helped us with technology insights to build our portfolio.I would highly recommend them to anyone who could use their services.",
+                    "quate": "I was recommended of InventIP through a professional connect.Our IP portfolio was spread across multiple law firms and service providers, and we needed one- stop solution provider.We are happy that we went along with them. The handover was efficient and smooth. The global filings and renewal management has become fuss free. Their work quality is great. They take ownership and ensure timely delivery to every task assigned to them. They have also helped us with technology insights to build our portfolio. I would highly recommend them to anyone who could use their services.",
                     "image": "/images/img.png",
                     "company": "Chief Patent Counsel at HCL Technologies"
                 },
                 {
                     "name": "Dhruv Sud",
-                    "quate": "Over the course of our collaboration for the last several years, the InventIP team has proven to be an invaluable partner in securing and safeguarding our intellectualproperty, particularly in the complex and evolving domain of machine learning inhealthcare.Their team of seasoned professionals consistently demonstrates aprofound understanding of patent applications and legal intricacies. As leaders, whatsets Ankush and Rahul apart is not only their expertise but also their unwaveringdedication to our success.They provide strategic guidance, ensuring that our patentsalign with our business objectives, and their efficiency and responsiveness havebeen instrumental in meeting critical deadlines.InventIP maintains transparentcommunication throughout the entire process, keeping us informed about progressand potential challenges.",
+                    "quate": "Over the course of our collaboration for the last several years, the InventIP team has proven to be an invaluable partner in securing and safeguarding our intellectualproperty, particularly in the complex and evolving domain of machine learning inhealthcare. Their team of seasoned professionals consistently demonstrates aprofound understanding of patent applications and legal intricacies. As leaders, whatsets Ankush and Rahul apart is not only their expertise but also their unwaveringdedication to our success. They provide strategic guidance, ensuring that our patentsalign with our business objectives, and their efficiency and responsiveness havebeen instrumental in meeting critical deadlines.InventIP maintains transparentcommunication throughout the entire process, keeping us informed about progressand potential challenges.",
                     "image": "/images/img.png",
                     "company": "CTO at Cloud physician"
                 }
@@ -195,34 +195,39 @@
         {
             "title": "IP Research",
             "image": "/images/ip-research.webp",
-            "intro": "Harness IP intelligence and market assessment to unlock strategic insights—fuel innovation, protect assets, and gain a competitive edge with precise, data-driven decisions.",
+            "intro": "Informed IP Decisions Through Expert Intelligence.",
             "details": {
                 "image": "/images/ip-research2.webp",
                 "title": "This needs to be added",
-                "content": "We help businesses navigate the complex IP landscape with data-driven intelligence. Our approach goes beyond identifying patentable inventions—we streamline costs, mitigate risks, and unlock monetization opportunities."
+                "content": "InventIP is the IP intelligence partner your business needs to navigate the IP landscape. We support global businesses in informed decision-making with respect to their potential IP investments, help them avoid running into troubled waters by safeguarding from potential invalidity/infringement challenges, and partner with them to identify potential monetization opportunities. Through relevant prior art searches helping you determine patentable inventions, we help in analysing and scrutinizing inventions to streamline costs. We are aware of the commercial and technical activity within the relevant domains and help you make wise patent decisions that are backed by data, IP and market analysis, and thorough research. | | Our in-house professionals have been leveraging their learning curve developed through decades of practice and have the expertise of searching through sophisticated tools and resources. We take pride in helping you with innovative insights and strategies to enhance the quality and returns on your IP investment."
             },
             "services": {
                 "title": "IP Research services",
                 "cards": [
                     {
                         "name": "Novelty & Patentability Search",
-                        "description": "Ensure your innovation stands strong before filing by thoroughly identifying existing patents and prior art. This service provides the clarity and confidence needed to move forward with your patent application."
+                        "description": "Ensure your innovation stands strong before filing by thoroughly identifying existing patents and prior art. This service provides the clarity and confidence needed to move forward with your patent application.",
+                        "image": "/images/research-s1.webp"
                     },
                     {
                         "name": "Invalidity & Validity Studies",
-                        "description": "Strengthen IP protection and mitigate litigation risks through comprehensive analysis of existing patents and prior art. Receive clear, actionable insights to support legal and business strategies."
+                        "description": "Strengthen IP protection and mitigate litigation risks through comprehensive analysis of existing patents and prior art. Receive clear, actionable insights to support legal and business strategies.",
+                        "image": "/images/research-s2.webp"
                     },
                     {
                         "name": "State of the Art & Technology Landscape Studies",
-                        "description": "Gain a 360-degree view of emerging trends, technologies, and key players in your field. These studies deliver actionable insights to inform R&D, innovation, and strategic decisions."
+                        "description": "Gain a 360-degree view of emerging trends, technologies, and key players in your field. These studies deliver actionable insights to inform R&D, innovation, and strategic decisions.",
+                        "image": "/images/research-s3.webp"
                     },
                     {
                         "name": "Trademark & Design Search",
-                        "description": "Safeguard your brand and product designs with thorough searches that identify existing trademarks and designs, helping you avoid conflicts and secure your intellectual property with confidence."
+                        "description": "Safeguard your brand and product designs with thorough searches that identify existing trademarks and designs, helping you avoid conflicts and secure your intellectual property with confidence.",
+                        "image": "/images/research-s4.webp"
                     },
                     {
                         "name": "IP/Product Watch",
-                        "description": "Stay ahead of competitors by monitoring industry activity, tracking new patents, products, and market developments relevant to your business. Receive timely insights to support strategic decision-making and innovation."
+                        "description": "Stay ahead of competitors by monitoring industry activity, tracking new patents, products, and market developments relevant to your business. Receive timely insights to support strategic decision-making and innovation.",
+                        "image": "/images/research-s5.webp"
                     }
                 ]
             },
@@ -268,22 +273,25 @@
             "details": {
                 "image": "/images/ip-strategy2.webp",
                 "title": "This needs to be added",
-                "content": "A strong IP strategy is more than just protection—it's about staying ahead, mitigating risks, and unlocking commercial opportunities. We provide businesses with the intelligence needed to enforce their rights, navigate legal complexities, and make informed strategic decisions."
+                "content": "Creation of IP necessitates subsequent enforcement and ensuring sanctity of IP rights. At the same time, evaluating and subsequently adhering to IP boundaries set by competitors is equally important. With years of experience, our team of trained lawyers and engineers are able to identify such violation of clients' IP rights and at the same time making sure that the clients are not stepping into a landmine of IP violations, at least not without sufficient safeguards. | | IP filing related strategies have a strong correlation with R&D focus of companies and thus in this technologically competitive world it becomes prudent to periodically analyse IP portfolios of competitors in order to stay ahead of the curve. Our team of experts is specialized in drawing interesting and useful competitor insights to help tailor our clients IP filing strategies. | | Our approach to working in close collaborations with the inventors as well as the IP/legal teams of our clients enables us to fully understand their core technology and design successful strategies for creating and managing global patent portfolios. Our strategic advisory is always in alignment with the commercial requirements of our clients."
             },
             "services": {
                 "title": "IP Strategy services",
                 "cards": [
                     {
                         "name": "Infringement Search",
-                        "description": "Identify potential patent violations early to safeguard your innovations and maintain market exclusivity. Thorough analyses detect possible risks, enabling informed business decisions and effective protection of intellectual property rights."
+                        "description": "Identify potential patent violations early to safeguard your innovations and maintain market exclusivity. Thorough analyses detect possible risks, enabling informed business decisions and effective protection of intellectual property rights.",
+                        "image": "/images/strategy-s1.webp"
                     },
                     {
                         "name": "Evidence of Use Study",
-                        "description": "Receive well-documented, proof-backed insights to support legal and licensing strategies. By mapping patent claims to real-world products or processes, this service enhances negotiation power and supports confident decision-making."
+                        "description": "Receive well-documented, proof-backed insights to support legal and licensing strategies. By mapping patent claims to real-world products or processes, this service enhances negotiation power and supports confident decision-making.",
+                        "image": "/images/strategy-s2.webp"
                     },
                     {
                         "name": "Competitive Intelligence Study",
-                        "description": "Gain a comprehensive understanding of competitor strategies, emerging technologies, and market trends. Actionable insights help refine IP positioning and support informed decisions for business growth."
+                        "description": "Gain a comprehensive understanding of competitor strategies, emerging technologies, and market trends. Actionable insights help refine IP positioning and support informed decisions for business growth.",
+                        "image": "/images/strategy-s3.webp"
                     }
                 ]
             },
@@ -329,30 +337,35 @@
             "details": {
                 "image": "/images/ip-management2.webp",
                 "title": "This needs to be added",
-                "content": "A well-structured IP portfolio is more than just a collection of patents—it's a strategic asset that drives innovation, mitigates risks, and maximizes business value. We help businesses assess, optimize, and manage their intellectual property to ensure alignment with commercial objectives and long-term growth."
+                "content": "We believe in empowering you to make intelligent decisions driven by data and information about your IP portfolio's competitiveness. Through our portfolio management services, we help you identify the strength of individual patents and overall value of your patent portfolio. Such a periodic assessment helps in avoiding maintaining assets that have a lower ROI or are technologically obsolete, thereby reducing better deployment of your IP budget. A closer eye on your portfolio also helps you realize true value of your IP through sale/licensing. | | Regular portfolio reviews also provide early visibility into potential gaps or overlaps, allowing you to adapt your IP strategy as your business evolves. This proactive approach ensures your portfolio remains aligned with both current market dynamics and your long-term commercial objectives."
             },
             "services": {
                 "title": "IP Portfolio Management Services",
                 "cards": [
                     {
                         "name": "IP Due Diligence & Audits",
-                        "description": "Uncover the true potential of your IP assets through comprehensive evaluations of agreements, licensing, and portfolio strength. Identify risks and opportunities to ensure your intellectual property supports your strategic goals with confidence."
+                        "description": "Uncover the true potential of your IP assets through comprehensive evaluations of agreements, licensing, and portfolio strength. Identify risks and opportunities to ensure your intellectual property supports your strategic goals with confidence.",
+                        "image": "/images/portfolio-s1.webp"
                     },
                     {
                         "name": "Freedom to Operate (FTO) Studies",
-                        "description": "Identify potential patent roadblocks and ensure a clear commercialization pathway before market entry. Analysis of existing patents and legal risks enables confident product launches while minimizing infringement concerns."
+                        "description": "Identify potential patent roadblocks and ensure a clear commercialization pathway before market entry. Analysis of existing patents and legal risks enables confident product launches while minimizing infringement concerns.",
+                        "image": "/images/portfolio-s2.webp"
                     },
                     {
                         "name": "Clearance Searches",
-                        "description": "Assess risks early to avoid costly legal disputes and strengthen go-to-market strategies. Potential patent infringements are identified, supporting product launches with greater confidence and legal clarity."
+                        "description": "Assess risks early to avoid costly legal disputes and strengthen go-to-market strategies. Potential patent infringements are identified, supporting product launches with greater confidence and legal clarity.",
+                        "image": "/images/portfolio-s3.webp"
                     },
                     {
                         "name": "Portfolio Analysis & Optimization",
-                        "description": "Pinpoint high-value patents, eliminate weak assets, and refine IP strategies for maximum return on investment. Receive clear, actionable insights to strengthen your portfolio and align it with business goals."
+                        "description": "Pinpoint high-value patents, eliminate weak assets, and refine IP strategies for maximum return on investment. Receive clear, actionable insights to strengthen your portfolio and align it with business goals.",
+                        "image": "/images/portfolio-s4.webp"
                     },
                     {
                         "name": "IP Watch & Competitive Monitoring",
-                        "description": "Stay ahead by continuously tracking new patent filings, emerging competitors, and industry trends. This proactive approach delivers timely insights for strategic decision-making and maintaining a competitive edge."
+                        "description": "Stay ahead by continuously tracking new patent filings, emerging competitors, and industry trends. This proactive approach delivers timely insights for strategic decision-making and maintaining a competitive edge.",
+                        "image": "/images/portfolio-s5.webp"
                     }
                 ]
             },
@@ -390,30 +403,35 @@
             "details": {
                 "image": "/images/open-innovation2.webp",
                 "title": "This needs to be added",
-                "content": "Innovation without execution is just a concept. We transform ideas into reality with a collaborative, insight-driven approach to open innovation, helping businesses not only innovate but also commercialize their breakthroughs."
+                "content": "Innovation will remain an idea or thought on paper if insights are not actionable or not practicable. We look beyond conventional search strategies and work in a collaborative manner to generate actionable and practicable innovation, whereby we not only share the analysis and methodology but also keep the clients informed with interim updates and share sample output. With creativity being the fulcrum of our approach, we blend our understanding of technology, commercial strategy, client requirements and customer needs to achieve the best fit end-result and helping you select the right option, always. | | This commitment to clarity and collaboration ensures that innovation is not just conceptualized but implemented effectively. By maintaining open communication and adapting to evolving project needs, we help clients confidently move from idea to impact, making innovation a practical driver of business success."
             },
             "services": {
                 "title": "Open Innovation Services",
                 "cards": [
                     {
                         "name": "Technology Scouting",
-                        "description": "Identifying new and emerging technologies to drive business growth. Systematic scanning of the innovation landscape uncovers opportunities, helping you stay ahead of industry trends and make informed strategic decisions."
+                        "description": "Identifying new and emerging technologies to drive business growth. Systematic scanning of the innovation landscape uncovers opportunities, helping you stay ahead of industry trends and make informed strategic decisions.",
+                        "image": "/images/innovation-s1.webp"
                     },
                     {
                         "name": "Technology Whitespace Analysis",
-                        "description": "Spotting unexplored market opportunities for strategic advantage. By highlighting gaps in current technology landscapes, this service targets innovation efforts where competition is low and potential is high, supporting smarter R&amp;D and business growth."
+                        "description": "Spotting unexplored market opportunities for strategic advantage. By highlighting gaps in current technology landscapes, this service targets innovation efforts where competition is low and potential is high, supporting smarter R&amp;D and business growth.",
+                        "image": "/images/innovation-s2.webp"
                     },
                     {
                         "name": "Technology Feasibility &amp; Maturity Assessment",
-                        "description": "Evaluating the practicalityand readiness of innovations Analysis of technical viability, development stage, and potential challenges enables informed decisions and accelerates successful implementation."
+                        "description": "Evaluating the practicalityand readiness of innovations Analysis of technical viability, development stage, and potential challenges enables informed decisions and accelerates successful implementation.",
+                        "image": "/images/innovation-s3.webp"
                     },
                     {
                         "name": "Technology Monitoring",
-                        "description": "Keeping you updated on the latest market and research advancements relevant to your field. Tracking emerging trends and competitor activities provides actionable insights for strategic decision- making."
+                        "description": "Keeping you updated on the latest market and research advancements relevant to your field. Tracking emerging trends and competitor activities provides actionable insights for strategic decision- making.",
+                        "image": "/images/innovation-s4.webp"
                     },
                     {
                         "name": "Market Research &amp; Intelligence",
-                        "description": "Aligning innovation with business and consumer needs. Actionable insights on market trends, competitive landscapes, and customer preferences empower informed strategic decisions and maximize market potential."
+                        "description": "Aligning innovation with business and consumer needs. Actionable insights on market trends, competitive landscapes, and customer preferences empower informed strategic decisions and maximize market potential.",
+                        "image": "/images/innovation-s5.webp"
                     }
                 ]
             },

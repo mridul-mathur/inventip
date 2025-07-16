@@ -8,15 +8,17 @@ interface HeroProps {
 
 function Hero({ title, intro, image }: HeroProps) {
   return (
-    <main className="w-screen h-screen p-16 my-[2rem] flex justify-between items-center">
-      <div className="h-full w-7/12 flex flex-col">
-        <h1 className="text-head md:text-max">{title}</h1>
-        <p className="mt-5 text-para leading-6">{intro}</p>
+    <main className="w-screen max-h-screen h-fit p-16 my-[2rem] gap-6 flex flex-col justify-start items-center">
+      <div className="text-center h-full w-3/4 flex flex-col">
+        <h1 className="text-head font-semibold md:text-max">{title}</h1>
+        <p className="mt-5 text-subhead font-medium leading-[125%]">{intro}</p>
       </div>
-      <div className=" h-full w-5/12 flex justify-center items-center">
-        <div className="h-full w-full relative overflow-hidden border rounded-[2rem] bg-slate-300">
-          <img src={image} alt="" className="w-full h-full object-cover" />
-        </div>
+      <div className="w-[90vw] h-auto overflow-hidden relative aspect-[2/1] bg-slate-300 mt-10 rounded-[2.5rem]">
+        <img
+          src={image}
+          alt="About Hero"
+          className="w-full h-full object-cover object-center"
+        />
       </div>
     </main>
   );
