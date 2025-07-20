@@ -20,7 +20,7 @@ const WhyUs = () => {
         <h1 className="text-head text-secondary mb-4">
           <TextFormatter text={whyJoinUs.title} />
         </h1>
-        <h3 className="text-para text-center leading-[125%] w-3/4">
+        <h3 className="text-para text-center  w-3/4">
           <TextFormatter text={whyJoinUs.subhead} />
         </h3>
       </div>
@@ -34,11 +34,11 @@ const WhyUs = () => {
           {whyJoinUs.reasons.map(
             (reason: { title: string; description: string }, index: number) => (
               <div key={index} className="relative flex flex-col gap-2">
-                <hr className="-left-2 absolute w-[2px] h-full bg-gradient-to-r from-accent1 to-accent2"/>
-                <h3 className="text-subheadmin leading-[125%] text-secondary ">
+                <hr className="-left-2 absolute w-[2px] h-full bg-gradient-to-r from-accent1 to-accent2" />
+                <h3 className="text-subheadmin  text-secondary ">
                   <TextFormatter text={reason.title} />
                 </h3>
-                <p className="text-para leading-[125%] text-secondary">
+                <p className="text-para text-secondary">
                   <TextFormatter text={reason.description} />
                 </p>
               </div>

@@ -27,12 +27,12 @@ function ourmission() {
       </div>
       <div className="flex min-h-auto w-full mt-8 flex-col p-2 sm:flex-row">
         <div className=" h-auto w-full pr-0 pt-10 sm:pr-20">
-          <p className="text-para leading-6">
+          <p className="text-para ">
             <TextFormatter text={content?.text1 || ""} />
           </p>
         </div>
         <div className="  min-h-auto w-[100%]  pl-0 pt-10 p-2 sm:pl-20 ">
-          <p className="text-para leading-6">
+          <p className="text-para ">
             <TextFormatter text={content?.text2 || ""} />
           </p>
         </div>

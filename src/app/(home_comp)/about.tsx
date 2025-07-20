@@ -17,6 +17,11 @@ interface AboutContent {
   }>;
 }
 
+interface BentoContent {
+  text: string;
+  image: string;
+}
+
 const HomeAbout = () => {
   const [content, setContent] = useState<AboutContent | null>(null);
 
@@ -80,28 +85,60 @@ const Numb: React.FC<NumbProps> = ({ numb, text }) => {
 };
 
 const BentoGrid = () => {
+  const [content, setContent] = useState<BentoContent[] | null>(null);
+
+  useEffect(() => {
+    fetch("/content/content.json")
+      .then((response) => response.json())
+      .then((data) => setContent(data.Home.about.bento))
+      .catch((error) => console.error("Error fetching content:", error));
+  }, []);
+
+  if (!content) {
+    return (
+      <div className="w-full h-[48rem] flex items-center justify-center">
+        Loading...
+      </div>
+    );
+  }
+
   return (
-    <div className="w-full h-[48rem] grid sm:grid-cols-1 md:grid-cols-3 grid-rows-7 gap-6">
+    <div className="text-center w-full h-[48rem] grid sm:grid-cols-1 md:grid-cols-3 grid-rows-7 gap-6">
       <div className="relative overflow-hidden col-span-2 row-span-3 flex justify-center items-center rounded-xl">
         <img
-          src="/images/scope-s.webp"
+          src={content?.[0].image}
           alt={`S`}
           className="w-full h-full object-cover object-center"
         />
+        <div className="bg-secondary h-fit bg-clip-padding backdrop-filter backdrop-blur-2xl bg-opacity-30 absolute bottom-0 w-full flex justify-center items-center text-white text-para font-semibold py-2 transition-opacity duration-500 group-hover:opacity-90">
+          <div className="group-hover:bg-gradient-to-r group-hover:from-accent1 group-hover:to-accent2 group-hover:text-transparent group-hover:bg-clip-text duration-500">
+            <TextFormatter text={content?.[0].text} />
+          </div>
+        </div>
       </div>
       <div className="relative overflow-hidden col-span-1 row-span-3 flex justify-center items-center rounded-xl">
         <img
-          src="/images/scope-c.webp"
+          src={content?.[1].image}
           alt={`C`}
           className="w-full h-full object-cover object-center"
         />
+        <div className="bg-secondary h-fit bg-clip-padding backdrop-filter backdrop-blur-2xl bg-opacity-30 absolute w-full bottom-0 flex justify-center items-center text-white text-para font-semibold py-2 transition-opacity duration-500 group-hover:opacity-90">
+          <div className="group-hover:bg-gradient-to-r group-hover:from-accent1 group-hover:to-accent2 group-hover:text-transparent group-hover:bg-clip-text duration-500">
+            <TextFormatter text={content?.[1].text} />
+          </div>
+        </div>
       </div>
       <div className="relative overflow-hidden col-span-1 row-span-4 flex justify-center items-center rounded-xl">
         <img
-          src="/images/scope-o.webp"
+          src={content?.[2].image}
           alt={`O`}
           className="w-full h-full object-cover object-center"
         />
+        <div className="bg-secondary h-fit bg-clip-padding backdrop-filter backdrop-blur-2xl bg-opacity-30 absolute w-full bottom-0 flex justify-center items-center text-white text-para font-semibold py-2 transition-opacity duration-500 group-hover:opacity-90">
+          <div className="group-hover:bg-gradient-to-r group-hover:from-accent1 group-hover:to-accent2 group-hover:text-transparent group-hover:bg-clip-text duration-500">
+            <TextFormatter text={content?.[2].text} />
+          </div>
+        </div>
       </div>
       <div className="relative border border-accent1 overflow-hidden col-span-1 row-span-1 flex justify-center items-center rounded-xl">
         <p className="text-max uppercase font-bold  bg-gradient-to-r from-accent1 to-accent2 text-transparent bg-clip-text text-center">
@@ -110,17 +147,27 @@ const BentoGrid = () => {
       </div>
       <div className="relative overflow-hidden col-span-1 row-span-4 flex justify-center items-center rounded-xl">
         <img
-          src="/images/scope-e.webp"
+          src={content?.[4].image}
           alt={`E`}
           className="w-full h-full object-cover object-center"
         />
+        <div className="bg-secondary h-fit bg-clip-padding backdrop-filter backdrop-blur-2xl bg-opacity-30 absolute w-full flex bottom-0 justify-center items-center text-white text-para font-semibold py-2 transition-opacity duration-500 group-hover:opacity-90">
+          <div className="group-hover:bg-gradient-to-r group-hover:from-accent1 group-hover:to-accent2 group-hover:text-transparent group-hover:bg-clip-text duration-500">
+            <TextFormatter text={content?.[4].text} />
+          </div>
+        </div>
       </div>
       <div className="relative overflow-hidden col-span-1 row-span-3 flex justify-center items-center rounded-xl">
         <img
-          src="/images/scope-p.webp"
+          src={content?.[3].image}
           alt={`P`}
           className="w-full h-full object-cover object-right"
         />
+        <div className="bg-secondary h-fit bg-clip-padding backdrop-filter backdrop-blur-2xl bg-opacity-30 absolute w-full flex bottom-0 justify-center items-center text-white text-para font-semibold py-2 transition-opacity duration-500 group-hover:opacity-90">
+          <div className="group-hover:bg-gradient-to-r group-hover:from-accent1 group-hover:to-accent2 group-hover:text-transparent group-hover:bg-clip-text duration-500">
+            <TextFormatter text={content?.[3].text} />
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -17,7 +17,7 @@ function tier(data: { title: string; para: string; image: string }) {
         <h1 className="text-head mb-5 mt-5 md:mt-0">
           <TextFormatter text={data.title} />
         </h1>
-        <div className="flex flex-col mt-10 text-pretty text-para leading-[150%]">
+        <div className="flex flex-col mt-10 text-pretty text-para">
           <TextFormatter text={data.para} />
         </div>
       </div>

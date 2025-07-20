@@ -4,30 +4,28 @@ import { IoLogoLinkedin } from "react-icons/io5";
 import TextFormatter from "@/components/text-format";
 
 interface AboutTeamContent {
-  title: string,
-  cards: [
-    {}
-  ]
+  title: string;
+  cards: TeamCardProps[];
 }
 
 function team() {
   const [content, setContent] = useState<AboutTeamContent | null>(null);
 
   useEffect(() => {
-    fetch('/content/content.json')
-      .then(response => response.json())
-      .then(data => setContent(data.About.our_team))
-      .catch(error => console.error('Error fetching content:', error));
+    fetch("/content/content.json")
+      .then((response) => response.json())
+      .then((data) => setContent(data.About.our_team))
+      .catch((error) => console.error("Error fetching content:", error));
   }, []);
   return (
     <main className="h-[100%] w-full p-4 sm:p-16">
       <div className="w-full">
         <h1 className="text-head">
-          <TextFormatter text={ content?.title || '' } />
+          <TextFormatter text={content?.title || ""} />
         </h1>
       </div>
       <div className="w-full flex flex-wrap mt-[50px] gap-10 ">
-        <Team />
+        <Team team={content?.cards} />
       </div>
     </main>
   );
@@ -35,105 +33,69 @@ function team() {
 
 export default team;
 
-const Team = () => {
-  const teamData = [
-    {
-      name: "Ankush Bedi",
-      role: "Founding Partner",
-      linkedin: "",
-      mail: "john@example.com",
-      image:
-        "https://i.pinimg.com/736x/99/47/62/9947620a91a1e2c6f74b4711066941ae.jpg",
-    },
-    {
-      name: "Rahul Parmar",
-      role: "Founding Partner",
-      linkedin: "",
-      mail: "jane@example.com",
-      image:
-        "https://i.pinimg.com/736x/93/e7/62/93e7624c45f4631b8ca7568a7509bd99.jpg",
-    },
-    {
-      name: "Ken Sheets",
-      role: "US Advisor and Client Engagement Manager",
-      linkedin: "",
-      mail: "alex@example.com",
-      image:
-        "https://i.pinimg.com/736x/bd/c7/b8/bdc7b856ff45d369b620d8ca33d2d024.jpg",
-    },
-    {
-      name: "Shubha Verma",
-      role: "Associate Partner",
-      linkedin: "",
-      mail: "john@example.com",
-      image:
-        "https://i.pinimg.com/736x/51/34/b5/5134b558e3098fbf546905496a6922ac.jpg",
-    },
-    {
-      name: "Jane Smith",
-      role: "Backend Developer",
-      linkedin: "",
-      mail: "jane@example.com",
-      image:
-        "https://i.pinimg.com/736x/f1/4a/17/f14a174aa04589fffad68c526779eb7d.jpg",
-    },
-  ];
+interface TeamCardProps {
+  name: string;
+  image: string;
+  position: string;
+  li?: string;
+  mail?: string;
+}
 
+const Team: React.FC<{ team?: TeamCardProps[] }> = ({ team }) => {
+  if (!team) return null;
   return (
     <>
-      { teamData.map((item, index) => (
+      {team.map((item, index) => (
         <TeamCade
-          key={ index }
-          name={ item.name }
-          role={ item.role }
-          image={ item.image }
-          linkedin={ item.linkedin }
-          mail={ item.mail }
+          key={index}
+          name={item.name}
+          position={item.position}
+          image={item.image}
+          li={item.li}
+          mail={item.mail}
         />
-      )) }
+      ))}
     </>
   );
 };
 
-interface TeamCardProps {
-  name: string;
-  role: string;
-  linkedin: string;
-  mail: string;
-  image: string;
-}
-
 const TeamCade: React.FC<TeamCardProps> = ({
   name,
-  role,
+  position,
   image,
-  linkedin,
+  li,
   mail,
 }) => {
   return (
     <>
       <div className="card border h-[33rem] sm:h-[37rem] w-[410px] rounded-3xl relative overflow-hidden group">
-        <img src={ image } alt="" className="h-[100%] w-full" />
-        <div className="h-[16%] w-full border absolute bottom-0 rounded-xl backdrop-blur-[2px] flex shadow-inner">
+        <img src={image} alt="" className="h-[100%] w-full" />
+        <div className="h-[16%] w-full border-t absolute bottom-1 rounded-xl backdrop-blur-[2px] flex shadow-inner">
           <div className="name h-[100%] w-[100%] text-primary flex flex-col justify-evenly p-4">
-            <h1 className="text-2xl font-bold">{ name }</h1>
-            <p className="font-thin text-sm">{ role }</p>
+            <h1 className="text-2xl font-bold">{name}</h1>
+            <p className="font-thin text-sm">{position}</p>
           </div>
-          <div className="link h-[100%] w-[70%] flex gap-2 items-center">
-            <div className="ixon-box h-[50%] w-[30%] overflow-hidden border opacity-0 transition-opacity duration-1000 group-hover:opacity-100 rounded-md flex items-center justify-center">
+          <div className="link h-[100%] w-fit  px-3 justify-end flex gap-3 items-center">
+            <a
+              href={`https://mail.google.com/mail/u/0/?fs=1&to=${mail}&su=&body=&tf=cm`}
+              className="aspect-square h-12 w-12 ixon-box p-3 overflow-hidden border opacity-0 transition-opacity duration-1000 group-hover:opacity-100 rounded-md flex items-center justify-center"
+            >
               <img
                 src="/images/mail.png"
-                alt=""
-                className="text-primary  overflow-hidden translate-y-[100%] transition-transform duration-1000 group-hover:translate-y-0"
+                alt={`Send mail to ${name}`}
+                className="text-primary overflow-hidden translate-y-[100%] transition-transform duration-1000 group-hover:translate-y-0"
               />
-            </div>
-            <div className="ixon-box h-[50%] w-[30%] overflow-hidden border opacity-0 transition-opacity duration-1000 group-hover:opacity-100 rounded-md flex items-center justify-center">
+            </a>
+            <a
+              href={li}
+              className="aspect-square ixon-box h-12 w-12 p-3 overflow-hidden border opacity-0 transition-opacity duration-1000 group-hover:opacity-100 rounded-md flex items-center justify-center"
+            >
               <img
                 src="/images/link.png"
                 alt=""
                 className="text-primary  overflow-hidden translate-y-[100%] transition-transform duration-1000 group-hover:translate-y-0"
               />
-            </div>
+            </a>
           </div>
         </div>
       </div>

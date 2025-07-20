@@ -148,7 +148,7 @@ const TestiCard: React.FC<TestiCardProps> = ({
         <div className="px-6">
           <p className="text-paramin">{ name }</p>
           <p>
-            <span className="text-slate-400 text-min leading-5">{ company }</span>
+            <span className="text-slate-400 text-min">{ company }</span>
           </p>
         </div>
       </div>

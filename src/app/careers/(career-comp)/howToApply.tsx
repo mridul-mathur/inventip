@@ -30,13 +30,13 @@ export default function HowToApply() {
               <div key={idx} className="group">
                 <div className="flex items-start gap-8 justify-start">
                   <div className="flex flex-col w-fit gap-1">
-                    <span className="text-subheadmin leading-[125%] uppercase bg-gradient-to-r from-accent1 to-accent2 text-transparent  bg-clip-text text-center">
+                    <span className="text-subheadmin uppercase bg-gradient-to-r from-accent1 to-accent2 text-transparent  bg-clip-text text-center">
                       {String(idx + 1).padStart(2, "0")}
                     </span>
                     <hr className="w-full h-[0.125rem]  bg-secondary"></hr>
                   </div>
                   <div className="flex flex-col flex-1 gap-4 m-0 p-0">
-                    <h3 className="text-subheadmin leading-[125%] font-light text-secondary">
+                    <h3 className="text-subheadmin font-light text-secondary">
                       <TextFormatter text={item.title} />
                     </h3>
                     <p className="text-para  text-secondary">
@@ -52,7 +52,7 @@ export default function HowToApply() {
               <h2 className="text-subhead text-secondary text-center">
                 <TextFormatter text={internships.title} />
               </h2>
-              <h2 className="text-para leading-[125%] text-secondary">
+              <h2 className="text-para  text-secondary">
                 <TextFormatter text={internships.subhead} />
               </h2>
               <div className="flex my-4 gap-1 relative">

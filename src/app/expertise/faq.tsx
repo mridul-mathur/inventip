@@ -14,7 +14,7 @@ function Faq({ faqs }: FaqProps) {
       <div className="w-[100%] h-[100%] px-0 md:px-10 pt-[5%]">
         <h1 className="text-head">To ask? We may already have an answer.</h1>
         <div className="flex justify-between items-center mt-[10%] pr-10">
-          <p className="text-para leading-6">Is your question not listed?</p>
+          <p className="text-para ">Is your question not listed?</p>
           <div className="px-5 py-1 rounded-2xl bg-black">
             <Buttons
               color="light"
@@ -79,7 +79,7 @@ const FaqCard: React.FC<FaqCardProps> = ({ ques, ans, isOpen, onClick }) => {
       onClick={onClick}
     >
       <div className="flex justify-between items-center">
-        <h2 className="text-para leading-[1.5rem] md:leading-normal">{ques}</h2>
+        <h2 className="text-para">{ques}</h2>
         <span className="text-lg">{isOpen ? "➖" : "➕"}</span>
       </div>
       <div

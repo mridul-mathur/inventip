@@ -36,7 +36,7 @@ const OurCluture = () => {
           <h3 className="text-subheadmin">
             <TextFormatter text={content?.cards[0].title || ""} />
           </h3>
-          <p className="text-para leading-6">
+          <p className="text-para ">
             <TextFormatter text={content?.cards[0].description || ""} />
           </p>
         </div>
@@ -44,7 +44,7 @@ const OurCluture = () => {
           <h3 className="text-subheadmin">
             <TextFormatter text={content?.cards[1].title || ""} />
           </h3>
-          <p className="text-para leading-6">
+          <p className="text-para">
             <TextFormatter text={content?.cards[1].description || ""} />
           </p>
         </div>

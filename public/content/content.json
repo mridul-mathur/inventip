@@ -24,20 +24,39 @@
             },
             "numbers": [
                 {
-                    "number": 100,
-                    "text": "Satisfied Clients"
+                    "number": 70,
+                    "text": "Tech Experts"
                 },
                 {
-                    "number": 100,
-                    "text": "Successful Buisnesses"
+                    "number": 5000,
+                    "text": "Successful Projects"
                 },
                 {
                     "number": 10,
-                    "text": "Years of Experience"
+                    "text": "Across Countries"
                 }
             ],
             "bento": [
-                {}
+                {
+                    "text": "Search & Patentability",
+                    "image": "/images/scope-s.webp"
+                },
+                {
+                    "text": "Competitor & Market Intelligence",
+                    "image": "/images/scope-c.webp"
+                },
+                {
+                    "text": "Operational Freedom & Risk Assessment",
+                    "image": "/images/scope-o.webp"
+                },
+                {
+                    "text": "Portfolio Strategy & Monetization",
+                    "image": "/images/scope-p.webp"
+                },
+                {
+                    "text": "Emerging Trends Benchmarking",
+                    "image": "/images/scope-e.webp"
+                }
             ]
         },
         "industries": {
@@ -187,7 +206,34 @@
         "our_team": {
             "title": "Meet the people | behind inventIP",
             "cards": [
-                {}
+                {
+                    "name": "Ankush Bedi",
+                    "image": "/images/person-1.webp",
+                    "position": "Founding Partner | Attorney | Indian Patent Agent",
+                    "li": "https://www.linkedin.com/in/ankush-bedi-9524611",
+                    "mail": "ankushbedi@inventip.in"
+                },
+                {
+                    "name": "Rahul Parmar",
+                    "image": "/images/person-2.webp",
+                    "position": "Founding Partner | Attorney | Indian Patent Agent",
+                    "li": "https://www.linkedin.com/in/parmarrahul",
+                    "mail": "rahulparmar@inventip.in"
+                },
+                {
+                    "name": "Ken Sheets",
+                    "image": "/images/person-3.webp",
+                    "position": "US Advisor | US Attorney | US Patent Agent",
+                    "li": "",
+                    "mail": ""
+                },
+                {
+                    "name": "Shubha Verma",
+                    "image": "/images/person-4.webp",
+                    "position": "Associate Partner",
+                    "li": "https://www.linkedin.com/in/shubha-verma-189a039",
+                    "mail": "shubha.verma@inventip.in"
+                }
             ]
         }
     },
@@ -195,10 +241,9 @@
         {
             "title": "IP Research",
             "image": "/images/ip-research.webp",
-            "intro": "Informed IP Decisions Through Expert Intelligence.",
             "details": {
                 "image": "/images/ip-research2.webp",
-                "title": "This needs to be added",
+                "title": "Informed IP Decisions Through Expert Intelligence.",
                 "content": "InventIP is the IP intelligence partner your business needs to navigate the IP landscape. We support global businesses in informed decision-making with respect to their potential IP investments, help them avoid running into troubled waters by safeguarding from potential invalidity/infringement challenges, and partner with them to identify potential monetization opportunities. Through relevant prior art searches helping you determine patentable inventions, we help in analysing and scrutinizing inventions to streamline costs. We are aware of the commercial and technical activity within the relevant domains and help you make wise patent decisions that are backed by data, IP and market analysis, and thorough research. | | Our in-house professionals have been leveraging their learning curve developed through decades of practice and have the expertise of searching through sophisticated tools and resources. We take pride in helping you with innovative insights and strategies to enhance the quality and returns on your IP investment."
             },
             "services": {
@@ -269,10 +314,9 @@
         {
             "title": "IP Strategy",
             "image": "/images/ip-strategy.webp",
-            "intro": "Transform IP challenges into opportunities—enforce rights, mitigate risks, and sharpen your competitive edge with data-driven strategies.",
             "details": {
                 "image": "/images/ip-strategy2.webp",
-                "title": "This needs to be added",
+                "title": "Turn IP risks into advantages.",
                 "content": "Creation of IP necessitates subsequent enforcement and ensuring sanctity of IP rights. At the same time, evaluating and subsequently adhering to IP boundaries set by competitors is equally important. With years of experience, our team of trained lawyers and engineers are able to identify such violation of clients' IP rights and at the same time making sure that the clients are not stepping into a landmine of IP violations, at least not without sufficient safeguards. | | IP filing related strategies have a strong correlation with R&D focus of companies and thus in this technologically competitive world it becomes prudent to periodically analyse IP portfolios of competitors in order to stay ahead of the curve. Our team of experts is specialized in drawing interesting and useful competitor insights to help tailor our clients IP filing strategies. | | Our approach to working in close collaborations with the inventors as well as the IP/legal teams of our clients enables us to fully understand their core technology and design successful strategies for creating and managing global patent portfolios. Our strategic advisory is always in alignment with the commercial requirements of our clients."
             },
             "services": {
@@ -333,10 +377,9 @@
         {
             "title": "IP Portfolio Management",
             "image": "/images/ip-management.webp",
-            "intro": "Transform your IP portfolio into a strategic powerhouse that drives innovation, mitigates risks, and unlocks sustainable growth.",
             "details": {
                 "image": "/images/ip-management2.webp",
-                "title": "This needs to be added",
+                "title": "Make IP a growth driver.",
                 "content": "We believe in empowering you to make intelligent decisions driven by data and information about your IP portfolio's competitiveness. Through our portfolio management services, we help you identify the strength of individual patents and overall value of your patent portfolio. Such a periodic assessment helps in avoiding maintaining assets that have a lower ROI or are technologically obsolete, thereby reducing better deployment of your IP budget. A closer eye on your portfolio also helps you realize true value of your IP through sale/licensing. | | Regular portfolio reviews also provide early visibility into potential gaps or overlaps, allowing you to adapt your IP strategy as your business evolves. This proactive approach ensures your portfolio remains aligned with both current market dynamics and your long-term commercial objectives."
             },
             "services": {
@@ -399,10 +442,9 @@
         {
             "title": "Open Innovation",
             "image": "/images/open-innovation.webp",
-            "intro": "Where your ideas meet action—unlocking untapped opportunities and transforming innovation into impactful success.",
             "details": {
                 "image": "/images/open-innovation2.webp",
-                "title": "This needs to be added",
+                "title": "Ideas in action, impact unlocked.",
                 "content": "Innovation will remain an idea or thought on paper if insights are not actionable or not practicable. We look beyond conventional search strategies and work in a collaborative manner to generate actionable and practicable innovation, whereby we not only share the analysis and methodology but also keep the clients informed with interim updates and share sample output. With creativity being the fulcrum of our approach, we blend our understanding of technology, commercial strategy, client requirements and customer needs to achieve the best fit end-result and helping you select the right option, always. | | This commitment to clarity and collaboration ensures that innovation is not just conceptualized but implemented effectively. By maintaining open communication and adapting to evolving project needs, we help clients confidently move from idea to impact, making innovation a practical driver of business success."
             },
             "services": {
@@ -419,7 +461,7 @@
                         "image": "/images/innovation-s2.webp"
                     },
                     {
-                        "name": "Technology Feasibility &amp; Maturity Assessment",
+                        "name": "Technology Feasibility & Maturity Assessment",
                         "description": "Evaluating the practicalityand readiness of innovations Analysis of technical viability, development stage, and potential challenges enables informed decisions and accelerates successful implementation.",
                         "image": "/images/innovation-s3.webp"
                     },
@@ -429,7 +471,7 @@
                         "image": "/images/innovation-s4.webp"
                     },
                     {
-                        "name": "Market Research &amp; Intelligence",
+                        "name": "Market Research & Intelligence",
                         "description": "Aligning innovation with business and consumer needs. Actionable insights on market trends, competitive landscapes, and customer preferences empower informed strategic decisions and maximize market potential.",
                         "image": "/images/innovation-s5.webp"
                     }

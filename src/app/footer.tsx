@@ -15,7 +15,7 @@ type FooterSection = {
 const Footer: React.FC = () => {
   const footerSections: FooterSection[] = [
     {
-      title: "Menu",
+      title: "Site Navigation",
       items: [
         { name: "Home", link: "/" },
         { name: "About", link: "/about" },
@@ -52,14 +52,14 @@ const Footer: React.FC = () => {
           />
         </Link>
       </div>
-      <div className=" w-[100%] flex justify-center items-center">
+      <div className="w-[100%] flex justify-center items-center">
         <div className="flex gap-4 sm:gap-16">
           {footerSections.map((section, index) => (
             <div key={index}>
               <h3 className="pb-3 capitalize text-para font-medium">
                 {section.title}
               </h3>
-              <ul className="text-paramin sm:text-para font-light">
+              <ul className="text-paramin text-left sm:text-para font-light">
                 {section.items.map((item, idx) => (
                   <Buttons color="dark" underline key={idx}>
                     {item.link ? (
