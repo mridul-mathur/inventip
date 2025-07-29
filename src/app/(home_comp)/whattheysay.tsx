@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import React, { useState, useEffect } from "react";
-import Image from "next/image";
-import Buttons from "../buttons";
+import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
+import Buttons from '../buttons';
 import type { Swiper as SwiperType } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, EffectFade, Autoplay } from 'swiper/modules';
@@ -12,7 +12,7 @@ import 'swiper/css/effect-fade';
 
 interface TestimonialContent {
   title: string;
-  cards: [TestiCardProps]
+  cards: [TestiCardProps];
 }
 
 function WhatTheySay() {
@@ -20,9 +20,9 @@ function WhatTheySay() {
 
   useEffect(() => {
     fetch('/content/content.json')
-      .then(response => response.json())
-      .then(data => setContent(data.Home.testimonials))
-      .catch(error => console.error('Error fetching content:', error));
+      .then((response) => response.json())
+      .then((data) => setContent(data.Home.testimonials))
+      .catch((error) => console.error('Error fetching content:', error));
   }, []);
 
   const [swiper, setSwiper] = useState<SwiperType | null>(null);
@@ -41,68 +41,68 @@ function WhatTheySay() {
   };
 
   return (
-    <main className="flex flex-col  bg-primary h-fit min-h-[75vh] py-12 px-0 w-screen gap-6">
-      <div className="w-[100%] px-12 flex justify-between items-center">
-        <h1 className="text-head capitalize">
+    <main className='flex flex-col  bg-primary h-fit min-h-[75vh] py-12 px-0 w-screen gap-6'>
+      <div className='w-[100%] px-12 flex justify-between items-center'>
+        <h1 className='text-head capitalize'>
           What They <br /> Say About Us
         </h1>
-        <div className="flex gap-4">
-          <div className="flex p-1 border border-secondary rounded-full">
-            <Buttons color="dark" onClick={ handlePrev }>
+        <div className='flex gap-4'>
+          <div className='flex p-1 border border-secondary rounded-full'>
+            <Buttons color='dark' onClick={handlePrev}>
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="28"
-                height="28"
-                viewBox="0 0 24 24"
+                xmlns='http://www.w3.org/2000/svg'
+                width='28'
+                height='28'
+                viewBox='0 0 24 24'
               >
                 <path
-                  d="M12 4l1.41 1.41L7.83 11H20v2H7.83l5.58 5.59L12 20l-8-8 8-8z"
-                  fill="#191919"
+                  d='M12 4l1.41 1.41L7.83 11H20v2H7.83l5.58 5.59L12 20l-8-8 8-8z'
+                  fill='#191919'
                 />
               </svg>
             </Buttons>
           </div>
-          <div className="flex p-1 border border-secondary rounded-full">
-            <Buttons color="dark" onClick={ handleNext }>
+          <div className='flex p-1 border border-secondary rounded-full'>
+            <Buttons color='dark' onClick={handleNext}>
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="28"
-                height="28"
-                viewBox="0 0 24 24"
+                xmlns='http://www.w3.org/2000/svg'
+                width='28'
+                height='28'
+                viewBox='0 0 24 24'
               >
                 <path
-                  d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"
-                  fill="#191919"
+                  d='M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z'
+                  fill='#191919'
                 />
               </svg>
             </Buttons>
           </div>
         </div>
       </div>
-      <div className="relative w-full px-12 flex justify-center overflow-visible">
+      <div className='relative w-full px-12 flex justify-center overflow-visible'>
         <Swiper
-          modules={ [Navigation, EffectFade] }
-          spaceBetween={ 32 }
-          slidesPerView={ 1 }
-          loop={ true }
-          speed={ 1000 }
-          onSwiper={ setSwiper }
-          onSlideChange={ (swiper) => setActiveIndex(swiper.realIndex) }
-          className="w-full"
+          modules={[Navigation, EffectFade]}
+          spaceBetween={32}
+          slidesPerView={1}
+          loop={true}
+          speed={1000}
+          onSwiper={setSwiper}
+          onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+          className='w-full'
         >
-          { content?.cards.map((testi, index) => (
-            <SwiperSlide key={ index }>
+          {content?.cards.map((testi, index) => (
+            <SwiperSlide key={index}>
               <TestiCard
-                name={ testi.name }
-                quate={ testi.quate }
-                image={ testi.image }
-                company={ testi.company }
+                name={testi.name}
+                quate={testi.quate}
+                image={testi.image}
+                company={testi.company}
               />
             </SwiperSlide>
-          )) }
+          ))}
         </Swiper>
       </div>
-    </main >
+    </main>
   );
 }
 
@@ -122,33 +122,25 @@ const TestiCard: React.FC<TestiCardProps> = ({
   company,
 }) => {
   return (
-    <div className="w-full hover:cursor-grab h-full flex-shrink-0 flex items-center gap-4">
-      <div className="relative rounded-xl overflow-hidden w-2/5 h-full min-h-[15rem]">
-        <Image
-          src={ image }
-          fill
-          alt={ name }
-          className="relative object-cover w-full h-full"
-        />
-      </div>
-      <div className="w-3/5 h-full flex flex-col justify-between">
-        <div className="relative w-full py-4 px-6">
+    <div className='w-full hover:cursor-grab h-full justify-center text-center flex-shrink-0 flex items-center gap-8'>
+      <div className='w-3/5 h-fit flex flex-col justify-between items-center gap-6'>
+        <div className='relative w-full py-4 px-6'>
           <img
-            src="/images/upper.png"
-            alt=""
-            className="absolute top-0 left-0"
+            src='/images/upper.png'
+            alt=''
+            className='absolute top-0 left-0'
           />
-          <h1 className="text-para w-full">{ quate }</h1>
+          <h1 className='text-para w-full'>{quate}</h1>
           <img
-            src="/images/down.png"
-            className="absolute bottom-0 right-6"
-            alt=""
+            src='/images/down.png'
+            className='absolute bottom-0 right-6'
+            alt=''
           />
         </div>
-        <div className="px-6">
-          <p className="text-paramin">{ name }</p>
+        <div className='px-6'>
+          <p className='text-paramin'>{name}</p>
           <p>
-            <span className="text-slate-400 text-min">{ company }</span>
+            <span className='text-slate-400 text-min'>{company}</span>
           </p>
         </div>
       </div>

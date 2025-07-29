@@ -33,7 +33,6 @@ const TextFormatter: React.FC<TextFormatterProps> = ({ text }) => {
     if (!text) {
         return null;
     }
-    // Step 1: Split by '|', each means a new paragraph (two <br/>)
     const paragraphs = text.split('|');
     let nodes: React.ReactNode[] = [];
     paragraphs.forEach((para, idx) => {

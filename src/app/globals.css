@@ -140,17 +140,3 @@
 }
 
 
-html,
-body {
-  overscroll-behavior: none;
-  scrollbar-width: none;
-
-}
-
-
-.right-image{
-  scrollbar-width: none;
-}
-
-
-
