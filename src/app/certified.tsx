@@ -1,108 +1,113 @@
 'use client';
 
-import React, { useState, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-
-interface Slide {
-  subtitle: string;
-  para: string;
-  img: string;
-}
+import React, { useRef } from 'react';
+import { motion } from 'framer-motion';
+import type { Swiper as SwiperType } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, EffectFade, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/effect-fade';
+import Buttons from './buttons';
 
 const Certified: React.FC = () => {
-  const slides: Slide[] = [
-    {
-      subtitle: 'Industry Certification A',
-      para: 'Details about Certification A go here.',
-      img: 'https://i.pinimg.com/control2/736x/39/80/16/3980164e1d092aed57c619b854d3e72e.jpg',
-    },
-    {
-      subtitle: 'Industry Certification B',
-      para: 'Details about Certification B go here.',
-      img: 'https://i.pinimg.com/736x/38/bf/5a/38bf5acc0e4a38da034b516009ad5fec.jpg',
-    },
-    {
-      subtitle: 'Industry Certification C',
-      para: 'Details about Certification C go here.',
-      img: 'https://i.pinimg.com/736x/dc/dd/a9/dcdda91488940560786283b38213ec6b.jpg',
-    },
-    {
-      subtitle: 'Industry Certification D',
-      para: 'Details about Certification D go here.',
-      img: 'https://i.pinimg.com/736x/74/05/09/74050921771c3359416531919ec211c9.jpg',
-    },
+  const slides: string[] = [
+    '/images/cert1.webp',
+    '/images/cert2.webp',
+    '/images/cert3.webp',
   ];
 
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const rightImageRef = useRef<HTMLDivElement | null>(null);
+  const swiperRef = useRef<SwiperType | null>(null);
 
-  const handleCardClick = (index: number) => {
-    setCurrentIndex(index);
-    const rightImageContainer = rightImageRef.current;
-    if (rightImageContainer) {
-      const targetImage = rightImageContainer.children[index] as HTMLElement;
-      targetImage?.scrollIntoView({
-        behavior: 'smooth',
-        block: 'nearest',
-        inline: 'center',
-      });
+  const handleNext = () => {
+    if (swiperRef.current) {
+      swiperRef.current.slideNext();
+    }
+  };
+
+  const handlePrev = () => {
+    if (swiperRef.current) {
+      swiperRef.current.slidePrev();
     }
   };
 
   return (
-    <main className='min-h-[90vh] w-screen bg-primary flex flex-col md:flex-row p-4 md:p-16 overflow-hidden z-[1]'>
-      <div className='left-detail w-full md:w-[50%] flex flex-col justify-evenly gap-5 md:gap-0 pl-2'>
-        <h1 className='text-head capitalize'>Appreciation and Awards</h1>
-        <AnimatePresence mode='wait'>
-          <motion.div
-            key={`subtitle-${currentIndex}`}
-            initial={{ y: -50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: 50, opacity: 0 }}
-            transition={{ duration: 0.25 }}
-          >
-            <h2 className='text-subhead'>{slides[currentIndex].subtitle}</h2>
-          </motion.div>
-          <motion.div
-            key={`para-${currentIndex}`}
-            initial={{ y: -50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: 50, opacity: 0 }}
-            transition={{ duration: 0.25 }}
-          >
-            <p className='text-para'>{slides[currentIndex].para}</p>
-          </motion.div>
-        </AnimatePresence>
-      </div>
+    <main className='min-h-[90vh] w-screen bg-primary flex flex-col justify-center items-center p-4 md:p-16 overflow-hidden z-[1]'>
+      <h1 className='text-head capitalize mb-12'>Appreciation and Awards</h1>
+      <div className='relative w-full max-w-6xl'>
+        <Swiper
+          onSwiper={(swiper) => {
+            swiperRef.current = swiper;
+          }}
+          modules={[Navigation, EffectFade]}
+          spaceBetween={24}
+          loop={true}
+          breakpoints={{
+            640: {
+              slidesPerView: 1,
+              spaceBetween: 24,
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 24,
+            },
+          }}
+          className='w-full'
+        >
+          {slides.map((slide, index) => (
+            <SwiperSlide key={index}>
+              <motion.div
+                className='relative h-fit w-fit flex items-center justify-center cursor-pointer'
+                transition={{ duration: 0.3 }}
+              >
+                <div className='h-full w-full aspect-square flex border rounded-[2rem] items-center justify-center overflow-hidden'>
+                  <img
+                    src={slide}
+                    alt={`Certificate ${index + 1}`}
+                    className='w-full h-full object-contain p-6 bg-white rounded-[2rem]'
+                  />
+                </div>
+              </motion.div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
 
-      <div
-        className='right-image h-[80vh] w-full md:w-[80%] flex items-center p-4 md:p-12 overflow-x-scroll scrollbar-none'
-        ref={rightImageRef}
-      >
-        {slides.map((slide, index) => (
-          <motion.div
-            key={`container-${index}`}
-            className={`relative h-[80%] min-w-[280px] flex-shrink-0 flex items-center justify-center cursor-pointer`}
-            onClick={() => handleCardClick(index)}
-          >
-            <motion.div
-              className={`h-full w-full border rounded-[2rem] overflow-hidden ${
-                currentIndex === index ? 'z-[2]' : 'z-[0]'
-              }`}
-              animate={{
-                scale: currentIndex === index ? 1.05 : 0.85,
-                opacity: currentIndex === index ? 1 : 0.9,
-              }}
-              transition={{ duration: 0.5 }}
-            >
-              <img
-                src={slide.img}
-                alt={slide.subtitle}
-                className='w-full h-full object-cover rounded-[2rem]'
-              />
-            </motion.div>
-          </motion.div>
-        ))}
+        <div className='absolute top-1/2 -left-16 transform -translate-y-1/2 z-10'>
+          <div className='flex p-1 border border-secondary rounded-full'>
+            <Buttons color='dark' onClick={handleNext}>
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                width='28'
+                height='28'
+                viewBox='0 0 24 24'
+                style={{ transform: 'rotate(180deg)' }}
+              >
+                <path
+                  d='M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z'
+                  fill='#191919'
+                />
+              </svg>
+            </Buttons>
+          </div>
+        </div>
+
+        <div className='absolute top-1/2 -right-16 transform -translate-y-1/2 z-10'>
+          <div className='flex p-1 border border-secondary rounded-full'>
+            <Buttons color='dark' onClick={handlePrev}>
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                width='28'
+                height='28'
+                viewBox='0 0 24 24'
+              >
+                <path
+                  d='M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z'
+                  fill='#191919'
+                />
+              </svg>
+            </Buttons>
+          </div>
+        </div>
       </div>
     </main>
   );

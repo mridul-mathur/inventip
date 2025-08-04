@@ -46,40 +46,23 @@ function WhatTheySay() {
         <h1 className='text-head capitalize'>
           What They <br /> Say About Us
         </h1>
-        <div className='flex gap-4'>
-          <div className='flex p-1 border border-secondary rounded-full'>
-            <Buttons color='dark' onClick={handlePrev}>
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                width='28'
-                height='28'
-                viewBox='0 0 24 24'
-              >
-                <path
-                  d='M12 4l1.41 1.41L7.83 11H20v2H7.83l5.58 5.59L12 20l-8-8 8-8z'
-                  fill='#191919'
-                />
-              </svg>
-            </Buttons>
-          </div>
-          <div className='flex p-1 border border-secondary rounded-full'>
-            <Buttons color='dark' onClick={handleNext}>
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                width='28'
-                height='28'
-                viewBox='0 0 24 24'
-              >
-                <path
-                  d='M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z'
-                  fill='#191919'
-                />
-              </svg>
-            </Buttons>
-          </div>
-        </div>
       </div>
-      <div className='relative w-full px-12 flex justify-center overflow-visible'>
+      <div className='relative w-full px-12 flex justify-center items-center overflow-visible'>
+        <div className='absolute left-20 z-[10] flex p-1 border border-secondary rounded-full'>
+          <Buttons color='dark' onClick={handlePrev}>
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              width='28'
+              height='28'
+              viewBox='0 0 24 24'
+            >
+              <path
+                d='M12 4l1.41 1.41L7.83 11H20v2H7.83l5.58 5.59L12 20l-8-8 8-8z'
+                fill='#191919'
+              />
+            </svg>
+          </Buttons>
+        </div>
         <Swiper
           modules={[Navigation, EffectFade]}
           spaceBetween={32}
@@ -101,6 +84,21 @@ function WhatTheySay() {
             </SwiperSlide>
           ))}
         </Swiper>
+        <div className='absolute right-20 z-[10] flex p-1 border border-secondary w-fit h-fit rounded-full'>
+          <Buttons color='dark' onClick={handleNext}>
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              width='28'
+              height='28'
+              viewBox='0 0 24 24'
+            >
+              <path
+                d='M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z'
+                fill='#191919'
+              />
+            </svg>
+          </Buttons>
+        </div>
       </div>
     </main>
   );

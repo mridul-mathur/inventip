@@ -17,7 +17,7 @@
         },
         "about": {
             "title": "Converge. Disrupt. Outpace.",
-            "text": "InventIP is a premier consulting firm specializing in patent analytics and open - innovation services. We empower forward - thinking businesses totransform complex IP data into strategic advantages, guided by our ethos: | <b>Converge.Disrupt.Outpace</b>. | | InventIP doesn't just analyze patents—we turn them into momentum. Converge with possibilities. Disrupt the status quo. Outpace what's next.",
+            "text": "InventIP is a premier consulting firm specializing in patent analytics and open - innovation services. We empower forward - thinking businesses to transform complex IP data into strategic advantages, guided by our ethos: | <b>Converge.Disrupt.Outpace</b>. | | InventIP doesn't just analyze patents—we turn them into momentum. Converge with possibilities. Disrupt the status quo. Outpace what's next.",
             "cta": {
                 "text": "Know About Us",
                 "link": "/about"
@@ -149,40 +149,28 @@
             "title": "What TheySay About Us",
             "cards": [
                 {
-                    "name": "Faiz Ur Rehman",
-                    "quate": "In our search for a law firm with strong technical expertise in patent drafting and prosecution, we discovered InventIP and have been impressed with their work.Over the past two years, InventIP has successfully handled a significant portion of our annual filings and prosecutions.Our in -house attorneys and inventors consistently praise their deep understanding of the technologies involved and the high quality of their patent applications.Notably, the grant rates for patents handled by InventIP,both in India and the US, have been excellent.",
-                    "image": "/images/img.png",
-                    "company": "Head IP and Innovation at Infosys"
-                },
-                {
-                    "name": "Rajiv Trehan",
-                    "quate": "As a fellow startup and partner, I can't speak highly enough about InventIP. Their commitment to quality and integrity has made them an invaluable asset to our journey. Their supportive approach and unwavering ethical standards make them the perfect partner for any startup looking to thrive.",
-                    "image": "/images/img.png",
-                    "company": "CTO and Founder at Merlin Fit"
-                },
-                {
-                    "name": "Thomas D. Franklin",
-                    "quate": "I have tried several patent drafting firms for patent applications, but the quality is typically very poor.InventIP is an exception. I would put their work quality on par or better with any well- known domestic patent firm. Their staff is articulate and have a natural curiosity that translates into a well - done work product. InventIP is my go - to firm in India.I would put their work quality on par or better with any well - known domestic patent firm.Their staff is articulate and have a natural curiosity that translates into a well - done work product.InventIP is my go - to firm in India.",
-                    "image": "/images/img.png",
-                    "company": "Founder Triangle IP (US)"
-                },
-                {
-                    "name": "Mohammed Faisal",
-                    "quate": "I have had the pleasure of working with InventIP on multiple projects, and I must say that their commitment to delivering high- quality results within the stipulated timeframe is unparalleled.It's rare to find a company that excels in both aspects.",
-                    "image": "/images/img.png",
-                    "company": "GM and Head IP at Tata Motors"
-                },
-                {
                     "name": "Chetan Kumar Chenappa",
-                    "quate": "I was recommended of InventIP through a professional connect.Our IP portfolio was spread across multiple law firms and service providers, and we needed one- stop solution provider.We are happy that we went along with them. The handover was efficient and smooth. The global filings and renewal management has become fuss free. Their work quality is great. They take ownership and ensure timely delivery to every task assigned to them. They have also helped us with technology insights to build our portfolio. I would highly recommend them to anyone who could use their services.",
+                    "quate": "I have been working with InventIP for the past 5 years, during which they have executed multiple projects—including Technology Landscape analysis, Competitive Intelligence, Patent Portfolio Optimization, and patent invalidity studies—for our team. I am consistently impressed by their work quality and responsiveness. Their dedication, subject matter expertise, and prompt communication give me confidence that I am working with the right partner. InventIP has regularly exceeded my expectations, and I highly recommend their services.",
                     "image": "/images/img.png",
-                    "company": "Chief Patent Counsel at HCL Technologies"
+                    "company": "Chief Patent Counsel, HCL"
                 },
                 {
-                    "name": "Dhruv Sud",
-                    "quate": "Over the course of our collaboration for the last several years, the InventIP team has proven to be an invaluable partner in securing and safeguarding our intellectualproperty, particularly in the complex and evolving domain of machine learning inhealthcare. Their team of seasoned professionals consistently demonstrates aprofound understanding of patent applications and legal intricacies. As leaders, whatsets Ankush and Rahul apart is not only their expertise but also their unwaveringdedication to our success. They provide strategic guidance, ensuring that our patentsalign with our business objectives, and their efficiency and responsiveness havebeen instrumental in meeting critical deadlines.InventIP maintains transparentcommunication throughout the entire process, keeping us informed about progressand potential challenges.",
+                    "name": "Manoj Patel",
+                    "quate": "We've had the pleasure of working with Invent IP team across a range of IP-related projects, including Patentability Studies, Technology Landscape Analysis, as well as Patent Drafting and Prosecution. Their deep domain expertise, timely delivery, and high-quality work have consistently added value to our innovation pipeline. The team demonstrates professionalism, responsiveness, and a thorough understanding of both technical and legal nuances—making them a trusted partner in our IP strategy. I'd be glad to recommend their services to anyone looking for reliable and insightful IP support.",
                     "image": "/images/img.png",
-                    "company": "CTO at Cloud physician"
+                    "company": "CEO Merlin Health Group"
+                },
+                {
+                    "name": "Thomas Franklin",
+                    "quate": "InventIP has been my preferred partner for technology/ whitespace assessment and patentability studies for several years. Their reports go beyond the standard—they highlight key issues with clarity and depth that's hard to find elsewhere. Their professionalism and reliability have made a real difference in how we serve our clients.",
+                    "image": "/images/img.png",
+                    "company": "Shareholder at Mughal Gaudry and Franklin PC"
+                },
+                {
+                    "name": "Ken Sheets",
+                    "quate": "I've relied on InventIP for IP research over the past several years, and they've delivered every time—whether it's a patentability/knock out search, invalidity or risk assessment. The team is not only technically strong but also practical in their approach, often anticipating and addressing our business needs before we ask. Their professionalism and consistency make them a trusted partner.",
+                    "image": "/images/img.png",
+                    "company": "Patent Attorney at DNL Zito Castellano"
                 }
             ]
         }
@@ -221,18 +209,18 @@
                     "mail": "rahulparmar@inventip.in"
                 },
                 {
-                    "name": "Ken Sheets",
-                    "image": "/images/person-3.webp",
-                    "position": "US Advisor | US Attorney | US Patent Agent",
-                    "li": "",
-                    "mail": ""
-                },
-                {
                     "name": "Shubha Verma",
                     "image": "/images/person-4.webp",
                     "position": "Associate Partner",
                     "li": "https://www.linkedin.com/in/shubha-verma-189a039",
                     "mail": "shubha.verma@inventip.in"
+                },
+                {
+                    "name": "Ken Sheets",
+                    "image": "/images/person-3.webp",
+                    "position": "US Advisor | US Attorney | US Patent Agent",
+                    "li": "",
+                    "mail": ""
                 }
             ]
         }
@@ -467,7 +455,7 @@
                     },
                     {
                         "name": "Technology Monitoring",
-                        "description": "Keeping you updated on the latest market and research advancements relevant to your field. Tracking emerging trends and competitor activities provides actionable insights for strategic decision- making.",
+                        "description": "Keeping you updated on the latest market and research advancements relevant to your field. Tracking emerging trends and competitor activities provides actionable insights for strategic decision making.",
                         "image": "/images/innovation-s4.webp"
                     },
                     {
@@ -516,7 +504,7 @@
         },
         "whyJoinUs": {
             "title": "Why Join Us?",
-            "image": "/whyus.webp",
+            "image": "/images/whyus.webp",
             "subhead": "At InventIP Legal Services LLP, we offer more than just jobs; we offer journeys. Join a team of brilliant minds and innovative thinkers who are redefining intellectual property law. | | Join us at InventIP Legal Services LLP and embark on a dynamic and inspiring career. Together, we will shape the future of intellectual property law and create a legacy of excellence.",
             "reasons": [
                 {

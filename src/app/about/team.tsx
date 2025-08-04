@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { MdMarkEmailUnread } from "react-icons/md";
-import { IoLogoLinkedin } from "react-icons/io5";
-import TextFormatter from "@/components/text-format";
+import React, { useState, useEffect } from 'react';
+import { MdMarkEmailUnread } from 'react-icons/md';
+import { IoLogoLinkedin } from 'react-icons/io5';
+import TextFormatter from '@/components/text-format';
 
 interface AboutTeamContent {
   title: string;
@@ -12,19 +12,19 @@ function team() {
   const [content, setContent] = useState<AboutTeamContent | null>(null);
 
   useEffect(() => {
-    fetch("/content/content.json")
+    fetch('/content/content.json')
       .then((response) => response.json())
       .then((data) => setContent(data.About.our_team))
-      .catch((error) => console.error("Error fetching content:", error));
+      .catch((error) => console.error('Error fetching content:', error));
   }, []);
   return (
-    <main className="h-[100%] w-full p-4 sm:p-16">
-      <div className="w-full">
-        <h1 className="text-head">
-          <TextFormatter text={content?.title || ""} />
+    <main className='h-[100%] w-full p-4 sm:p-16'>
+      <div className='w-full'>
+        <h1 className='text-head'>
+          <TextFormatter text={content?.title || ''} />
         </h1>
       </div>
-      <div className="w-full flex flex-wrap mt-[50px] gap-10 ">
+      <div className='w-full flex flex-wrap mt-[50px] gap-10 '>
         <Team team={content?.cards} />
       </div>
     </main>
@@ -44,7 +44,7 @@ interface TeamCardProps {
 const Team: React.FC<{ team?: TeamCardProps[] }> = ({ team }) => {
   if (!team) return null;
   return (
-    <>
+    <div className='w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
       {team.map((item, index) => (
         <TeamCade
           key={index}
@@ -55,7 +55,7 @@ const Team: React.FC<{ team?: TeamCardProps[] }> = ({ team }) => {
           mail={item.mail}
         />
       ))}
-    </>
+    </div>
   );
 };
 
@@ -68,35 +68,37 @@ const TeamCade: React.FC<TeamCardProps> = ({
 }) => {
   return (
     <>
-      <div className="card border h-[33rem] sm:h-[37rem] w-[410px] rounded-3xl relative overflow-hidden group">
-        <img src={image} alt="" className="h-[100%] w-full" />
-        <div className="h-[16%] w-full border-t absolute bottom-1 rounded-xl backdrop-blur-[2px] flex shadow-inner">
-          <div className="name h-[100%] w-[100%] text-primary flex flex-col justify-evenly p-4">
-            <h1 className="text-2xl font-bold">{name}</h1>
-            <p className="font-thin text-sm">{position}</p>
+      <div className='card border aspect-[3/5] w-full rounded-3xl relative overflow-hidden group'>
+        <img src={image} alt='' className='h-[100%] object-cover w-full' />
+        <div className='h-[6rem] w-full border-t absolute bottom-1 rounded-xl backdrop-blur-[2px] flex shadow-inner'>
+          <div className='name h-[100%] w-[100%] text-primary flex flex-col justify-evenly p-4'>
+            <h1 className='text-xl font-bold'>{name}</h1>
+            <p className='font-thin text-xs'>{position}</p>
           </div>
-          <div className="link h-[100%] w-fit  px-3 justify-end flex gap-3 items-center">
-            <a
-              href={`https://mail.google.com/mail/u/0/?fs=1&to=${mail}&su=&body=&tf=cm`}
-              className="aspect-square h-12 w-12 ixon-box p-3 overflow-hidden border opacity-0 transition-opacity duration-1000 group-hover:opacity-100 rounded-md flex items-center justify-center"
-            >
-              <img
-                src="/images/mail.png"
-                alt={`Send mail to ${name}`}
-                className="text-primary overflow-hidden translate-y-[100%] transition-transform duration-1000 group-hover:translate-y-0"
-              />
-            </a>
-            <a
-              href={li}
-              className="aspect-square ixon-box h-12 w-12 p-3 overflow-hidden border opacity-0 transition-opacity duration-1000 group-hover:opacity-100 rounded-md flex items-center justify-center"
-            >
-              <img
-                src="/images/link.png"
-                alt=""
-                className="text-primary  overflow-hidden translate-y-[100%] transition-transform duration-1000 group-hover:translate-y-0"
-              />
-            </a>
-          </div>
+          {mail && li && (
+            <div className='link h-[100%] w-fit px-3 justify-end flex gap-3 items-center'>
+              <a
+                href={`https://mail.google.com/mail/u/0/?fs=1&to=${mail}&su=&body=&tf=cm`}
+                className='aspect-square h-12 w-12 ixon-box p-3 overflow-hidden border opacity-0 transition-opacity duration-1000 group-hover:opacity-100 rounded-md flex items-center justify-center'
+              >
+                <img
+                  src='/images/mail.png'
+                  alt={`Send mail to ${name}`}
+                  className='text-primary overflow-hidden translate-y-[100%] transition-transform duration-1000 object-cover group-hover:translate-y-0'
+                />
+              </a>
+              <a
+                href={li}
+                className='aspect-square ixon-box h-12 w-12 p-3 overflow-hidden border opacity-0 transition-opacity duration-1000 group-hover:opacity-100 rounded-md flex items-center justify-center'
+              >
+                <img
+                  src='/images/link.png'
+                  alt=''
+                  className='text-primary  overflow-hidden translate-y-[100%] transition-transform duration-1000 group-hover:translate-y-0'
+                />
+              </a>
+            </div>
+          )}
         </div>
       </div>
     </>
