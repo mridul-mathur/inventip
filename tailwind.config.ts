@@ -33,13 +33,13 @@ const config: Config = {
         para: [
           '1.125rem',
           {
-            lineHeight: '150%',
+            lineHeight: '175%',
           },
         ],
         subhead: [
           '2.25rem',
           {
-            lineHeight: '150%',
+            lineHeight: '125%',
           },
         ],
         subheadmin: [
@@ -51,7 +51,7 @@ const config: Config = {
         head: [
           '3rem',
           {
-            lineHeight: '150%',
+            lineHeight: '125%',
           },
         ],
         max: [

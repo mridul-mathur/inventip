@@ -20,7 +20,7 @@ function team() {
   return (
     <main className='h-[100%] w-full p-4 sm:p-16'>
       <div className='w-full'>
-        <h1 className='text-head'>
+        <h1 className='text-head text-center w-full'>
           <TextFormatter text={content?.title || ''} />
         </h1>
       </div>
@@ -70,15 +70,19 @@ const TeamCade: React.FC<TeamCardProps> = ({
     <>
       <div className='card border aspect-[3/5] w-full rounded-3xl relative overflow-hidden group'>
         <img src={image} alt='' className='h-[100%] object-cover w-full' />
-        <div className='h-[6rem] w-full border-t absolute bottom-1 rounded-xl backdrop-blur-[2px] flex shadow-inner'>
-          <div className='name h-[100%] w-[100%] text-primary flex flex-col justify-evenly p-4'>
+        <div className='h-[8rem] w-full border-t absolute bottom-0 rounded-xl bg-black/50 backdrop-blur-[2px] flex shadow-inner'>
+          <div className='name h-[100%] w-[100%] text-primary flex flex-col justify-start p-4'>
             <h1 className='text-xl font-bold'>{name}</h1>
-            <p className='font-thin text-xs'>{position}</p>
+            <p className='font-medium text-paramin'>
+              <TextFormatter text={position} />
+            </p>
           </div>
           {mail && li && (
             <div className='link h-[100%] w-fit px-3 justify-end flex gap-3 items-center'>
               <a
-                href={`https://mail.google.com/mail/u/0/?fs=1&to=${mail}&su=&body=&tf=cm`}
+                href={`https://outlook.live.com/mail/0/deeplink/compose?to=${mail}&subject=Hello&body=Message%20text`}
+                target='_blank'
+                rel='noopener noreferrer'
                 className='aspect-square h-12 w-12 ixon-box p-3 overflow-hidden border opacity-0 transition-opacity duration-1000 group-hover:opacity-100 rounded-md flex items-center justify-center'
               >
                 <img
@@ -89,6 +93,8 @@ const TeamCade: React.FC<TeamCardProps> = ({
               </a>
               <a
                 href={li}
+                target='_blank'
+                rel='noopener noreferrer'
                 className='aspect-square ixon-box h-12 w-12 p-3 overflow-hidden border opacity-0 transition-opacity duration-1000 group-hover:opacity-100 rounded-md flex items-center justify-center'
               >
                 <img

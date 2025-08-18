@@ -1,10 +1,9 @@
 {
-  "/favicon.ico/route": "app/favicon.ico/route.js",
   "/_not-found/page": "app/_not-found/page.js",
-  "/about/page": "app/about/page.js",
+  "/careers/page": "app/careers/page.js",
   "/expertise/[id]/page": "app/expertise/[id]/page.js",
   "/contact/page": "app/contact/page.js",
-  "/careers/page": "app/careers/page.js",
+  "/about/page": "app/about/page.js",
   "/page": "app/page.js",
   "/insights/[id]/page": "app/insights/[id]/page.js",
   "/insights/page": "app/insights/page.js"

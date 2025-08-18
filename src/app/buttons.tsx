@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import { motion } from "framer-motion";
-import React from "react";
+import { motion } from 'framer-motion';
+import React from 'react';
 
 interface ButtonsProps {
   children: React.ReactNode;
-  color: "dark" | "light";
+  color: 'dark' | 'light';
   arrow?: boolean;
   underline?: boolean;
   onClick?: () => void;
@@ -18,14 +18,14 @@ export default function Buttons({
   underline,
   onClick,
 }: ButtonsProps) {
-  const base = color === "dark" ? "#191919" : "#f7f7f7";
+  const base = color === 'dark' ? '#191919' : '#f7f7f7';
 
   /* ─── shared variants ─── */
   const variants = {
     rest: { rotate: 0, fill: base },
     hover: {
       rotate: 45 / 2,
-      fill: "url(#gradient)",
+      fill: 'url(#gradient)',
       transition: { rotate: { duration: 0.25 }, fill: { delay: 0.25 } },
     },
   };
@@ -33,15 +33,15 @@ export default function Buttons({
   return (
     <motion.button
       onClick={onClick}
-      initial="rest"
-      animate="rest"
-      whileHover="hover" /* one gesture, on the button */
-      className="relative flex items-center justify-center gap-1 px-1 py-1 overflow-hidden bg-transparent cursor-pointer"
+      initial='rest'
+      animate='rest'
+      whileHover='hover' /* one gesture, on the button */
+      className='relative flex items-center justify-center gap-1 px-1 py-1 overflow-hidden bg-transparent cursor-pointer'
     >
       {/* text keeps its own slide-up animation, unchanged */}
-      <motion.div className="relative flex flex-col items-center justify-center">
+      <motion.div className='relative flex flex-col items-center justify-center'>
         <motion.span
-          className="block text-para"
+          className='block text-2xl'
           style={{ color: base }}
           variants={{
             rest: { y: 0 },
@@ -52,7 +52,7 @@ export default function Buttons({
         </motion.span>
 
         <motion.span
-          className="absolute top-0 left-0 text-para"
+          className='absolute top-0 text-2xl left-0'
           style={{ color: base }}
           variants={{
             rest: { y: 30 },
@@ -65,7 +65,7 @@ export default function Buttons({
 
       {underline && (
         <motion.div
-          className="absolute bottom-0 left-0 w-full h-[2px] origin-bottom-left bg-gradient-to-r from-[#2DCCD8] to-[#2965DD]"
+          className='absolute bottom-0 left-0 w-full h-[2px] origin-bottom-left bg-gradient-to-r from-[#2DCCD8] to-[#2965DD]'
           variants={{
             rest: { scaleX: 0 },
             hover: { scaleX: 1, transition: { duration: 0.25, delay: 0.3 } },
@@ -77,23 +77,23 @@ export default function Buttons({
       {arrow && (
         <motion.svg
           key={color} /* remount when theme flips */
-          width="28"
-          height="28"
-          viewBox="0 0 24 24"
+          width='28'
+          height='28'
+          viewBox='0 0 24 24'
           variants={variants} /* no whileHover here */
-          xmlns="http://www.w3.org/2000/svg"
+          xmlns='http://www.w3.org/2000/svg'
         >
           <defs>
-            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#2DCCD8" />
-              <stop offset="100%" stopColor="#2965DD" />
+            <linearGradient id='gradient' x1='0%' y1='0%' x2='100%' y2='0%'>
+              <stop offset='0%' stopColor='#2DCCD8' />
+              <stop offset='100%' stopColor='#2965DD' />
             </linearGradient>
           </defs>
 
           <motion.path
-            d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"
+            d='M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z'
             variants={variants}
-            stroke="none"
+            stroke='none'
           />
         </motion.svg>
       )}

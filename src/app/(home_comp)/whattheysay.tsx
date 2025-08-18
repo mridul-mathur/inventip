@@ -42,9 +42,9 @@ function WhatTheySay() {
 
   return (
     <main className='flex flex-col  bg-primary h-fit min-h-[75vh] py-12 px-0 w-screen gap-6'>
-      <div className='w-[100%] px-12 flex justify-between items-center'>
-        <h1 className='text-head capitalize'>
-          What They <br /> Say About Us
+      <div className='w-[100%] px-12 py-6 flex justify-between items-center'>
+        <h1 className='text-head text-center w-full capitalize'>
+          What They Say About Us
         </h1>
       </div>
       <div className='relative w-full px-12 flex justify-center items-center overflow-visible'>
@@ -121,7 +121,7 @@ const TestiCard: React.FC<TestiCardProps> = ({
 }) => {
   return (
     <div className='w-full hover:cursor-grab h-full justify-center text-center flex-shrink-0 flex items-center gap-8'>
-      <div className='w-3/5 h-fit flex flex-col justify-between items-center gap-6'>
+      <div className='w-3/5 h-fit flex flex-col justify-center items-center gap-6'>
         <div className='relative w-full py-4 px-6'>
           <img
             src='/images/upper.png'
@@ -135,11 +135,9 @@ const TestiCard: React.FC<TestiCardProps> = ({
             alt=''
           />
         </div>
-        <div className='px-6'>
-          <p className='text-paramin'>{name}</p>
-          <p>
-            <span className='text-slate-400 text-min'>{company}</span>
-          </p>
+        <div className='p-6 flex flex-col gap-1 items-center'>
+          <p className='text-para'>{name}</p>
+          <p className='text-para font-semibold'>{company}</p>
         </div>
       </div>
     </div>

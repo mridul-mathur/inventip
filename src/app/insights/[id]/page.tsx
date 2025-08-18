@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import React from "react";
-import useSWR from "swr";
-import { notFound } from "next/navigation";
-import { useParams } from "next/navigation";
+import React from 'react';
+import useSWR from 'swr';
+import { notFound } from 'next/navigation';
+import { useParams } from 'next/navigation';
 
 interface BlogProps {
   _id: string;
@@ -29,7 +29,7 @@ const BlogPage = () => {
 
   if (error) {
     return (
-      <div className="w-full min-h-screen flex justify-center items-center">
+      <div className='w-full min-h-screen flex justify-center items-center'>
         Error fetching blog. Please try again later.
       </div>
     );
@@ -37,7 +37,7 @@ const BlogPage = () => {
 
   if (!data) {
     return (
-      <div className="w-full min-h-screen flex justify-center items-center">
+      <div className='w-full min-h-screen flex justify-center items-center'>
         Loading...
       </div>
     );
@@ -50,37 +50,37 @@ const BlogPage = () => {
   }
   return (
     <main
-      data-theme="light"
+      data-theme='light'
       key={blog._id}
-      className="min-h-screen h-full w-screen px-[16rem] py-[8rem] flex flex-col items-center justify-center space-y-[4rem]"
+      className='min-h-screen h-full w-screen px-[16rem] py-[8rem] flex flex-col items-center justify-center space-y-[4rem]'
     >
-      <div className="w-full h-fit space-y-6 flex flex-col items-start">
-        <h1 className="text-max font-bold w-full">{blog.title}</h1>
-        <p className="text-para font-light">{blog.brief}</p>
+      <div className='w-full h-fit space-y-6 flex flex-col items-start'>
+        <h1 className='text-max font-bold w-full'>{blog.title}</h1>
+        <p className='text-para font-light'>{blog.brief}</p>
         <img
           src={blog.title_image}
           alt={blog.title}
-          className="w-full object-cover h-[35rem] rounded-[1rem]"
+          className='w-full object-cover h-[35rem] rounded-[1rem]'
         />
       </div>
       {blog.segments.map((segment: Segment, index: number) => (
         <div
           key={segment._id || index}
-          className=" flex flex-col w-full gap-[1rem] filter brightness-[0.1]"
+          className=' flex flex-col w-full gap-[1rem] '
         >
           {segment.head && (
-            <h1 className="text-subhead font-semibold">{segment.head}</h1>
+            <h1 className='text-subhead font-semibold'>{segment.head}</h1>
           )}
           {segment.subhead && (
-            <h3 className="text-subheadmin font-light">{segment.subhead}</h3>
+            <h3 className='text-subheadmin font-light'>{segment.subhead}</h3>
           )}
-          <p className="text-para font-light">{segment.content}</p>
-          {segment.seg_img && segment.seg_img !== "none" && (
-            <div className="w-full h-auto overflow-hidden relative my-[2rem]">
+          <p className='text-para text-justify font-light'>{segment.content}</p>
+          {segment.seg_img && segment.seg_img !== 'none' && (
+            <div className='w-full h-auto overflow-hidden rounded-[0.5rem] relative my-[2rem]'>
               <img
                 src={segment.seg_img}
                 alt={segment.head}
-                className="w-full h-auto aspect-auto filter rounded-[0.5rem] object-cover"
+                className='w-full h-auto aspect-auto rounded-[0.5rem] object-cover'
               />
             </div>
           )}
