@@ -8,7 +8,7 @@ interface AboutMissionContent {
   image: string;
 }
 
-function ourmission() {
+function Ourmission() {
   const [content, setContent] = useState<AboutMissionContent | null>(null);
 
   useEffect(() => {
@@ -48,4 +48,4 @@ function ourmission() {
   );
 }
 
-export default ourmission;
+export default Ourmission;

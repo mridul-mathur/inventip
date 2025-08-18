@@ -8,7 +8,7 @@ interface AboutTeamContent {
   cards: TeamCardProps[];
 }
 
-function team() {
+function Team() {
   const [content, setContent] = useState<AboutTeamContent | null>(null);
 
   useEffect(() => {
@@ -25,13 +25,13 @@ function team() {
         </h1>
       </div>
       <div className='w-full flex flex-wrap mt-[50px] gap-10 '>
-        <Team team={content?.cards} />
+        <TeamCards team={content?.cards} />
       </div>
     </main>
   );
 }
 
-export default team;
+export default Team;
 
 interface TeamCardProps {
   name: string;
@@ -41,7 +41,7 @@ interface TeamCardProps {
   mail?: string;
 }
 
-const Team: React.FC<{ team?: TeamCardProps[] }> = ({ team }) => {
+const TeamCards: React.FC<{ team?: TeamCardProps[] }> = ({ team }) => {
   if (!team) return null;
   return (
     <div className='w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
