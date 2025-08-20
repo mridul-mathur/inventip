@@ -26,7 +26,7 @@ const ContactUs = () => {
                 <Linkedin size={24} />
               </Buttons>
             </a>
-            <a href="mailto:letstalk@inventip.in.in" target="_blank" rel="noopener noreferrer">
+            <a href="mailto:letstalk@inventip.in" target="_blank" rel="noopener noreferrer">
               <Buttons color="dark">
                 <Mail size={24} />
               </Buttons>
