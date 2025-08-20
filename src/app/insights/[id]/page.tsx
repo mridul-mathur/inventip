@@ -80,7 +80,7 @@ const BlogPage = () => {
               <img
                 src={segment.seg_img}
                 alt={segment.head}
-                className='w-full h-auto aspect-auto rounded-[0.5rem] object-cover'
+                className='w-full h-full !aspect-auto rounded-[1rem]'
               />
             </div>
           )}

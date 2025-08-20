@@ -128,7 +128,7 @@ const TestiCard: React.FC<TestiCardProps> = ({
             alt=''
             className='absolute top-0 left-0'
           />
-          <h1 className='text-para w-full'>{quate}</h1>
+          <h1 className='text-para text-justify w-full'>{quate}</h1>
           <img
             src='/images/down.png'
             className='absolute bottom-0 right-6'

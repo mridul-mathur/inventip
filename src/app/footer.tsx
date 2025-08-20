@@ -15,7 +15,7 @@ type FooterSection = {
 const Footer: React.FC = () => {
   const footerSections: FooterSection[] = [
     {
-      title: 'Site Navigation',
+      title: 'Explore',
       items: [
         { name: 'Home', link: '/' },
         { name: 'About', link: '/about' },

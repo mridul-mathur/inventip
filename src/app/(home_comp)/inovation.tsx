@@ -72,7 +72,7 @@ const Inovation: React.FC<ExpertiseContent> = ({ title, cards }) => {
                 <span className='text-5xl font-medium'>
                   <TextFormatter text={cards[currentIndex]?.name || ''} />
                 </span>
-                <motion.p className='my-12 w-[24rem] text-2xl'>
+                <motion.p className='my-12 text-justify w-[24rem] text-2xl'>
                   <TextFormatter
                     text={cards[currentIndex]?.description || ''}
                   />

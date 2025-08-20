@@ -19,7 +19,7 @@ export default function HowToApply() {
   if (!content) return null;
 
   return (
-    <main className="z-[2] bg-primary w-screen h-fit min-h-screen flex flex-col justify-between items-center gap-12 p-4 sm:p-[8rem]">
+    <main className="z-[2] bg-primary w-screen h-fit min-h-screen flex flex-col justify-between items-center gap-12 p-4 sm:py-[4rem] sm:p-[8rem]">
       <h2 className="text-head text-secondary text-center">
         <TextFormatter text={content.process.title} />
       </h2>
@@ -39,7 +39,7 @@ export default function HowToApply() {
                     <h3 className="text-subheadmin font-light text-secondary">
                       <TextFormatter text={item.title} />
                     </h3>
-                    <p className="text-para  text-secondary">
+                    <p className="text-para  text-secondary text-justify">
                       <TextFormatter text={item.description} />
                     </p>
                   </div>
@@ -52,7 +52,7 @@ export default function HowToApply() {
               <h2 className="text-subhead text-secondary text-center">
                 <TextFormatter text={internships.title} />
               </h2>
-              <h2 className="text-para  text-secondary">
+              <h2 className="text-para  text-secondary text-justify">
                 <TextFormatter text={internships.subhead} />
               </h2>
               <div className="flex my-4 gap-1 relative">
@@ -61,7 +61,7 @@ export default function HowToApply() {
                   <h3 className="text-subheadmin mb-2 text-secondary">
                     <TextFormatter text="Program Details" />
                   </h3>
-                  <p className="text-para font-light inline-flex gap-2 text-light text-secondary ">
+                  <p className="text-para text-justify font-medium inline-flex gap-2 text-light text-secondary ">
                     <span className="font-medium text-nowrap">
                       Eligibility:
                     </span>{" "}
@@ -69,11 +69,11 @@ export default function HowToApply() {
                       text={internships.programDetails.eligibility}
                     />
                   </p>
-                  <p className="text-para inline-flex gap-2 text-light text-secondary ">
+                  <p className="text-para text-justify inline-flex gap-2 text-light text-secondary ">
                     <span className="font-medium text-nowrap">Duration:</span>{" "}
                     <TextFormatter text={internships.programDetails.duration} />
                   </p>
-                  <p className="text-para inline-flex gap-2 text-light text-secondary ">
+                  <p className="text-para text-justify inline-flex gap-2 text-light text-secondary ">
                     <span className="font-medium text-nowrap">How to:</span>{" "}
                     <TextFormatter
                       text={internships.programDetails.applicationProcess}
@@ -81,7 +81,7 @@ export default function HowToApply() {
                   </p>
                 </div>
               </div>
-              <p className="text-para">{internships.learningOpportunities}</p>
+              <p className="text-para text-justify">{internships.learningOpportunities}</p>
             </div>
           )}
         </div>
@@ -94,7 +94,7 @@ export default function HowToApply() {
               <h3 className="text-subhead text-secondary">
                 <TextFormatter text="Tips For You" />
               </h3>
-              <ul className="text-para flex flex-col gap-4 text-light text-secondary ">
+              <ul className="text-para text-justify flex flex-col gap-4 text-light text-secondary ">
                 {content.tips.map((item: any, idx: number) => (
                   <li key={idx}>
                     <span className="bg-gradient-to-r from-accent1 to-accent2 text-transparent bg-clip-text">

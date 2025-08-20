@@ -4,6 +4,7 @@ import React from "react";
 import Buttons from "../buttons";
 import { useState } from "react";
 import { FaLinkedinIn, FaTwitter, FaFacebookF } from "react-icons/fa";
+import { Linkedin, Mail, Mailbox, MailCheck, MailWarning } from 'lucide-react';
 
 const ContactUs = () => {
   return (
@@ -20,19 +21,14 @@ const ContactUs = () => {
         <div className="flex flex-col gap-4 pt-4">
           <p className="text-subhead font-light">Follow us on social media to stay updated with the latest news and insights.</p>
           <div className="flex gap-6">
-            <a href="#" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/company/inventip-legal-services-llp" target="_blank" rel="noopener noreferrer">
               <Buttons color="dark">
-                <FaLinkedinIn size={24} />
+                <Linkedin size={24} />
               </Buttons>
             </a>
-            <a href="#" target="_blank" rel="noopener noreferrer">
+            <a href="mailto:letstalk@inventip.in.in" target="_blank" rel="noopener noreferrer">
               <Buttons color="dark">
-                <FaTwitter size={24} />
-              </Buttons>
-            </a>
-            <a href="#" target="_blank" rel="noopener noreferrer">
-              <Buttons color="dark">
-                <FaFacebookF size={24} />
+                <Mail size={24} />
               </Buttons>
             </a>
           </div>
