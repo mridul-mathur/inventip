@@ -38,7 +38,7 @@ const WhyUs = () => {
                 <h3 className='text-subheadmin  text-secondary '>
                   <TextFormatter text={reason.title} />
                 </h3>
-                <p className='text-para text-secondary'>
+                <p className='text-para text-secondary text-justify'>
                   <TextFormatter text={reason.description} />
                 </p>
               </div>

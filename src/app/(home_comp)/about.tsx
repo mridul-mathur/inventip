@@ -50,7 +50,7 @@ const HomeAbout = () => {
             Know About Us
           </Buttons>
         </div>
-        <div className='w-full text-para sm:w-3/5 h-fit flex flex-col justify-between items-start gap-[4rem]'>
+        <div className='w-full text-para text-justify sm:w-3/5 h-fit flex flex-col justify-between items-start gap-[4rem]'>
           <p>
             <TextFormatter text={content?.text || ''} />
           </p>

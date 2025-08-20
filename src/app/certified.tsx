@@ -15,6 +15,7 @@ const Certified: React.FC = () => {
     '/images/cert1.webp',
     '/images/cert2.webp',
     '/images/cert3.webp',
+    '/images/cert4.webp',
   ];
 
   const swiperRef = useRef<SwiperType | null>(null);
