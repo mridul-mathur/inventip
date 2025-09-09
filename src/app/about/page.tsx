@@ -1,32 +1,31 @@
-"use client";
+'use client';
 
-import React, { useEffect, useState } from "react";
-import Hero from "../about/hero";
-import Aboutus from "./aboutus";
-import Ourmission from "./ourmission";
-import Certified from "../certified";
-import Team from "./team";
-import CursorFollower from "../cursorFollower";
+import React, { useEffect, useState } from 'react';
+import Hero from '../about/hero';
+import Aboutus from './aboutus';
+import Ourmission from './ourmission';
+import Certified from '../certified';
+import Team from './team';
 
 const AboutPage = () => {
   const [cursorProps, setCursorProps] = useState<{
     show: boolean;
     text: string;
-  }>({ show: false, text: "" });
+  }>({ show: false, text: '' });
 
   useEffect(() => {
-    const sections = document.querySelectorAll("section");
+    const sections = document.querySelectorAll('section');
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             switch (entry.target.id) {
-              case "certified":
-                setCursorProps({ show: true, text: "Click!" });
+              case 'certified':
+                setCursorProps({ show: true, text: 'Click!' });
                 break;
               default:
-                setCursorProps({ show: false, text: "" });
+                setCursorProps({ show: false, text: '' });
             }
           }
         });
@@ -44,20 +43,20 @@ const AboutPage = () => {
   }, []);
 
   return (
-    <div className="overflow-x-hidden relative">
-      <section data-theme="light" id="hero">
+    <div className='overflow-x-hidden relative w-full flex flex-col items-center justify-center'>
+      <section data-theme='light' id='hero'>
         <Hero />
       </section>
-      <section data-theme="light" id="aboutus">
+      <section data-theme='light' id='aboutus'>
         <Aboutus />
       </section>
-      <section data-theme="light" id="ourmission">
+      <section data-theme='light' id='ourmission'>
         <Ourmission />
       </section>
-      <section data-theme="light" id="certified">
+      <section data-theme='light' id='certified'>
         <Certified />
       </section>
-      <section data-theme="light" id="team">
+      <section data-theme='light' id='team'>
         <Team />
       </section>
     </div>

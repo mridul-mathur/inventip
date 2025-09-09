@@ -44,7 +44,7 @@ interface TeamCardProps {
 const TeamCards: React.FC<{ team?: TeamCardProps[] }> = ({ team }) => {
   if (!team) return null;
   return (
-    <div className='w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
+    <div className='w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4'>
       {team.map((item, index) => (
         <TeamCade
           key={index}
@@ -71,36 +71,38 @@ const TeamCade: React.FC<TeamCardProps> = ({
       <div className='card border aspect-[3/5] w-full rounded-3xl relative overflow-hidden group'>
         <img src={image} alt='' className='h-[100%] object-cover w-full' />
         <div className='h-[8rem] w-full border-t absolute bottom-0 rounded-xl bg-black/50 backdrop-blur-[2px] flex shadow-inner'>
-          <div className='name h-[100%] w-[100%] text-primary flex flex-col justify-start p-4'>
-            <h1 className='text-xl font-bold'>{name}</h1>
-            <p className='font-medium text-paramin'>
+          <div className='name h-[100%] w-[100%] text-primary flex flex-col justify-start pl-3 py-3'>
+            <h1 className='lg:text-xl md:text-base text-base font-bold'>
+              {name}
+            </h1>
+            <p className='font-medium lg:text-paramin sm:text-[13px] text-[12px]'>
               <TextFormatter text={position} />
             </p>
           </div>
           {mail && li && (
-            <div className='link h-[100%] w-fit px-3 justify-end flex gap-3 items-center'>
+            <div className='h-[100%] w-fit px-2 justify-end flex lg:gap-3 gap-2 items-center'>
               <a
                 href={`https://outlook.live.com/mail/0/deeplink/compose?to=${mail}&subject=Hello&body=Message%20text`}
                 target='_blank'
                 rel='noopener noreferrer'
-                className='aspect-square h-12 w-12 ixon-box p-3 overflow-hidden border opacity-0 transition-opacity duration-1000 group-hover:opacity-100 rounded-md flex items-center justify-center'
+                className='aspect-square h-10 w-10 p-3 overflow-hidden border lg:opacity-0 transition-opacity duration-1000 group-hover:opacity-100 rounded-md flex items-center justify-center'
               >
                 <img
                   src='/images/mail.png'
                   alt={`Send mail to ${name}`}
-                  className='text-primary overflow-hidden translate-y-[100%] transition-transform duration-1000 object-cover group-hover:translate-y-0'
+                  className='text-primary overflow-hidden lg:translate-y-[100%] transition-transform duration-1000 object-cover group-hover:translate-y-0'
                 />
               </a>
               <a
                 href={li}
                 target='_blank'
                 rel='noopener noreferrer'
-                className='aspect-square ixon-box h-12 w-12 p-3 overflow-hidden border opacity-0 transition-opacity duration-1000 group-hover:opacity-100 rounded-md flex items-center justify-center'
+                className='aspect-square h-10 w-10 p-3 overflow-hidden border lg:opacity-0 transition-opacity duration-1000 group-hover:opacity-100 rounded-md flex items-center justify-center'
               >
                 <img
                   src='/images/link.png'
                   alt=''
-                  className='text-primary  overflow-hidden translate-y-[100%] transition-transform duration-1000 group-hover:translate-y-0'
+                  className='text-primary overflow-hidden lg:translate-y-[100%] transition-transform duration-1000 group-hover:translate-y-0'
                 />
               </a>
             </div>

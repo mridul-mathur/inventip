@@ -51,16 +51,15 @@ const Inovation: React.FC<ExpertiseContent> = ({ title, cards }) => {
       style={{ height: `${cards.length * 2 * (windowHeight ?? 0)}px` }}
     >
       <div className='sticky top-0 left-0 flex w-screen h-screen'>
-        <div className='w-5/12 h-full flex flex-col justify-center gap-12 p-12 py-36'>
+        <div className='w-5/12 h-full grid grid-rows-6 items-start justify-center gap-12 p-12 py-36'>
           <motion.h1
-            className='text-head  h-fit font-suisse'
+            className='text-head items-start row-span-2 justify-start h-fit font-suisse'
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
           >
             <TextFormatter text={title || ''} />
           </motion.h1>
-
-          <div className='w-fit h-3/4 items-start justify-start flex flex-col overflow-hidden'>
+          <div className='w-fit h-fit items-start row-span-4 justify-start flex flex-col overflow-hidden'>
             <AnimatePresence mode='wait'>
               <motion.div
                 key={currentIndex}
@@ -69,14 +68,15 @@ const Inovation: React.FC<ExpertiseContent> = ({ title, cards }) => {
                 exit={{ y: '125%' }}
                 transition={{ duration: 0.5 }}
               >
-                <span className='text-5xl font-medium'>
+                <span className='text-subhead font-medium flex flex-col gap-2 mb-6'>
                   <TextFormatter text={cards[currentIndex]?.name || ''} />
+                  <motion.p className='text-justify font-normal w-[24rem] text-para'>
+                    <TextFormatter
+                      text={cards[currentIndex]?.description || ''}
+                    />
+                  </motion.p>
                 </span>
-                <motion.p className='my-12 text-justify w-[24rem] text-2xl'>
-                  <TextFormatter
-                    text={cards[currentIndex]?.description || ''}
-                  />
-                </motion.p>
+
                 {cards[currentIndex]?.link && (
                   <Link href={cards[currentIndex].link!}>
                     <Buttons color='dark' arrow={true} underline={true}>

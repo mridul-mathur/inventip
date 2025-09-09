@@ -41,7 +41,7 @@ export default function Buttons({
       {/* text keeps its own slide-up animation, unchanged */}
       <motion.div className='relative flex flex-col items-center justify-center'>
         <motion.span
-          className='block text-2xl'
+          className='block text-para'
           style={{ color: base }}
           variants={{
             rest: { y: 0 },
@@ -52,7 +52,7 @@ export default function Buttons({
         </motion.span>
 
         <motion.span
-          className='absolute top-0 text-2xl left-0'
+          className='absolute top-0 text-para left-0'
           style={{ color: base }}
           variants={{
             rest: { y: 30 },

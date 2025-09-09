@@ -17,7 +17,9 @@ export default function RootLayout({
     <html lang='en'>
       <body className='font-suisse bg-primary'>
         <Nav />
-        {children}
+        <div className='max-w-screen-2xl relative overflow-x-hidden flex flex-col items-center justify-center'>
+          {children}
+        </div>
         <Footer />
       </body>
     </html>
