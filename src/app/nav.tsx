@@ -4,7 +4,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import Buttons from './buttons';
 import { CiMenuKebab } from 'react-icons/ci';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { usePathname } from 'next/navigation';
 
 type NavLink = {
@@ -31,7 +31,7 @@ const navLinks: NavLink[] = [
 // Refactored useNavContrast to return both contrast and barRef
 export function useNavContrast(): [
   'dark' | 'light',
-  React.RefObject<HTMLDivElement | null>
+  React.RefObject<HTMLDivElement | null>,
 ] {
   const [contrast, setContrast] = useState<'dark' | 'light'>('dark');
   const barRef = useRef<HTMLDivElement | null>(null);
@@ -42,8 +42,8 @@ export function useNavContrast(): [
 
     const barHeight = barRef.current.getBoundingClientRect().height;
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
+      entries => {
+        entries.forEach(entry => {
           if (entry.isIntersecting) {
             const sectionTheme = entry.target.getAttribute('data-theme') as
               | 'dark'
@@ -66,12 +66,12 @@ export function useNavContrast(): [
     const sections = document.querySelectorAll<HTMLElement>(
       'section[data-theme]'
     );
-    sections.forEach((el) => observer.observe(el));
+    sections.forEach(el => observer.observe(el));
 
     return () => {
       observer.disconnect();
     };
-  }, [pathname, barRef.current]); // re-run on route change or ref change
+  }, [pathname]);
 
   return [contrast, barRef];
 }
@@ -81,15 +81,15 @@ const Dropdown: React.FC<{
   subLinks: NavLink['subLinks'];
   textColour?: 'dark' | 'light';
 }> = ({ label, subLinks, textColour = 'dark' }) => (
-  <div className=' relative group z-50'>
-    <span className='cursor-pointer flex items-center justify-center lg:justify-start'>
+  <div className="group relative z-50">
+    <span className="flex cursor-pointer items-center justify-center lg:justify-start">
       <Buttons color={textColour} underline={true}>
         {label}
       </Buttons>
     </span>
     {label.toLowerCase() === 'expertise' && (
       <motion.div
-        className=' absolute left-0 top-full flex flex-col border border-secondary overflow-hidden rounded-md w-fit text-left opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500'
+        className="invisible absolute left-0 top-full flex w-fit flex-col overflow-hidden rounded-md border border-secondary text-left opacity-0 duration-500 group-hover:visible group-hover:opacity-100"
         style={{
           background: 'rgba(255, 255, 255, 0.2)',
           backdropFilter: 'blur(10px)',
@@ -101,10 +101,10 @@ const Dropdown: React.FC<{
           <Link
             key={index}
             href={subLink.href}
-            className='px-4 py-2 group bg-primary hover:bg-primary duration-500 whitespace-nowrap'
+            className="group whitespace-nowrap bg-primary px-4 py-2 duration-500 hover:bg-primary"
           >
             <Buttons color={textColour}>
-              <div className='group-hover:bg-gradient-to-r group-hover:from-accent1 group-hover:to-accent2 group-hover:text-transparent group-hover:bg-clip-text duration-500'>
+              <div className="duration-500 group-hover:bg-gradient-to-r group-hover:from-accent1 group-hover:to-accent2 group-hover:bg-clip-text group-hover:text-transparent">
                 {subLink.label}
               </div>
             </Buttons>
@@ -152,7 +152,7 @@ export function Nav() {
   const [textColour, barRef] = useNavContrast();
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleMenu = () => setIsOpen((prev) => !prev);
+  const toggleMenu = () => setIsOpen(prev => !prev);
   const menuClass = isOpen
     ? 'flex flex-col lg:flex lg:flex-row text-paramin lg:items-center w-full lg:w-auto mt-4 lg:mt-0'
     : 'hidden lg:flex lg:flex-row lg:items-center w-full lg:w-auto mt-4 lg:mt-0';
@@ -160,23 +160,23 @@ export function Nav() {
   return (
     <main
       ref={barRef}
-      className={`fixed top-0 w-full text-paramin backdrop-blur py-1 z-40 border-b border-[#191919]`}
+      className={`fixed top-0 z-40 w-full border-b border-[#191919] py-1 text-paramin backdrop-blur`}
     >
-      <nav className='flex items-center justify-between py-3 px-6 lg:px-12 text-paramin'>
-        <Link href='/' className='capitalize font-bold'>
+      <nav className="flex items-center justify-between px-6 py-3 text-paramin lg:px-12">
+        <Link href="/" className="font-bold capitalize">
           <img
             src={
               textColour === 'dark'
                 ? '/images/inventIPblack.png'
                 : '/images/inventIP.png'
             }
-            alt='inventIP'
-            className='h-6 w-auto'
+            alt="inventIP"
+            className="h-6 w-auto"
           />
         </Link>
 
         <div className={menuClass}>
-          <div className='flex flex-col lg:flex-row lg:gap-8 text-center lg:text-left capitalize relative'>
+          <div className="relative flex flex-col text-center capitalize lg:flex-row lg:gap-8 lg:text-left">
             {navLinks.map((link, index) => (
               <NavLinkComponent
                 key={index}
@@ -190,13 +190,13 @@ export function Nav() {
 
         <div
           onClick={toggleMenu}
-          className='cursor-pointer text-paramin lg:hidden'
+          className="cursor-pointer text-paramin lg:hidden"
         >
           <CiMenuKebab />
         </div>
 
-        <div className='hidden lg:block text-paramin'>
-          <Link href='/contact'>
+        <div className="hidden text-paramin lg:block">
+          <Link href="/contact">
             <Buttons color={textColour} arrow underline>
               Contact Us
             </Buttons>

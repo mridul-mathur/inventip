@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 interface HeroProps {
   title: string;
@@ -8,15 +8,15 @@ interface HeroProps {
 
 function Hero({ title, intro, image }: HeroProps) {
   return (
-    <main className="w-screen max-h-[48rem] h-fit p-16 mt-[2rem] gap-6 flex flex-col justify-start items-center">
-      <div className="text-center h-full w-3/4 flex flex-col">
+    <main className="mt-[2rem] flex h-fit max-h-[48rem] w-screen flex-col items-center justify-start gap-6 p-16">
+      <div className="flex h-full w-3/4 flex-col text-center">
         <h1 className="text-head font-semibold md:text-max">{title}</h1>
       </div>
-      <div className="w-[90vw] h-auto overflow-hidden relative aspect-[2/1] bg-slate-300 mt-10 rounded-[2.5rem]">
+      <div className="relative mt-10 aspect-[2/1] h-auto w-[90vw] overflow-hidden rounded-[2.5rem] bg-slate-300">
         <img
           src={image}
           alt="About Hero"
-          className="w-full h-full object-cover object-center"
+          className="h-full w-full object-cover object-center"
         />
       </div>
     </main>

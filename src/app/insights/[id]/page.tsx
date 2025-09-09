@@ -29,7 +29,7 @@ const BlogPage = () => {
 
   if (error) {
     return (
-      <div className='w-full min-h-screen flex justify-center items-center'>
+      <div className="flex min-h-screen w-full items-center justify-center">
         Error fetching blog. Please try again later.
       </div>
     );
@@ -37,7 +37,7 @@ const BlogPage = () => {
 
   if (!data) {
     return (
-      <div className='w-full min-h-screen flex justify-center items-center'>
+      <div className="flex min-h-screen w-full items-center justify-center">
         Loading...
       </div>
     );
@@ -50,37 +50,37 @@ const BlogPage = () => {
   }
   return (
     <main
-      data-theme='light'
+      data-theme="light"
       key={blog._id}
-      className='min-h-screen h-full w-screen px-[16rem] py-[8rem] flex flex-col items-center justify-center space-y-[4rem]'
+      className="flex h-full min-h-screen w-screen flex-col items-center justify-center space-y-[4rem] px-[16rem] py-[8rem]"
     >
-      <div className='w-full h-fit space-y-6 flex flex-col items-start'>
-        <h1 className='text-max font-bold w-full'>{blog.title}</h1>
-        <p className='text-para font-light'>{blog.brief}</p>
+      <div className="flex h-fit w-full flex-col items-start space-y-6">
+        <h1 className="w-full text-max font-bold">{blog.title}</h1>
+        <p className="text-para font-light">{blog.brief}</p>
         <img
           src={blog.title_image}
           alt={blog.title}
-          className='w-full object-cover h-[35rem] rounded-[1rem]'
+          className="h-[35rem] w-full rounded-[1rem] object-cover"
         />
       </div>
       {blog.segments.map((segment: Segment, index: number) => (
         <div
           key={segment._id || index}
-          className=' flex flex-col w-full gap-[1rem] '
+          className="flex w-full flex-col gap-[1rem]"
         >
           {segment.head && (
-            <h1 className='text-subhead font-semibold'>{segment.head}</h1>
+            <h1 className="text-subhead font-semibold">{segment.head}</h1>
           )}
           {segment.subhead && (
-            <h3 className='text-subheadmin font-light'>{segment.subhead}</h3>
+            <h3 className="text-subheadmin font-light">{segment.subhead}</h3>
           )}
-          <p className='text-para text-justify font-light'>{segment.content}</p>
+          <p className="text-justify text-para font-light">{segment.content}</p>
           {segment.seg_img && segment.seg_img !== 'none' && (
-            <div className='w-full h-auto overflow-hidden rounded-[0.5rem] relative my-[2rem]'>
+            <div className="relative my-[2rem] h-auto w-full overflow-hidden rounded-[0.5rem]">
               <img
                 src={segment.seg_img}
                 alt={segment.head}
-                className='w-full h-full !aspect-auto rounded-[1rem]'
+                className="!aspect-auto h-full w-full rounded-[1rem]"
               />
             </div>
           )}

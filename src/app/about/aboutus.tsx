@@ -12,25 +12,25 @@ function Aboutus() {
 
   useEffect(() => {
     fetch('/content/content.json')
-      .then((response) => response.json())
-      .then((data) => setContent(data.About.about))
-      .catch((error) => console.error('Error fetching content:', error));
+      .then(response => response.json())
+      .then(data => setContent(data.About.about))
+      .catch(error => console.error('Error fetching content:', error));
   }, []);
 
   return (
-    <main className='h-fit w-full p-4 xl:p-16 lg:p-12 md:p-10 sm:p-8'>
-      <div className='w-full'>
-        <h1 className='text-head pb-5 sm:pt-0 '>{content?.title}</h1>
+    <main className="h-fit w-full p-4 sm:p-8 md:p-10 lg:p-12 xl:p-16">
+      <div className="w-full">
+        <h1 className="pb-5 text-head sm:pt-0">{content?.title}</h1>
       </div>
-      <div className='flex w-full items-center sm:gap-12 gap-6 xl:flex-row flex-col'>
-        <div className='xl:aspect-square sm:aspect-[5/2] aspect-square xl:w-2/5 w-full border relative overflow-hidden rounded-3xl bg-slate-300'>
+      <div className="flex w-full flex-col items-center gap-6 sm:gap-12 xl:flex-row">
+        <div className="relative aspect-square w-full overflow-hidden rounded-3xl border bg-slate-300 sm:aspect-[5/2] xl:aspect-square xl:w-2/5">
           <img
             src={content?.image}
-            alt=''
-            className='w-full h-full object-cover'
+            alt=""
+            className="h-full w-full object-cover"
           />
         </div>
-        <div className='text-pretty detail xl:w-3/5 w-full text-para py-5 flex flex-col text-justify justify-evenly'>
+        <div className="detail flex w-full flex-col justify-evenly text-pretty py-5 text-justify text-para xl:w-3/5">
           <TextFormatter text={content ? content.text : ''} />
         </div>
       </div>

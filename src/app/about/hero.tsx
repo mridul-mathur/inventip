@@ -10,27 +10,27 @@ function Hero() {
 
   useEffect(() => {
     fetch('/content/content.json')
-      .then((response) => response.json())
-      .then((data) => {
+      .then(response => response.json())
+      .then(data => {
         console.log('About hero data:', data.About.hero);
         setContent(data.About.hero);
       })
-      .catch((error) => console.error('Error fetching content:', error));
+      .catch(error => console.error('Error fetching content:', error));
   }, []);
 
   return (
-    <div className='max-h-screen pt-24 pb-12 sm:px-16 px-4 flex flex-col items-center justify-center h-full relative w-full'>
-      <h1 className='lg:text-max font-semibold text-5xl sm:text-5xl md:text-6xl text-center'>
+    <div className="relative flex h-full max-h-screen w-full flex-col items-center justify-center px-4 pb-12 pt-24 sm:px-16">
+      <h1 className="text-center text-5xl font-semibold sm:text-5xl md:text-6xl lg:text-max">
         {content?.title}
       </h1>
-      <div className='w-full h-full overflow-hidden relative bg-slate-300 mt-10 rounded-[2.5rem] aspect-[2/1]'>
+      <div className="relative mt-10 aspect-[2/1] h-full w-full overflow-hidden rounded-[2.5rem] bg-slate-300">
         {content?.image && (
           <img
             src={content.image}
-            alt='About Hero'
-            className='w-full h-full object-cover'
+            alt="About Hero"
+            className="h-full w-full object-cover"
             onLoad={() => setImageLoaded(true)}
-            onError={(e) => {
+            onError={e => {
               console.error('Image failed to load:', content.image);
               console.error('Error:', e);
             }}

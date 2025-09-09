@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import { ExternalLink } from 'lucide-react';
 import Buttons from '@/app/buttons';
 
 export interface CareerCardProps {
@@ -23,36 +22,33 @@ export default function CareerCard({
   file_url,
 }: CareerCardProps) {
   return (
-    <article
-      className='
-        relative flex flex-col h-fit overflow-hidden gap-6 max-h-[30rem] rounded-lg border border-secondary bg-primary p-2 md:p-4 duration-200'
-    >
-      <header>
-        <h3 className='text-2xl font-suisse md:text-subheadmin font-medium'>
-          {position || 'No Position'}
-        </h3>
-      </header>
-      <section className='grid gap-2 text-para text-secondary/80'>
-        <Info label='Location' value={location} />
-        <Info label='Duration' value={duration} />
-        <Info label='Pay' value={pay} />
-        <Info
-          label='Skills'
-          value={skills.length ? skills.join(', ') : 'N/A'}
-        />
-      </section>
-
-      <footer className='z-10 absolute left-0 bottom-0 bg-primary  flex flex-col w-full items-center justify-between'>
-        <hr className='w-full h-[2px] bg-gradient-to-r from-accent1 to-accent2' />
+    <article className="p-4 relative flex flex-col justify-between h-fit  overflow-hidden rounded-lg border border-secondary bg-primary duration-200">
+        <h3 className="font-suisse w-full bg-primary border-b-[1px] pb-4 border-accent2 sticky top-0 text-2xl font-medium mb-4 md:text-3xl">
+        {position || 'No Position'}
+      </h3>
+        <section className="grid grid-cols-4  items-center justify-between gap-2 text-para text-secondary/80">
+          <Info label="Location" value={location} />
+          <Info label="Duration" value={duration} />
+          <span className="col-span-2">
+            <Info label="Pay" value={pay} />
+          </span>
+        </section>
+        <span className="text-para font-medium mt-4 text-secondary">
+          Skills:{' '}
+          <li className="list-disc font-normal inline text-para leading-[100%]">
+            {skills.length ? skills.join(' • ') : 'N/A'}
+          </li>
+        </span>
+      <footer className="sticky bottom-0 pt-4 border-t-[1px] border-accent2 left-0 z-10 flex w-full items-center justify-between bg-primary">
         <Buttons
-          color='dark'
+          color="dark"
           underline
           onClick={() => (window.location.href = file_url || '#')}
         >
           Description PDF
         </Buttons>
         <Buttons
-          color='dark'
+          color="dark"
           arrow
           onClick={() =>
             window.open(
@@ -70,10 +66,10 @@ export default function CareerCard({
 function Info({ label, value }: { label: string; value: string }) {
   return (
     <p>
-      <span className='font-medium h-full truncate text-secondary'>
+      <span className="h-full truncate font-medium text-secondary">
         {label}:
       </span>{' '}
-      <span className='line-clamp-4'>{value || 'N/A'}</span>
+      <span className="line-clamp-4">{value || 'N/A'}</span>
     </p>
   );
 }

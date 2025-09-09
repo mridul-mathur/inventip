@@ -1,26 +1,26 @@
-"use client";
-import React, { useEffect, useState } from "react";
-import TextFormatter from "@/components/text-format";
+'use client';
+import React, { useEffect, useState } from 'react';
+import TextFormatter from '@/components/text-format';
 
 export default function HowToApply() {
   const [content, setContent] = useState<any>(null);
   const [internships, setInternships] = useState<any>(null);
 
   useEffect(() => {
-    fetch("/content/content.json")
-      .then((res) => res.json())
-      .then((data) => setContent(data.Careers.howToApply));
+    fetch('/content/content.json')
+      .then(res => res.json())
+      .then(data => setContent(data.Careers.howToApply));
 
-    fetch("/content/content.json")
-      .then((res) => res.json())
-      .then((data) => setInternships(data.Careers.internProgram));
+    fetch('/content/content.json')
+      .then(res => res.json())
+      .then(data => setInternships(data.Careers.internProgram));
   }, []);
 
   if (!content) return null;
 
   return (
-    <main className="z-[2] bg-primary w-screen h-fit min-h-screen flex flex-col justify-between items-center gap-12 p-4 sm:py-[4rem] sm:p-[8rem]">
-      <h2 className="text-head text-secondary text-center">
+    <main className="z-[2] flex h-fit min-h-screen w-screen flex-col items-center justify-between gap-12 bg-primary p-4 sm:p-[8rem] sm:py-[4rem]">
+      <h2 className="text-center text-head text-secondary">
         <TextFormatter text={content.process.title} />
       </h2>
       <div className="relative grid grid-cols-12 gap-16">
@@ -28,18 +28,18 @@ export default function HowToApply() {
           <div className="space-y-8">
             {content.process.steps.map((item: any, idx: number) => (
               <div key={idx} className="group">
-                <div className="flex items-start gap-8 justify-start">
-                  <div className="flex flex-col w-fit gap-1">
-                    <span className="text-subheadmin uppercase bg-gradient-to-r from-accent1 to-accent2 text-transparent  bg-clip-text text-center">
-                      {String(idx + 1).padStart(2, "0")}
+                <div className="flex items-start justify-start gap-8">
+                  <div className="flex w-fit flex-col gap-1">
+                    <span className="bg-gradient-to-r from-accent1 to-accent2 bg-clip-text text-center text-subheadmin uppercase text-transparent">
+                      {String(idx + 1).padStart(2, '0')}
                     </span>
-                    <hr className="w-full h-[0.125rem]  bg-secondary"></hr>
+                    <hr className="h-[0.125rem] w-full bg-secondary"></hr>
                   </div>
-                  <div className="flex flex-col flex-1 gap-4 m-0 p-0">
+                  <div className="m-0 flex flex-1 flex-col gap-4 p-0">
                     <h3 className="text-subheadmin font-light text-secondary">
                       <TextFormatter text={item.title} />
                     </h3>
-                    <p className="text-para  text-secondary text-justify">
+                    <p className="text-justify text-para text-secondary">
                       <TextFormatter text={item.description} />
                     </p>
                   </div>
@@ -48,58 +48,60 @@ export default function HowToApply() {
             ))}
           </div>
           {internships && (
-            <div className="h-fit flex flex-col gap-4 mt-16 items-start justify-center">
-              <h2 className="text-subhead text-secondary text-center">
+            <div className="mt-16 flex h-fit flex-col items-start justify-center gap-4">
+              <h2 className="text-center text-subhead text-secondary">
                 <TextFormatter text={internships.title} />
               </h2>
-              <h2 className="text-para  text-secondary text-justify">
+              <h2 className="text-justify text-para text-secondary">
                 <TextFormatter text={internships.subhead} />
               </h2>
-              <div className="flex my-4 gap-1 relative">
-                <div className="absolute top-0 left-0 w-[2px] h-full bg-gradient-to-b from-accent1 to-accent2"></div>
-                <div className="pl-8 flex flex-col gap-4">
-                  <h3 className="text-subheadmin mb-2 text-secondary">
+              <div className="relative my-4 flex gap-1">
+                <div className="absolute left-0 top-0 h-full w-[2px] bg-gradient-to-b from-accent1 to-accent2"></div>
+                <div className="flex flex-col gap-4 pl-8">
+                  <h3 className="mb-2 text-subheadmin text-secondary">
                     <TextFormatter text="Program Details" />
                   </h3>
-                  <p className="text-para text-justify font-medium inline-flex gap-2 text-light text-secondary ">
-                    <span className="font-medium text-nowrap">
+                  <p className="text-light inline-flex gap-2 text-justify text-para font-medium text-secondary">
+                    <span className="text-nowrap font-medium">
                       Eligibility:
-                    </span>{" "}
+                    </span>{' '}
                     <TextFormatter
                       text={internships.programDetails.eligibility}
                     />
                   </p>
-                  <p className="text-para text-justify inline-flex gap-2 text-light text-secondary ">
-                    <span className="font-medium text-nowrap">Duration:</span>{" "}
+                  <p className="text-light inline-flex gap-2 text-justify text-para text-secondary">
+                    <span className="text-nowrap font-medium">Duration:</span>{' '}
                     <TextFormatter text={internships.programDetails.duration} />
                   </p>
-                  <p className="text-para text-justify inline-flex gap-2 text-light text-secondary ">
-                    <span className="font-medium text-nowrap">How to:</span>{" "}
+                  <p className="text-light inline-flex gap-2 text-justify text-para text-secondary">
+                    <span className="text-nowrap font-medium">How to:</span>{' '}
                     <TextFormatter
                       text={internships.programDetails.applicationProcess}
                     />
                   </p>
                 </div>
               </div>
-              <p className="text-para text-justify">{internships.learningOpportunities}</p>
+              <p className="text-justify text-para">
+                {internships.learningOpportunities}
+              </p>
             </div>
           )}
         </div>
 
         {/* Grow With Us - Right Side with Swiss Positioning */}
-        <div className="h-fit lg:sticky lg:top-24 col-span-12 lg:col-span-4 lg:col-start-9">
-          <div className="flex gap-1 relative">
-            <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-accent1 to-accent2"></div>
-            <div className="pl-8 flex flex-col gap-4">
+        <div className="col-span-12 h-fit lg:sticky lg:top-24 lg:col-span-4 lg:col-start-9">
+          <div className="relative flex gap-1">
+            <div className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-accent1 to-accent2"></div>
+            <div className="flex flex-col gap-4 pl-8">
               <h3 className="text-subhead text-secondary">
                 <TextFormatter text="Tips For You" />
               </h3>
-              <ul className="text-para text-justify flex flex-col gap-4 text-light text-secondary ">
+              <ul className="text-light flex flex-col gap-4 text-justify text-para text-secondary">
                 {content.tips.map((item: any, idx: number) => (
                   <li key={idx}>
-                    <span className="bg-gradient-to-r from-accent1 to-accent2 text-transparent bg-clip-text">
+                    <span className="bg-gradient-to-r from-accent1 to-accent2 bg-clip-text text-transparent">
                       *
-                    </span>{" "}
+                    </span>{' '}
                     <TextFormatter text={item} />
                   </li>
                 ))}

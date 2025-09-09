@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { SWRConfig } from "swr";
-import React from "react";
+import { SWRConfig } from 'swr';
+import React from 'react';
 
 const fetcher = async (url: string) => {
   const res = await fetch(url);

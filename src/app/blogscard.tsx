@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import Link from 'next/link';
 
 interface BlogCardProps {
@@ -31,42 +31,42 @@ const BlogsCard = ({ title, brief, title_image, id, tags }: BlogCardProps) => {
     }
   }, []);
   return (
-    <Link href={`insights/${id}`} className='h-fit w-fit'>
+    <Link href={`insights/${id}`} className="h-fit w-fit">
       <motion.div
         initial={{ scale: 1 }}
-        whileHover='hover'
-        className='overflow-hidden relative group max-w-[30rem] max-h-[40rem] w-full h-fit flex flex-col justify-center items-center'
+        whileHover="hover"
+        className="group relative flex h-fit max-h-[40rem] w-full max-w-[30rem] flex-col items-center justify-center overflow-hidden"
       >
-        <div className='w-full h-fit rounded-[1rem] overflow-hidden relative flex justify-center items-center'>
+        <div className="relative flex h-fit w-full items-center justify-center overflow-hidden rounded-[1rem]">
           <motion.img
             variants={imgvar}
             transition={{ duration: 0.3, ease: 'easeOut' }}
             src={title_image}
-            alt='title'
-            className='w-full h-auto !aspect-[3/2] object-cover'
+            alt="title"
+            className="!aspect-[3/2] h-auto w-full object-cover"
           />
           <motion.svg
             initial={{ opacity: 0, scale: 0.75 }}
             transition={{ duration: 0.25, delay: 0.25, ease: 'circInOut' }}
             variants={svgvar}
-            className='absolute'
-            xmlns='http://www.w3.org/2000/svg'
-            width='64'
-            height='64'
-            fill='#f7f7f7'
-            viewBox='0 0 24 24'
+            className="absolute"
+            xmlns="http://www.w3.org/2000/svg"
+            width="64"
+            height="64"
+            fill="#f7f7f7"
+            viewBox="0 0 24 24"
           >
-            <path d='M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z' />
+            <path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z" />
           </motion.svg>
         </div>
-        <div className='w-full flex flex-col h-fit py-4 px-2 gap-4'>
-          <div className='flex flex-col gap-2'>
-            <h2 className='text-2xl font-semibold line-clamp-2'>{title}</h2>
-            <div className='flex gap-1 flex-wrap'>
+        <div className="flex h-fit w-full flex-col gap-4 px-2 py-4">
+          <div className="flex flex-col gap-2">
+            <h2 className="line-clamp-2 text-2xl font-semibold">{title}</h2>
+            <div className="flex flex-wrap gap-1">
               {tags.map((tag, index) => (
                 <span
                   key={index}
-                  className='text-min font-light bg-gradient-to-r from-accent1/50 to-accent2/50 rounded-md px-2 py-1'
+                  className="rounded-md bg-gradient-to-r from-accent1/50 to-accent2/50 px-2 py-1 text-min font-light"
                 >
                   {tag}
                 </span>
@@ -78,7 +78,7 @@ const BlogsCard = ({ title, brief, title_image, id, tags }: BlogCardProps) => {
             initial={{ y: height + 100 }}
             transition={{ duration: 0.4, delay: 0.1, ease: 'easeOut' }}
             variants={textvar}
-            className='text-paramin text-justify line-clamp-4 leading-relaxed'
+            className="line-clamp-4 text-justify text-paramin leading-relaxed"
           >
             {brief}
           </motion.p>
