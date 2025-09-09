@@ -21,7 +21,7 @@ const ContactUs = () => {
         <div className="flex flex-col gap-4 pt-4">
           <p className="text-subhead font-light">Follow us on social media to stay updated with the latest news and insights.</p>
           <div className="flex gap-6">
-            <a href="https://www.linkedin.com/company/inventip-legal-services-llp" target="_blank" rel="noopener noreferrer">
+            <a href="https://linkedin.com/company/inventip-legal-services-llp" target="_blank" rel="noopener noreferrer">
               <Buttons color="dark">
                 <Linkedin size={24} />
               </Buttons>

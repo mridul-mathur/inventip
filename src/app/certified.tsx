@@ -44,13 +44,29 @@ const Certified: React.FC = () => {
           spaceBetween={24}
           loop={true}
           breakpoints={{
-            640: {
+            100: {
               slidesPerView: 1,
-              spaceBetween: 24,
+              spaceBetween: 16,
+            },
+            300: {
+              slidesPerView: 1.25,
+              spaceBetween: 16,
+            },
+            425: {
+              slidesPerView: 1.5,
+              spaceBetween: 16,
+            },
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 16,
+            },
+            768: {
+              slidesPerView: 2.5,
+              spaceBetween: 16,
             },
             1024: {
               slidesPerView: 3,
-              spaceBetween: 24,
+              spaceBetween: 16,
             },
           }}
           className='w-full'
@@ -61,7 +77,7 @@ const Certified: React.FC = () => {
                 className='relative h-fit w-fit flex items-center justify-center cursor-pointer'
                 transition={{ duration: 0.3 }}
               >
-                <div className='h-full w-full aspect-square flex border rounded-[2rem] items-center justify-center overflow-hidden'>
+                <div className='h-full w-full xl:aspect-square sm:aspect-[4/5] aspect-[4/5] flex border rounded-[2rem] items-center justify-center overflow-hidden'>
                   <img
                     src={slide}
                     alt={`Certificate ${index + 1}`}

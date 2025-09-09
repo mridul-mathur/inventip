@@ -1,6 +1,7 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 import Buttons from '../buttons';
 import TextFormatter from '@/components/text-format';
 
@@ -22,8 +23,43 @@ interface BentoContent {
   image: string;
 }
 
+const useCounterAnimation = (targetNumber: number, isVisible: boolean) => {
+  const [currentNumber, setCurrentNumber] = useState(0);
+
+  useEffect(() => {
+    if (!isVisible) {
+      setCurrentNumber(0);
+      return;
+    }
+
+    const totalSteps = 10;
+    const stepSize = targetNumber / totalSteps;
+    let currentStep = 0;
+
+    const interval = setInterval(() => {
+      currentStep++;
+      const newValue = Math.min(currentStep * stepSize, targetNumber);
+      setCurrentNumber(newValue);
+
+      if (currentStep >= totalSteps) {
+        clearInterval(interval);
+        setCurrentNumber(targetNumber);
+      }
+    }, 100);
+
+    return () => clearInterval(interval);
+  }, [isVisible, targetNumber]);
+
+  return currentNumber;
+};
+
 const HomeAbout = () => {
   const [content, setContent] = useState<AboutContent | null>(null);
+  const numbersRef = useRef<HTMLDivElement>(null);
+  const isNumbersVisible = useInView(numbersRef, {
+    amount: 0.3,
+    margin: '0px 0px -100px 0px',
+  });
 
   useEffect(() => {
     fetch('/content/content.json')
@@ -50,14 +86,21 @@ const HomeAbout = () => {
             Know About Us
           </Buttons>
         </div>
-        <div className='w-full text-para text-justify sm:w-3/5 h-fit flex flex-col justify-between items-start gap-[4rem]'>
+        <div className='w-full text-para text-justify sm:w-3/5 h-fit flex flex-col justify-between items-start gap-12'>
           <p>
             <TextFormatter text={content?.text || ''} />
           </p>
-          <div className='flex w-full justify-start items-center gap-16'>
+          <div
+            ref={numbersRef}
+            className='grid grid-cols-3 w-full justify-start items-center'
+          >
             {content?.numbers.map((number, index) => (
-              <div className='' key={index}>
-                <Numb numb={number.number} text={number.text} />
+              <div className='col-span-1 ' key={index}>
+                <Numb
+                  numb={number.number}
+                  text={number.text}
+                  isVisible={isNumbersVisible}
+                />
               </div>
             ))}
           </div>
@@ -73,13 +116,18 @@ export default HomeAbout;
 interface NumbProps {
   numb: number;
   text: string;
+  isVisible: boolean;
 }
 
-const Numb: React.FC<NumbProps> = ({ numb, text }) => {
+const Numb: React.FC<NumbProps> = ({ numb, text, isVisible }) => {
+  const animatedValue = useCounterAnimation(numb, isVisible);
+
   return (
     <div className='flex flex-col gap-4'>
-      <p className='text-head font-medium'>{numb}+</p>
-      <p className='text-para font-medium'>{text}</p>
+      <motion.p className='text-subhead font-medium'>
+        {Math.round(animatedValue)}+
+      </motion.p>
+      <p className='text-paramin font-medium'>{text}</p>
     </div>
   );
 };
