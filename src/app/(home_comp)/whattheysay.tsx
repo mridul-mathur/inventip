@@ -20,9 +20,9 @@ function WhatTheySay() {
 
   useEffect(() => {
     fetch('/content/content.json')
-      .then((response) => response.json())
-      .then((data) => setContent(data.Home.testimonials))
-      .catch((error) => console.error('Error fetching content:', error));
+      .then(response => response.json())
+      .then(data => setContent(data.Home.testimonials))
+      .catch(error => console.error('Error fetching content:', error));
   }, []);
 
   const [swiper, setSwiper] = useState<SwiperType | null>(null);
@@ -41,24 +41,24 @@ function WhatTheySay() {
   };
 
   return (
-    <main className='flex flex-col  bg-primary h-fit min-h-[75vh] py-12 px-0 w-screen gap-6'>
-      <div className='w-[100%] px-12 py-6 flex justify-between items-center'>
-        <h1 className='text-head text-center w-full capitalize'>
+    <main className="flex h-fit min-h-[75vh] w-screen flex-col gap-6 bg-primary px-0 py-12">
+      <div className="flex w-[100%] items-center justify-between px-12 py-6">
+        <h1 className="w-full text-center text-head capitalize">
           What They Say About Us
         </h1>
       </div>
-      <div className='relative w-full px-12 flex justify-center items-center overflow-visible'>
-        <div className='absolute left-20 z-[10] flex p-1 border border-secondary rounded-full'>
-          <Buttons color='dark' onClick={handlePrev}>
+      <div className="relative flex w-full items-center justify-center overflow-visible px-12">
+        <div className="absolute left-20 z-[10] flex rounded-full border border-secondary p-1">
+          <Buttons color="dark" onClick={handlePrev}>
             <svg
-              xmlns='http://www.w3.org/2000/svg'
-              width='28'
-              height='28'
-              viewBox='0 0 24 24'
+              xmlns="http://www.w3.org/2000/svg"
+              width="28"
+              height="28"
+              viewBox="0 0 24 24"
             >
               <path
-                d='M12 4l1.41 1.41L7.83 11H20v2H7.83l5.58 5.59L12 20l-8-8 8-8z'
-                fill='#191919'
+                d="M12 4l1.41 1.41L7.83 11H20v2H7.83l5.58 5.59L12 20l-8-8 8-8z"
+                fill="#191919"
               />
             </svg>
           </Buttons>
@@ -70,8 +70,8 @@ function WhatTheySay() {
           loop={true}
           speed={1000}
           onSwiper={setSwiper}
-          onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
-          className='w-full'
+          onSlideChange={swiper => setActiveIndex(swiper.realIndex)}
+          className="w-full"
         >
           {content?.cards.map((testi, index) => (
             <SwiperSlide key={index}>
@@ -84,17 +84,17 @@ function WhatTheySay() {
             </SwiperSlide>
           ))}
         </Swiper>
-        <div className='absolute right-20 z-[10] flex p-1 border border-secondary w-fit h-fit rounded-full'>
-          <Buttons color='dark' onClick={handleNext}>
+        <div className="absolute right-20 z-[10] flex h-fit w-fit rounded-full border border-secondary p-1">
+          <Buttons color="dark" onClick={handleNext}>
             <svg
-              xmlns='http://www.w3.org/2000/svg'
-              width='28'
-              height='28'
-              viewBox='0 0 24 24'
+              xmlns="http://www.w3.org/2000/svg"
+              width="28"
+              height="28"
+              viewBox="0 0 24 24"
             >
               <path
-                d='M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z'
-                fill='#191919'
+                d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"
+                fill="#191919"
               />
             </svg>
           </Buttons>
@@ -120,24 +120,24 @@ const TestiCard: React.FC<TestiCardProps> = ({
   company,
 }) => {
   return (
-    <div className='w-full hover:cursor-grab h-full justify-center text-center flex-shrink-0 flex items-center gap-8'>
-      <div className='w-3/5 h-fit flex flex-col justify-center items-center gap-6'>
-        <div className='relative w-full py-4 px-6'>
+    <div className="flex h-full w-full flex-shrink-0 items-center justify-center gap-8 text-center hover:cursor-grab">
+      <div className="flex h-fit w-3/5 flex-col items-center justify-center gap-6">
+        <div className="relative w-full px-6 py-4">
           <img
-            src='/images/upper.png'
-            alt=''
-            className='absolute top-0 left-0'
+            src="/images/upper.png"
+            alt=""
+            className="absolute left-0 top-0"
           />
-          <h1 className='text-para text-justify w-full'>{quate}</h1>
+          <h1 className="w-full text-justify text-para">{quate}</h1>
           <img
-            src='/images/down.png'
-            className='absolute bottom-0 right-6'
-            alt=''
+            src="/images/down.png"
+            className="absolute bottom-0 right-6"
+            alt=""
           />
         </div>
-        <div className='p-6 flex flex-col gap-1 items-center'>
-          <p className='text-para'>{name}</p>
-          <p className='text-para font-semibold'>{company}</p>
+        <div className="flex flex-col items-center gap-1 p-6">
+          <p className="text-para">{name}</p>
+          <p className="text-para font-semibold">{company}</p>
         </div>
       </div>
     </div>

@@ -10,14 +10,14 @@ interface FaqProps {
 
 function Faq({ faqs }: FaqProps) {
   return (
-    <main className='min-h-[75vh] w-screen flex flex-col gap-12 md:flex-row p-4 md:p-16'>
-      <div className='w-full sticky top-6 h-[100%] p-0 pt-[5%]'>
-        <h1 className='text-head'>To ask? We may already have an answer.</h1>
-        <div className='flex justify-between items-center mt-6'>
-          <p className='text-para '>Is your question not listed?</p>
-          <div className='px-5 py-1 rounded-2xl bg-black'>
+    <main className="flex min-h-[75vh] w-screen flex-col gap-12 p-4 md:flex-row md:p-16">
+      <div className="sticky top-6 h-[100%] w-full p-0 pt-[5%]">
+        <h1 className="text-head">To ask? We may already have an answer.</h1>
+        <div className="mt-6 flex items-center justify-between">
+          <p className="text-para">Is your question not listed?</p>
+          <div className="rounded-2xl bg-black px-5 py-1">
             <Buttons
-              color='light'
+              color="light"
               onClick={() => (window.location.href = '/contact')}
               underline={true}
               arrow={true}
@@ -27,7 +27,7 @@ function Faq({ faqs }: FaqProps) {
           </div>
         </div>
       </div>
-      <div className='w-full  min-h-[100%] p-0 pt-[5%]'>
+      <div className="min-h-[100%] w-full p-0 pt-[5%]">
         <AllFaq faqs={faqs} />
       </div>
     </main>
@@ -75,19 +75,19 @@ interface FaqCardProps {
 const FaqCard: React.FC<FaqCardProps> = ({ ques, ans, isOpen, onClick }) => {
   return (
     <div
-      className='border-b-[0.5px] border-black p-5 flex flex-col cursor-pointer'
+      className="flex cursor-pointer flex-col border-b-[0.5px] border-black p-5"
       onClick={onClick}
     >
-      <div className='flex justify-between items-center'>
-        <h2 className='text-2xl leading-[150%] font-suisse'>{ques}</h2>
-        <span className='text-lg'>{isOpen ? '➖' : '➕'}</span>
+      <div className="flex items-center justify-between">
+        <h2 className="font-suisse text-2xl leading-[150%]">{ques}</h2>
+        <span className="text-lg">{isOpen ? '➖' : '➕'}</span>
       </div>
       <div
-        className={`overflow-hidden transition-all duration-800 ease-in-out ${
-          isOpen ? 'max-h-[200px] mt-2' : 'max-h-0'
+        className={`duration-800 overflow-hidden transition-all ease-in-out ${
+          isOpen ? 'mt-2 max-h-[200px]' : 'max-h-0'
         }`}
       >
-        <p className='text-para text-justify text-[#888888]'>{ans}</p>
+        <p className="text-justify text-para text-[#888888]">{ans}</p>
       </div>
     </div>
   );

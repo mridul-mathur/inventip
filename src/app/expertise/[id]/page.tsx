@@ -1,13 +1,12 @@
-"use client";
+'use client';
 
-import React, { useEffect, useState } from "react";
-import Hero from "../hero";
-import Tier from "../tier";
-import Inovation from "../../(home_comp)/inovation";
-import Faq from "../faq";
-import WhatTheySay from "../../(home_comp)/whattheysay";
-import CursorFollower from "../../cursorFollower";
-import { useParams } from "next/navigation";
+import React, { useEffect, useState } from 'react';
+import Hero from '../hero';
+import Tier from '../tier';
+import Inovation from '../../(home_comp)/inovation';
+import Faq from '../faq';
+import WhatTheySay from '../../(home_comp)/whattheysay';
+import { useParams } from 'next/navigation';
 
 interface ExpertiseContent {
   title: string;
@@ -30,19 +29,19 @@ interface ExpertiseContent {
     {
       question: string;
       answer: string;
-    }
+    },
   ];
 }
 
 const Page = () => {
   const { id } = useParams();
-  const expertiseId = typeof id === "string" ? parseInt(id) : 0;
+  const expertiseId = typeof id === 'string' ? parseInt(id) : 0;
   const [content, setContent] = useState<ExpertiseContent | null>(null);
 
   useEffect(() => {
-    fetch("/content/content.json")
-      .then((response) => response.json())
-      .then((data) => {
+    fetch('/content/content.json')
+      .then(response => response.json())
+      .then(data => {
         const expertiseArray = data.expertise;
         if (expertiseArray && expertiseArray[expertiseId]) {
           setContent(expertiseArray[expertiseId]);
@@ -50,8 +49,8 @@ const Page = () => {
           setContent(null);
         }
       })
-      .catch((error) => {
-        console.error("Error fetching content:", error);
+      .catch(error => {
+        console.error('Error fetching content:', error);
         setContent(null);
       });
   }, [expertiseId]);
@@ -59,25 +58,25 @@ const Page = () => {
   const [cursorProps, setCursorProps] = useState<{
     show: boolean;
     text: string;
-  }>({ show: false, text: "" });
+  }>({ show: false, text: '' });
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const sections = document.querySelectorAll("section");
+    if (typeof window !== 'undefined') {
+      const sections = document.querySelectorAll('section');
 
       const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
+        entries => {
+          entries.forEach(entry => {
             if (entry.isIntersecting) {
               switch (entry.target.id) {
-                case "inovation":
-                  setCursorProps({ show: true, text: "Scroll" });
+                case 'inovation':
+                  setCursorProps({ show: true, text: 'Scroll' });
                   break;
-                case "whattheysay":
-                  setCursorProps({ show: true, text: "Drag" });
+                case 'whattheysay':
+                  setCursorProps({ show: true, text: 'Drag' });
                   break;
                 default:
-                  setCursorProps({ show: false, text: "" });
+                  setCursorProps({ show: false, text: '' });
               }
             }
           });
@@ -85,7 +84,7 @@ const Page = () => {
         { threshold: 0.5 }
       );
 
-      sections.forEach((section) => {
+      sections.forEach(section => {
         observer.observe(section);
       });
 
@@ -100,12 +99,12 @@ const Page = () => {
   }
 
   return (
-    <main className="flex flex-col justify-center items-center w-full px-16 relative">
+    <main className="relative flex w-full flex-col items-center justify-center px-16">
       <section id="hero" data-theme="dark">
         <Hero
           image={content.image}
-          title={content?.title || ""}
-          intro={content?.intro || ""}
+          title={content?.title || ''}
+          intro={content?.intro || ''}
         />
       </section>
       <section id="tier" data-theme="light">

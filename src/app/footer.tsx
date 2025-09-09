@@ -42,26 +42,26 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <main className='z-[2] grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-5 overflow-hidden py-12 sm:px-8 px-4 lg:px-16 border min-h-[24rem] bg-primary text-black rounded-t-[3rem] border-black grid w-full absolute sm:pb-0'>
-      <div className='logo-div col-span-1 w-full flex flex-col gap-6'>
+    <main className="absolute z-[2] grid min-h-[24rem] w-full grid-cols-1 gap-12 overflow-hidden rounded-t-[3rem] border border-black bg-primary px-4 py-12 text-black sm:grid-cols-2 sm:px-8 sm:pb-0 lg:grid-cols-5 lg:px-16">
+      <div className="logo-div col-span-1 flex w-full flex-col gap-6">
         <Link href={'/'}>
           <img
-            src='/images/inventIPblack.png'
-            alt='logo'
-            className='w-52 h-auto'
+            src="/images/inventIPblack.png"
+            alt="logo"
+            className="h-auto w-52"
           />
         </Link>
-        <p className='text-para font-semibold'>India | United States</p>
+        <p className="text-para font-semibold">India | United States</p>
       </div>
-      <div className='flex flex-col sm:flex-row col-span-1 w-full sm:col-span-2 lg:col-span-4 items-start justify-start lg:justify-end gap-6 lg:gap-12'>
+      <div className="col-span-1 flex w-full flex-col items-start justify-start gap-6 sm:col-span-2 sm:flex-row lg:col-span-4 lg:justify-end lg:gap-12">
         {footerSections.map((section, index) => (
-          <div key={index} className='col-span-1 w-fit h-full'>
-            <h3 className='pb-3 capitalize text-para font-medium'>
+          <div key={index} className="col-span-1 h-full w-fit">
+            <h3 className="pb-3 text-para font-medium capitalize">
               {section.title}
             </h3>
-            <ul className='w-fit flex flex-col items-start justify-start list-none text-paramin text-left sm:text-para font-light'>
+            <ul className="flex w-fit list-none flex-col items-start justify-start text-left text-paramin font-light sm:text-para">
               {section.items.map((item, idx) => (
-                <Buttons color='dark' underline key={idx}>
+                <Buttons color="dark" underline key={idx}>
                   {item.link ? (
                     <Link href={item.link}>{item.name}</Link>
                   ) : (

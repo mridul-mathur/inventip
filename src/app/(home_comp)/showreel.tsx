@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import React from "react";
+import React from 'react';
 
 const Showreel = () => {
   return (
-    <main className="z-[2] w-screen h-screen flex flex-col justify-between items-start gap-16">
-      <div className="bg-blue-300 w-full h-full rounded-3xl"></div>
+    <main className="z-[2] flex h-screen w-screen flex-col items-start justify-between gap-16">
+      <div className="h-full w-full rounded-3xl bg-blue-300"></div>
     </main>
   );
 };

@@ -14,12 +14,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en'>
-      <body className='font-suisse bg-primary'>
+    <html lang="en">
+      <body className="mx-auto max-w-screen-2xl bg-primary font-suisse">
         <Nav />
-        <div className='max-w-screen-2xl relative overflow-x-hidden flex flex-col items-center justify-center'>
-          {children}
-        </div>
+        {children}
         <Footer />
       </body>
     </html>

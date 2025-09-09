@@ -1,13 +1,13 @@
 'use client';
 
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import {
   motion,
   useTransform,
   useScroll,
   AnimatePresence,
   useMotionValueEvent,
-} from 'framer-motion';
+} from 'motion/react';
 import Buttons from '../buttons';
 import Link from 'next/link';
 import TextFormatter from '@/components/text-format';
@@ -26,7 +26,10 @@ export interface ExpertiseContent {
 const Inovation: React.FC<ExpertiseContent> = ({ title, cards }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const windowRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({ target: containerRef });
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+  });
 
   const activeIndex = useTransform(
     scrollYProgress,
@@ -35,9 +38,11 @@ const Inovation: React.FC<ExpertiseContent> = ({ title, cards }) => {
   );
   const windowHeight = windowRef.current?.clientHeight;
   const [currentIndex, setCurrentIndex] = useState(0);
-  useMotionValueEvent(activeIndex, 'change', (latest) => {
+
+  useMotionValueEvent(activeIndex, 'change', latest => {
     setCurrentIndex(Math.floor(latest));
   });
+
   const imageStackY = useTransform(
     scrollYProgress,
     [0, 1],
@@ -47,20 +52,20 @@ const Inovation: React.FC<ExpertiseContent> = ({ title, cards }) => {
   return (
     <div
       ref={containerRef}
-      className='relative w-screen bg-primary'
+      className="relative w-screen bg-primary"
       style={{ height: `${cards.length * 2 * (windowHeight ?? 0)}px` }}
     >
-      <div className='sticky top-0 left-0 flex w-screen h-screen'>
-        <div className='w-5/12 h-full grid grid-rows-6 items-start justify-center gap-12 p-12 py-36'>
+      <div className="sticky left-0 top-0 flex h-screen w-screen">
+        <div className="grid h-full w-5/12 grid-rows-6 items-start justify-center gap-12 p-12 py-36">
           <motion.h1
-            className='text-head items-start row-span-2 justify-start h-fit font-suisse'
+            className="row-span-2 h-fit items-start justify-start font-suisse text-head"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
           >
             <TextFormatter text={title || ''} />
           </motion.h1>
-          <div className='w-fit h-fit items-start row-span-4 justify-start flex flex-col overflow-hidden'>
-            <AnimatePresence mode='wait'>
+          <div className="row-span-4 flex h-fit w-fit flex-col items-start justify-start overflow-hidden">
+            <AnimatePresence mode="wait">
               <motion.div
                 key={currentIndex}
                 initial={{ y: '125%' }}
@@ -68,9 +73,9 @@ const Inovation: React.FC<ExpertiseContent> = ({ title, cards }) => {
                 exit={{ y: '125%' }}
                 transition={{ duration: 0.5 }}
               >
-                <span className='text-subhead font-medium flex flex-col gap-2 mb-6'>
+                <span className="mb-6 flex flex-col gap-2 text-subhead font-medium">
                   <TextFormatter text={cards[currentIndex]?.name || ''} />
-                  <motion.p className='text-justify font-normal w-[24rem] text-para'>
+                  <motion.p className="w-[24rem] text-justify text-para font-normal">
                     <TextFormatter
                       text={cards[currentIndex]?.description || ''}
                     />
@@ -79,7 +84,7 @@ const Inovation: React.FC<ExpertiseContent> = ({ title, cards }) => {
 
                 {cards[currentIndex]?.link && (
                   <Link href={cards[currentIndex].link!}>
-                    <Buttons color='dark' arrow={true} underline={true}>
+                    <Buttons color="dark" arrow={true} underline={true}>
                       {cards[currentIndex].buttonText}
                     </Buttons>
                   </Link>
@@ -89,8 +94,8 @@ const Inovation: React.FC<ExpertiseContent> = ({ title, cards }) => {
           </div>
         </div>
 
-        <div className='w-7/12 h-screen flex items-center justify-center overflow-hidden relative'>
-          <div className='absolute  right-8 z-10 flex flex-col gap-3 items-end'>
+        <div className="relative flex h-screen w-7/12 items-center justify-center overflow-hidden">
+          <div className="absolute right-8 z-10 flex flex-col items-end gap-3">
             {cards.map((_, idx) => (
               <button
                 key={idx}
@@ -111,11 +116,11 @@ const Inovation: React.FC<ExpertiseContent> = ({ title, cards }) => {
                     });
                   }
                 }}
-                className='w-4 h-4 rounded-full  flex items-center justify-center p-0.5 transition-all duration-300'
+                className="flex h-4 w-4 items-center justify-center rounded-full p-0.5 transition-all duration-300"
               >
                 <motion.div
                   layout
-                  className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                  className={`h-2.5 w-2.5 rounded-full transition-all duration-300 ${
                     currentIndex === idx
                       ? 'bg-gradient-to-r from-accent1 to-accent2'
                       : 'bg-secondary/50'
@@ -127,21 +132,21 @@ const Inovation: React.FC<ExpertiseContent> = ({ title, cards }) => {
 
           <div
             ref={windowRef}
-            className='w-[30rem] snap-y snap-mandatory snap-start aspect-[3/4] relative m-0 p-0 gap-0 overflow-hidden rounded-lg border border-secondary'
+            className="relative m-0 aspect-[3/4] w-[30rem] snap-y snap-mandatory snap-start gap-0 overflow-hidden rounded-lg border border-secondary p-0"
           >
             <motion.div
-              className='absolute top-0 left-0 w-full h-full'
+              className="absolute left-0 top-0 h-full w-full"
               style={{ y: imageStackY }}
             >
               {cards.map((card, index) => (
                 <div
                   key={index}
-                  className='w-full h-[40rem] m-0 p-0 overflow-hidden flex items-center justify-center'
+                  className="m-0 flex h-[40rem] w-full items-center justify-center overflow-hidden p-0"
                 >
                   <img
                     src={card.image}
                     alt={card.name}
-                    className='w-full h-full hover:scale-105 transition-all duration-300 ease-out object-cover'
+                    className="h-full w-full object-cover transition-all duration-300 ease-out hover:scale-105"
                   />
                 </div>
               ))}

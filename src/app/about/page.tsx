@@ -17,8 +17,8 @@ const AboutPage = () => {
     const sections = document.querySelectorAll('section');
 
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
+      entries => {
+        entries.forEach(entry => {
           if (entry.isIntersecting) {
             switch (entry.target.id) {
               case 'certified':
@@ -33,7 +33,7 @@ const AboutPage = () => {
       { threshold: 0.5 }
     );
 
-    sections.forEach((section) => {
+    sections.forEach(section => {
       observer.observe(section);
     });
 
@@ -43,20 +43,20 @@ const AboutPage = () => {
   }, []);
 
   return (
-    <div className='overflow-x-hidden relative w-full flex flex-col items-center justify-center'>
-      <section data-theme='light' id='hero'>
+    <div className="relative flex w-full flex-col items-center justify-center overflow-x-hidden">
+      <section data-theme="light" id="hero">
         <Hero />
       </section>
-      <section data-theme='light' id='aboutus'>
+      <section data-theme="light" id="aboutus">
         <Aboutus />
       </section>
-      <section data-theme='light' id='ourmission'>
+      <section data-theme="light" id="ourmission">
         <Ourmission />
       </section>
-      <section data-theme='light' id='certified'>
+      <section data-theme="light" id="certified">
         <Certified />
       </section>
-      <section data-theme='light' id='team'>
+      <section data-theme="light" id="team">
         <Team />
       </section>
     </div>

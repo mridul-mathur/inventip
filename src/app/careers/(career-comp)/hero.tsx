@@ -11,22 +11,22 @@ function CareersHero() {
 
   useEffect(() => {
     fetch('/content/content.json')
-      .then((response) => response.json())
-      .then((data) => setContent(data.Careers.hero))
-      .catch((error) => console.error('Error fetching content:', error));
+      .then(response => response.json())
+      .then(data => setContent(data.Careers.hero))
+      .catch(error => console.error('Error fetching content:', error));
   }, []);
 
   return (
-    <main className='min-h-screen'>
-      <div className='mt-[4rem] sm:mt-[6rem] flex flex-col items-center justify-center'>
-        <h1 className='text-max font-semibold sm:text-max text-center'>
+    <main className="min-h-screen">
+      <div className="mt-[4rem] flex flex-col items-center justify-center sm:mt-[6rem]">
+        <h1 className="text-center text-max font-semibold sm:text-max">
           {content?.title}
         </h1>
-        <div className='w-[90vw] min-h-[70vh] bg-slate-300 mt-10 rounded-[2.5rem] relative overflow-hidden'>
+        <div className="relative mt-10 min-h-[70vh] w-[90vw] overflow-hidden rounded-[2.5rem] bg-slate-300">
           <img
             src={content?.image}
-            alt=''
-            className='w-full h-full object-cover object-center'
+            alt=""
+            className="h-full w-full object-cover object-center"
           />
         </div>
       </div>

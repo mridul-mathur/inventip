@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useRef } from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import type { Swiper as SwiperType } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, EffectFade, Autoplay } from 'swiper/modules';
@@ -33,11 +33,11 @@ const Certified: React.FC = () => {
   };
 
   return (
-    <main className='min-h-[90vh] w-screen bg-primary flex flex-col justify-center items-center p-4 md:p-16 overflow-hidden z-[1]'>
-      <h1 className='text-head capitalize mb-12'>Appreciation and Awards</h1>
-      <div className='relative w-full max-w-6xl'>
+    <main className="z-[1] flex min-h-[90vh] w-screen flex-col items-center justify-center overflow-hidden bg-primary p-4 md:p-16">
+      <h1 className="mb-12 text-head capitalize">Appreciation and Awards</h1>
+      <div className="relative w-full max-w-6xl">
         <Swiper
-          onSwiper={(swiper) => {
+          onSwiper={swiper => {
             swiperRef.current = swiper;
           }}
           modules={[Navigation, EffectFade]}
@@ -69,19 +69,19 @@ const Certified: React.FC = () => {
               spaceBetween: 16,
             },
           }}
-          className='w-full'
+          className="w-full"
         >
           {slides.map((slide, index) => (
             <SwiperSlide key={index}>
               <motion.div
-                className='relative h-fit w-fit flex items-center justify-center cursor-pointer'
+                className="relative flex h-fit w-fit cursor-pointer items-center justify-center"
                 transition={{ duration: 0.3 }}
               >
-                <div className='h-full w-full xl:aspect-square sm:aspect-[4/5] aspect-[4/5] flex border rounded-[2rem] items-center justify-center overflow-hidden'>
+                <div className="flex aspect-[4/5] h-full w-full items-center justify-center overflow-hidden rounded-[2rem] border sm:aspect-[4/5] xl:aspect-square">
                   <img
                     src={slide}
                     alt={`Certificate ${index + 1}`}
-                    className='w-full h-full object-contain p-6 bg-white rounded-[2rem]'
+                    className="h-full w-full rounded-[2rem] bg-white object-contain p-6"
                   />
                 </div>
               </motion.div>
@@ -89,37 +89,37 @@ const Certified: React.FC = () => {
           ))}
         </Swiper>
 
-        <div className='absolute top-1/2 -left-16 transform -translate-y-1/2 z-10'>
-          <div className='flex p-1 border border-secondary rounded-full'>
-            <Buttons color='dark' onClick={handleNext}>
+        <div className="absolute -left-16 top-1/2 z-10 -translate-y-1/2 transform">
+          <div className="flex rounded-full border border-secondary p-1">
+            <Buttons color="dark" onClick={handleNext}>
               <svg
-                xmlns='http://www.w3.org/2000/svg'
-                width='28'
-                height='28'
-                viewBox='0 0 24 24'
+                xmlns="http://www.w3.org/2000/svg"
+                width="28"
+                height="28"
+                viewBox="0 0 24 24"
                 style={{ transform: 'rotate(180deg)' }}
               >
                 <path
-                  d='M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z'
-                  fill='#191919'
+                  d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"
+                  fill="#191919"
                 />
               </svg>
             </Buttons>
           </div>
         </div>
 
-        <div className='absolute top-1/2 -right-16 transform -translate-y-1/2 z-10'>
-          <div className='flex p-1 border border-secondary rounded-full'>
-            <Buttons color='dark' onClick={handlePrev}>
+        <div className="absolute -right-16 top-1/2 z-10 -translate-y-1/2 transform">
+          <div className="flex rounded-full border border-secondary p-1">
+            <Buttons color="dark" onClick={handlePrev}>
               <svg
-                xmlns='http://www.w3.org/2000/svg'
-                width='28'
-                height='28'
-                viewBox='0 0 24 24'
+                xmlns="http://www.w3.org/2000/svg"
+                width="28"
+                height="28"
+                viewBox="0 0 24 24"
               >
                 <path
-                  d='M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z'
-                  fill='#191919'
+                  d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"
+                  fill="#191919"
                 />
               </svg>
             </Buttons>

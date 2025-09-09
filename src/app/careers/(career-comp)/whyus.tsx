@@ -8,37 +8,37 @@ const WhyUs = () => {
 
   useEffect(() => {
     fetch('/content/content.json')
-      .then((res) => res.json())
-      .then((data) => setWhyJoinUs(data.Careers.whyJoinUs));
+      .then(res => res.json())
+      .then(data => setWhyJoinUs(data.Careers.whyJoinUs));
   }, []);
 
   if (!whyJoinUs) return null;
 
   return (
-    <main className='z-[2] bg-primary w-screen h-fit min-h-screen flex flex-col justify-between items-center gap-16 p-4 sm:p-[8rem]'>
-      <div className='flex w-full flex-col gap-4 items-center justify-center'>
-        <h1 className='text-head text-secondary mb-4'>
+    <main className="z-[2] flex h-fit min-h-screen w-screen flex-col items-center justify-between gap-16 bg-primary p-4 sm:p-[8rem]">
+      <div className="flex w-full flex-col items-center justify-center gap-4">
+        <h1 className="mb-4 text-head text-secondary">
           <TextFormatter text={whyJoinUs.title} />
         </h1>
-        <h3 className='text-para text-center  w-3/4'>
+        <h3 className="w-3/4 text-center text-para">
           <TextFormatter text={whyJoinUs.subhead} />
         </h3>
       </div>
-      <div className='flex md:flex-row h-fit flex-col gap-12'>
+      <div className="flex h-fit flex-col gap-12 md:flex-row">
         <img
           src={whyJoinUs.image}
-          alt='Join Us @InventIP'
-          className='w-[40%] aspect-[3/5] bg-slate-300 rounded-[2.5rem]'
+          alt="Join Us @InventIP"
+          className="aspect-[3/5] w-[40%] rounded-[2.5rem] bg-slate-300"
         />
-        <div className='grid grid-cols-1 w-[60%] h-fit gap-12'>
+        <div className="grid h-fit w-[60%] grid-cols-1 gap-12">
           {whyJoinUs.reasons.map(
             (reason: { title: string; description: string }, index: number) => (
-              <div key={index} className='relative flex flex-col gap-2'>
-                <hr className='-left-2 absolute w-[2px] h-full bg-gradient-to-r from-accent1 to-accent2' />
-                <h3 className='text-subheadmin  text-secondary '>
+              <div key={index} className="relative flex flex-col gap-2">
+                <hr className="absolute -left-2 h-full w-[2px] bg-gradient-to-r from-accent1 to-accent2" />
+                <h3 className="text-subheadmin text-secondary">
                   <TextFormatter text={reason.title} />
                 </h3>
-                <p className='text-para text-secondary text-justify'>
+                <p className="text-justify text-para text-secondary">
                   <TextFormatter text={reason.description} />
                 </p>
               </div>

@@ -13,18 +13,18 @@ function Team() {
 
   useEffect(() => {
     fetch('/content/content.json')
-      .then((response) => response.json())
-      .then((data) => setContent(data.About.our_team))
-      .catch((error) => console.error('Error fetching content:', error));
+      .then(response => response.json())
+      .then(data => setContent(data.About.our_team))
+      .catch(error => console.error('Error fetching content:', error));
   }, []);
   return (
-    <main className='h-[100%] w-full p-4 sm:p-16'>
-      <div className='w-full'>
-        <h1 className='text-head text-center w-full'>
+    <main className="h-[100%] w-full p-4 sm:p-16">
+      <div className="w-full">
+        <h1 className="w-full text-center text-head">
           <TextFormatter text={content?.title || ''} />
         </h1>
       </div>
-      <div className='w-full flex flex-wrap mt-[50px] gap-10 '>
+      <div className="mt-[50px] flex w-full flex-wrap gap-10">
         <TeamCards team={content?.cards} />
       </div>
     </main>
@@ -44,7 +44,7 @@ interface TeamCardProps {
 const TeamCards: React.FC<{ team?: TeamCardProps[] }> = ({ team }) => {
   if (!team) return null;
   return (
-    <div className='w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4'>
+    <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
       {team.map((item, index) => (
         <TeamCade
           key={index}
@@ -68,41 +68,41 @@ const TeamCade: React.FC<TeamCardProps> = ({
 }) => {
   return (
     <>
-      <div className='card border aspect-[3/5] w-full rounded-3xl relative overflow-hidden group'>
-        <img src={image} alt='' className='h-[100%] object-cover w-full' />
-        <div className='h-[8rem] w-full border-t absolute bottom-0 rounded-xl bg-black/50 backdrop-blur-[2px] flex shadow-inner'>
-          <div className='name h-[100%] w-[100%] text-primary flex flex-col justify-start pl-3 py-3'>
-            <h1 className='lg:text-xl md:text-base text-base font-bold'>
+      <div className="card group relative aspect-[3/5] w-full overflow-hidden rounded-3xl border">
+        <img src={image} alt="" className="h-[100%] w-full object-cover" />
+        <div className="absolute bottom-0 flex h-[8rem] w-full rounded-xl border-t bg-black/50 shadow-inner backdrop-blur-[2px]">
+          <div className="name flex h-[100%] w-[100%] flex-col justify-start py-3 pl-3 text-primary">
+            <h1 className="text-base font-bold md:text-base lg:text-xl">
               {name}
             </h1>
-            <p className='font-medium lg:text-paramin sm:text-[13px] text-[12px]'>
+            <p className="text-[12px] font-medium sm:text-[13px] lg:text-paramin">
               <TextFormatter text={position} />
             </p>
           </div>
           {mail && li && (
-            <div className='h-[100%] w-fit px-2 justify-end flex lg:gap-3 gap-2 items-center'>
+            <div className="flex h-[100%] w-fit items-center justify-end gap-2 px-2 lg:gap-3">
               <a
                 href={`https://outlook.live.com/mail/0/deeplink/compose?to=${mail}&subject=Hello&body=Message%20text`}
-                target='_blank'
-                rel='noopener noreferrer'
-                className='aspect-square h-10 w-10 p-3 overflow-hidden border lg:opacity-0 transition-opacity duration-1000 group-hover:opacity-100 rounded-md flex items-center justify-center'
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex aspect-square h-10 w-10 items-center justify-center overflow-hidden rounded-md border p-3 transition-opacity duration-1000 group-hover:opacity-100 lg:opacity-0"
               >
                 <img
-                  src='/images/mail.png'
+                  src="/images/mail.png"
                   alt={`Send mail to ${name}`}
-                  className='text-primary overflow-hidden lg:translate-y-[100%] transition-transform duration-1000 object-cover group-hover:translate-y-0'
+                  className="overflow-hidden object-cover text-primary transition-transform duration-1000 group-hover:translate-y-0 lg:translate-y-[100%]"
                 />
               </a>
               <a
                 href={li}
-                target='_blank'
-                rel='noopener noreferrer'
-                className='aspect-square h-10 w-10 p-3 overflow-hidden border lg:opacity-0 transition-opacity duration-1000 group-hover:opacity-100 rounded-md flex items-center justify-center'
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex aspect-square h-10 w-10 items-center justify-center overflow-hidden rounded-md border p-3 transition-opacity duration-1000 group-hover:opacity-100 lg:opacity-0"
               >
                 <img
-                  src='/images/link.png'
-                  alt=''
-                  className='text-primary overflow-hidden lg:translate-y-[100%] transition-transform duration-1000 group-hover:translate-y-0'
+                  src="/images/link.png"
+                  alt=""
+                  className="overflow-hidden text-primary transition-transform duration-1000 group-hover:translate-y-0 lg:translate-y-[100%]"
                 />
               </a>
             </div>
