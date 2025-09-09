@@ -55,7 +55,7 @@ const JobOpenings = () => {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 gap-6">
         {careers.map((career: CareerCardProps, idx: number) => (
           <CareerCard key={career._id || idx} {...career} />
         ))}

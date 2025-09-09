@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import { ExternalLink } from 'lucide-react';
 import Buttons from '@/app/buttons';
 
 export interface CareerCardProps {
@@ -23,24 +22,24 @@ export default function CareerCard({
   file_url,
 }: CareerCardProps) {
   return (
-    <article className="relative flex h-fit max-h-[30rem] flex-col gap-6 overflow-hidden rounded-lg border border-secondary bg-primary p-2 duration-200 md:p-4">
-      <header>
-        <h3 className="font-suisse text-2xl font-medium md:text-subheadmin">
-          {position || 'No Position'}
-        </h3>
-      </header>
-      <section className="grid gap-2 text-para text-secondary/80">
-        <Info label="Location" value={location} />
-        <Info label="Duration" value={duration} />
-        <Info label="Pay" value={pay} />
-        <Info
-          label="Skills"
-          value={skills.length ? skills.join(', ') : 'N/A'}
-        />
-      </section>
-
-      <footer className="absolute bottom-0 left-0 z-10 flex w-full flex-col items-center justify-between bg-primary">
-        <hr className="h-[2px] w-full bg-gradient-to-r from-accent1 to-accent2" />
+    <article className="p-4 relative flex flex-col justify-between h-fit  overflow-hidden rounded-lg border border-secondary bg-primary duration-200">
+        <h3 className="font-suisse w-full bg-primary border-b-[1px] pb-4 border-accent2 sticky top-0 text-2xl font-medium mb-4 md:text-3xl">
+        {position || 'No Position'}
+      </h3>
+        <section className="grid grid-cols-4  items-center justify-between gap-2 text-para text-secondary/80">
+          <Info label="Location" value={location} />
+          <Info label="Duration" value={duration} />
+          <span className="col-span-2">
+            <Info label="Pay" value={pay} />
+          </span>
+        </section>
+        <span className="text-para font-medium mt-4 text-secondary">
+          Skills:{' '}
+          <li className="list-disc font-normal inline text-para leading-[100%]">
+            {skills.length ? skills.join(' • ') : 'N/A'}
+          </li>
+        </span>
+      <footer className="sticky bottom-0 pt-4 border-t-[1px] border-accent2 left-0 z-10 flex w-full items-center justify-between bg-primary">
         <Buttons
           color="dark"
           underline
